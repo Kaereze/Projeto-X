@@ -1,21 +1,24 @@
-# PROJETO X
+# Projeto X
 
 Meu primeiro portfólio desenvolvido com HTML e CSS.
 
 ## Tecnologias utilizadas
 
-- HTML
-- CSS
+- HTML5
+- CSS3
+- Git
 - GitHub
 
 ## O que aprendi
 
-- Criar páginas HTML
-- Estilizar páginas com CSS
-- Navegar entre páginas
-- Utilizar Git e GitHub
+- Estruturação de páginas HTML
+- Estilização com CSS
+- Navegação entre páginas
+- Versionamento com Git
+- Publicação usando GitHub Pages
 
-## Páginas do projeto
+## Como visualizar
 
-- Página Inicial
-- Página Sobre
+Acesse:
+
+https://kaereze.github.io/Projeto-X/
