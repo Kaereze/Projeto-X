@@ -74,3 +74,49 @@ footer {
 .projeto a:hover {
     background-color: #0ea5e9;
 }
+.foto-perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 15px;
+}
+.perfil {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 20px auto;
+}
+section {
+    transition: 0.3s;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+.projeto a {
+    display: inline-block;
+    background: #38bdf8;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.projeto a:hover {
+    opacity: 0.8;
+}
+<i class="fab fa-github"></i>
+<i class="fab fa-linkedin"></i>
+
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
+    section {
+        padding: 15px;
+    }
+}
