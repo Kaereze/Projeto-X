@@ -2,6 +2,10 @@
 <html lang="pt-BR">
 
 <head>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>João Carlos | Portfólio</title>
@@ -13,53 +17,114 @@
 
     <header class="hero">
 
-        <div class="hero-content">
+    <div class="hero-content">
 
+        <!-- FOTO -->
+        <div class="hero-left">
             <img src="foto-perfil.jpeg"
                  alt="João Carlos"
                  class="perfil">
-
-            <div class="hero-text">
-
-                <span class="badge">
-                    FRONT-END DEVELOPER
-                </span>
-
-                <h1>João Carlos 🚀</h1>
-
-                <p class="subtitulo">
-                    Desenvolvedor Front-End em Formação
-                </p>
-
-                <p class="descricao">
-                    Construindo projetos modernos com HTML, CSS, Git e GitHub.
-                </p>
-
-                <div class="skills-mini">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>Git</span>
-                    <span>GitHub</span>
-                </div>
-
-                <div class="botoes">
-
-                    <a href="https://github.com/Kaereze"
-                       target="_blank">
-                        GitHub
-                    </a>
-
-                    <a href="#projetos">
-                        Projetos
-                    </a>
-
-                </div>
-
-            </div>
-
         </div>
 
-    </header>
+        <!-- INFORMAÇÕES -->
+        <div class="hero-right">
+
+            <span class="badge">
+                FRONT-END DEVELOPER
+            </span>
+
+            <h1>João Carlos 🚀</h1>
+
+            <p class="subtitulo">
+                Desenvolvedor Front-End em Formação
+            </p>
+
+            <p class="descricao">
+                Construindo projetos modernos com HTML, CSS, Git e GitHub.
+            </p>
+
+            <div class="info-extra">
+                <p>📍 Florianópolis - SC</p>
+                <p>🎯 Buscando primeira oportunidade como Front-End</p>
+                <p>📚 Estudando HTML, CSS, JavaScript e Git</p>
+            </div>
+
+            <!-- CARDS -->
+            <div class="hero-stats">
+
+    <div class="stat">
+        <h3>1+</h3>
+        <p>Projetos</p>
+    </div>
+
+    <div class="stat">
+        <h3>4+</h3>
+        <p>Tecnologias</p>
+    </div>
+
+    <div class="stat roadmap-card">
+
+        <h3>Próximos Passos</h3>
+
+        <ul>
+            <li>Aprender JavaScript</li>
+            <li>Aprender React</li>
+            <li>Criar projetos completos</li>
+            <li>Conseguir primeira vaga</li>
+        </ul>
+
+    </div>
+
+    <div class="stat">
+        <h3>2026</h3>
+        <p>Início na Área</p>
+    </div>
+
+</div>
+
+            <!-- TECNOLOGIAS -->
+            <div class="skills-mini">
+
+    <span>
+        <i class="fa-brands fa-html5"></i>
+        HTML5
+    </span>
+
+    <span>
+        <i class="fa-brands fa-css3-alt"></i>
+        CSS3
+    </span>
+
+    <span>
+        <i class="fa-brands fa-git-alt"></i>
+        Git
+    </span>
+
+    <span>
+        <i class="fa-brands fa-github"></i>
+        GitHub
+    </span>
+
+</div>
+
+            <!-- BOTÕES -->
+            <div class="botoes">
+
+    <a href="https://github.com/Kaereze" target="_blank">
+        <i class="fa-brands fa-github"></i>
+        GitHub
+        <small>Meu Perfil</small>
+    </a>
+
+    <a href="#projetos">
+        <i class="fa-solid fa-folder"></i>
+        Projetos
+        <small>Meus Trabalhos</small>
+    </a>
+
+</div>
+
+</header>
 
     <nav class="navbar">
         <a href="index.html">Início</a>
@@ -105,12 +170,34 @@
 
             <div class="skills">
 
-                <span class="skill">HTML5</span>
-                <span class="skill">CSS3</span>
-                <span class="skill">Git</span>
-                <span class="skill">GitHub</span>
-                <span class="skill">VS Code</span>
-                <span class="skill">Responsividade</span>
+                <div class="skill-card">
+    <span>HTML5</span>
+    <small>Intermediário</small>
+</div>
+                <div class="skill-card">
+    <span>CSS3</span>
+    <small>Intermediário</small>
+</div>
+                <div class="skill-card">
+    <span>JavaScript</span>
+    <small>Básico</small>
+</div>
+                <div class="skill-card">
+    <span>Git</span>
+    <small>Intermediário</small>
+</div>
+                <div class="skill-card">
+    <span>GitHub</span>
+    <small>Intermediário</small>
+</div>
+                <div class="skill-card">
+    <span>VS Code</span>
+    <small>Intermediário</small>
+</div>
+                <div class="skill-card">
+    <span>Responsividade</span>
+    <small>Intermediário</small>
+</div>
 
             </div>
 
@@ -118,28 +205,37 @@
 
         <section id="projetos">
 
-            <h2>Projetos</h2>
+    <h2>Projetos</h2>
 
-            <div class="projeto-card">
+    <div class="projetos-grid">
 
-                <h3>Projeto X</h3>
+        <div class="projeto-card">
 
-                <p>
-                    Meu primeiro portfólio desenvolvido para praticar
-                    HTML, CSS, Git e GitHub.
-                </p>
+            <h3>💻 Projeto X</h3>
 
-                <p>
-                    <strong>Tecnologias:</strong>
-                    HTML5, CSS3, Git e GitHub.
-                </p>
+            <p>
+                Portfólio desenvolvido utilizando HTML, CSS e GitHub.
+            </p>
 
-                <a href="https://github.com/Kaereze/Projeto-X"
-                   target="_blank">
-                    Ver Projeto
-                </a>
+            <p>
+                Responsivo para desktop e mobile.
+            </p>
 
+            <div class="tecnologias-projeto">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>GitHub</span>
             </div>
+
+            <a href="https://github.com/Kaereze/Projeto-X" target="_blank">
+                Ver Projeto
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
 
         </section>
 
@@ -165,6 +261,7 @@
                 </a>
             </p>
 
+            
         </section>
 
     </main>
@@ -184,5 +281,6 @@
     <script src="matrix.js"></script>
 
 </body>
+
 
 </html>
