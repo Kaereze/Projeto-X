@@ -722,3 +722,98 @@ main {
         0 0 20px #00ff88,
         0 0 40px #00ff88;
 }
+
+
+/* ========================================
+   MOBILE SIMPLES
+======================================== */
+
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 30px 15px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .hero-right {
+        min-width: auto;
+        align-items: center;
+        text-align: center;
+    }
+
+    .perfil {
+        width: 180px;
+        height: 180px;
+    }
+
+    .hero-right h1 {
+        font-size: 2rem;
+    }
+
+    .subtitulo {
+        font-size: 1rem;
+    }
+
+    .hero-stats {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .stat {
+        width: 140px;
+        min-width: auto;
+        height: auto;
+        padding: 15px;
+    }
+
+    .skills-mini {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .skills-mini span {
+        width: 80px;
+        height: 80px;
+    }
+
+    .skills-mini i {
+        font-size: 30px;
+    }
+
+    .botoes {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .botoes a {
+        width: 90%;
+        text-align: center;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .sobre-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        width: 100%;
+    }
+}
