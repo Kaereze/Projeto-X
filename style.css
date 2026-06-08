@@ -285,12 +285,29 @@ section h2 {
     gap: 8px;
 }
 
-.skill {
-    background: #1e293b;
-    border: 1px solid var(--primary);
-    padding: 6px 12px;
-    border-radius: 5px;
-    font-size: 0.85rem;
+
+
+.skill-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 2px 14px;
+    margin-bottom: 10px;
+
+    border: 2px solid rgba(0,255,65,.3);
+    border-radius: 8px;
+
+    background: rgba(255,255,255,.03);
+}
+
+.skill-card span {
+    color: #fff;
+    font-weight: bold;
+}
+
+.skill-card small {
+    color: #00ff88;
 }
 
 .skill:hover {
@@ -310,18 +327,60 @@ section h2 {
 .skills-mini span {
     width: 100px;
     height: 100px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     gap: 10px;
+
     border: 1px solid #00ff88;
     border-radius: 10px;
+
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.skills-mini span:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 0 10px #00ff88,
+        0 0 20px #00ff88,
+        0 0 40px #00ff88;
 }
 
 .skills-mini i {
     font-size: 45px;
     color: #00ff88;
+
+    transition: all 0.3s ease;
+}
+
+.skills-mini span:hover i {
+    transform: scale(1.25) rotate(10deg);
+
+    text-shadow:
+        0 0 10px #00ff88,
+        0 0 20px #00ff88,
+        0 0 40px #00ff88;
+}
+
+@keyframes pulseIcon {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
 }
 
 .projeto-card {
@@ -462,60 +521,150 @@ main {
 /* PÁGINA SOBRE */
 /* ========================= */
 
-main {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 40px;
-}
-
 .sobre-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
 .sobre-header .perfil {
     width: 220px;
     height: 220px;
-    object-fit: cover;
     border-radius: 20px;
+    object-fit: cover;
+    border: 2px solid #00ff88;
+    box-shadow: 0 0 20px #00ff88;
     margin-bottom: 20px;
+}
+
+.sobre-header h1 {
+    color: #00ff88;
+    margin-bottom: 15px;
+}
+
+.sobre-header p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #ddd;
 }
 
 .sobre-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
-    max-width: 1200px;
-    margin: 0 auto;
+
+    max-width: 1300px;
+    margin: 50px auto;
 }
 
 .card {
-    background: rgba(0,0,0,0.7);
-    border: 2px solid #00ff88;
-    border-radius: 12px;
-    padding: 20px;
-    min-height: 250px;
+    background: rgba(0,0,0,.75);
 
-    box-shadow:
-        0 0 10px #00ff88,
-        inset 0 0 10px rgba(0,255,136,.2);
+    border: 1px solid #00ff88;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    min-height: 320px;
+
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #00ff88;
 }
 
 .card h2 {
     color: #00ff88;
+
     margin-bottom: 15px;
-    border-bottom: 1px solid #00ff88;
+
     padding-bottom: 10px;
+
+    border-bottom: 1px solid rgba(0,255,136,.3);
 }
 
+.card ul {
+    padding-left: 20px;
+}
+
+.card li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Tablet */
 @media (max-width: 1200px) {
+
     .sobre-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
 }
 
+/* Celular */
 @media (max-width: 768px) {
+
     .sobre-grid {
         grid-template-columns: 1fr;
     }
+
+}
+
+.sobre-topo{
+    max-width:1200px;
+    margin:60px auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:80px;
+}
+
+.sobre-foto{
+    flex-shrink:0;
+}
+
+.sobre-foto .perfil{
+    width:250px;
+    height:250px;
+    object-fit:cover;
+}
+
+.sobre-info{
+    max-width:600px;
+}
+
+.sobre-info h1{
+    font-size:3rem;
+    color:#fff;
+    margin-bottom:15px;
+}
+
+.sobre-info .subtitulo{
+    font-size:1.3rem;
+    margin-bottom:20px;
+}
+
+.sobre-resumo p{
+    margin-bottom:12px;
+    font-size:1.05rem;
+}
+
+@media (max-width: 768px){
+
+    .sobre-topo{
+        flex-direction:column;
+        text-align:center;
+        gap:30px;
+    }
+
+    .sobre-info{
+        max-width:100%;
+    }
+
+    .sobre-info h1{
+        font-size:2rem;
+    }
+
 }
