@@ -3,119 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Mim</title>
+    <title>Sobre Mim | João Carlos</title>
 
+    <!-- Fontes Orbitron e Rajdhani para o visual Cyberpunk -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Ícones do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Ligação ao CSS Global -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-      <nav class="navbar">
-        <a href="index.html">Início</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="skills.html">Skills</a>
+    <!-- Navbar igual à da Home, mas aqui o "Sobre" fica marcado como ativo ("#") -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html">Início</a>
+            <a href="#">Sobre</a>
+            <a href="skills.html">Skills</a>
+        </div>
     </nav>
 
-<header class="sobre-header">
-
-    
-
-    <div class="sobre-topo">
-
-        <div class="sobre-foto">
-            <img src="foto-perfil.jpeg"
-                 alt="João Carlos"
-                 class="perfil">
-        </div>
-
-        
-
-        <div class="sobre-info">
-
-            <h1>Sobre Mim</h1>
-
-            <p class="subtitulo">
-                Desenvolvedor Front-End em formação,
-                focado em criar interfaces modernas e responsivas.
-            </p>
-
-            
-
-            <div class="sobre-resumo">
-
-                <p>📍 Florianópolis - SC</p>
-
-                <p>
-                    💻 HTML, CSS, Git, GitHub e JavaScript
-                </p>
-
-                <p>
-                    🎯 Buscando minha primeira oportunidade
-                    na área de tecnologia
-                </p>
-
+    <!-- Cabeçalho da Página Sobre -->
+    <header class="hero" style="min-height: auto; padding: 40px 20px 10px 20px;">
+        <div class="hero-content" style="gap: 40px;">
+            <div class="avatar-wrapper">
+                <img src="foto-perfil.jpeg" alt="João Carlos" class="perfil" style="width: 160px; height: 160px;">
             </div>
-</header>
-
-
-    
+            <div class="hero-right">
+                <span class="badge"><i class="fa-solid fa-user"></i> PERFIL DO DESENVOLVEDOR</span>
+                <h1>Sobre Mim</h1>
+            </div>
         </div>
+    </header>
 
-    </div>
+    <!-- Conteúdo Principal organizado em Grid -->
+    <main class="sobre-grid">
+        <section class="card">
+            <h2>Quem sou eu</h2>
+            <p>
+                Sou um entusiasta da tecnologia, apaixonado por criar experiências digitais incríveis. 
+                Atualmente, estou focado em aprender HTML, CSS, Git e GitHub para construir meu portfólio e me preparar para o mercado de trabalho.
+            </p>
+        </section>
 
-</header>
+        <section class="card">
+            <h2>Minha Jornada</h2>
+            <ul>
+                <li>🚀 2025 — Iniciei meus estudos em HTML</li>
+                <li>🎨 2025 — Aprendi CSS</li>
+                <li>💼 2025 — Desenvolvi meu primeiro portfólio</li>
+                <li>🔧 2025 — Aprendi Git e GitHub</li>
+            </ul>
+        </section>
 
-<main>
+        <section class="card">
+            <h2>Certificações</h2>
+            <ul>
+                <li>✅ HTML5</li>
+                <li>✅ CSS3</li>
+                <li>✅ Git e GitHub</li>
+                <li>📚 JavaScript (em andamento)</li>
+            </ul>
+        </section>
 
-    <section class="card">
-    <h2>Quem sou eu</h2>
-    <p>
-        Sou um entusiasta da tecnologia, apaixonado por criar experiências digitais incríveis. 
-        Atualmente, estou focado em aprender HTML, CSS, Git e GitHub para construir meu portfólio e me preparar para o mercado de trabalho.
-    </p>
+        <section class="card">
+            <h2>Objetivos</h2>
+            <ul>
+                <li>🎯 Aprender JavaScript avançado</li>
+                <li>💻 Desenvolver projetos completos</li>
+                <li>🚀 Conseguir minha primeira vaga Front-End</li>
+                <li>📈 Evoluir continuamente como desenvolvedor</li>
+            </ul>
+        </section>
+    </main>
 
-     </div> 
-    </section>
+    <footer>
+        <p>© 2026 João Carlos</p>
+        <p>Desenvolvido com HTML, CSS e GitHub Pages</p>
+    </footer>
 
-    
-
-    <section class="card">
-    <h2>Minha Jornada</h2>
-
-    <ul>
-        <li>🚀 2025 — Iniciei meus estudos em HTML</li>
-<li>🎨 2025 — Aprendi CSS</li>
-<li>💼 2025 — Desenvolvi meu primeiro portfólio</li>
-<li>🔧 2025 — Aprendi Git e GitHub</li>
-    </ul>
-</section>
-
-<section class="card">
-    <h2>Certificações</h2>
-
-    <ul>
-        <li>✅ HTML5</li>
-<li>✅ CSS3</li>
-<li>✅ Git e GitHub</li>
-<li>📚 JavaScript (em andamento)</li>
-    </ul>
-</section>
-
-    <section class="card">
-    <h2>Objetivos</h2>
-
-        <ul>
-            <li>🎯 Aprender JavaScript avançado</li>
-<li>💻 Desenvolver projetos completos</li>
-<li>🚀 Conseguir minha primeira vaga Front-End</li>
-<li>📈 Evoluir continuamente como desenvolvedor</li>
-        </ul>
-    </section>
-
-</main>
-
-<footer>
-    <p>© 2026 João Carlos</p>
-</footer>
+    <!-- Fundo Matrix de fundo -->
+    <canvas id="matrix"></canvas>
+    <script src="matrix.js"></script>
 
 </body>
 </html>
