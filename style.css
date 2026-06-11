@@ -257,21 +257,23 @@ h1, h2, h3, .badge {
    PÁGINA SOBRE (ESTILOS COMPLEMENTARES)
 ======================================== */
 .sobre-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
+    display: flex;       /* Mudamos de grid para flex para controlar melhor o alinhamento */
+    flex-wrap: wrap;     /* Permite que os cards quebrem de linha se não couberem */
+    justify-content: center; /* Centraliza perfeitamente os cards no meio do ecrã */
+    gap: 100px;
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
+    min-height: 60vh;    /* Garante que o conteúdo empurre o rodapé para baixo */
 }
 
 .card {
     background: rgba(0,0,0,.75);
     border: 1px solid #00ff88;
     border-radius: 12px;
-    padding: 25px;
+    padding: 30px;
     min-height: 320px;
-    transition: 0.3s;
+    transition: 0,3s;
 }
 
 .card:hover {
@@ -336,4 +338,69 @@ footer {
         flex-wrap: wrap;
     }
     .sobre-grid { grid-template-columns: 1fr; }
+}
+
+/* ========================================
+   CORREÇÃO FORÇADA DE ALINHAMENTO (PROJETOS)
+======================================== */
+.sobre-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    gap: 25px !important;
+    max-width: 1200px !important;
+    margin: 40px auto !important;
+}
+
+/* Garante que cada bloco de projeto tenha um tamanho fixo lado a lado */
+.sobre-grid .card-link {
+    display: block !important;
+    width: 100% !important;
+    max-width: 360px !important; /* Tamanho perfeito para ficarem lado a lado */
+    text-decoration: none !important;
+}
+
+.sobre-grid .card {
+    height: 100% !important;
+    min-height: 380px !important;
+    width: 100% !important;
+}
+/* ========================================
+   AJUSTE DE ESPAÇAMENTOS REAIS (PROJETOS)
+======================================== */
+
+/* 1. Reduz o espaço gigante do topo (Header) */
+.hero[style*="min-height: auto"] {
+    padding: 30px 20px 0px 20px !important;
+    margin-bottom: 0px !important;
+}
+
+/* 2. Remove o esticamento vertical do container de cards */
+.sobre-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: flex-start !important; /* Muda de stretch para flex-start para não esticar o fundo */
+    gap: 30px !important;
+    max-width: 1200px !important;
+    margin: 20px auto 40px auto !important; /* Diminui a margem de cima e de baixo */
+    padding: 0 20px !important;
+    min-height: auto !important; /* Remove o 60vh que criava o buraco até o footer */
+}
+
+/* 3. Ajusta o tamanho e proporção interna dos cards de projetos */
+.sobre-grid .card-link {
+    display: block !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    text-decoration: none !important;
+}
+
+.sobre-grid .card {
+    min-height: 350px !important; /* Altura mínima menor para não ficar comprido à toa */
+    height: auto !important;
+    padding: 20px !important;     /* Espaçamento interno mais compacto */
 }
