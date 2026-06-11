@@ -4,7 +4,7 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const letras = "ボウルに卵とグラニュー糖を入れ、白っぽくふんわりするまで泡立てます。油と全乳を加え、全体が均一になるまでよく混ぜま小麦粉を少しずつ加え、泡を潰さないように優しく混ぜます。最後にベーキングパウダーを加えて混ぜます生地油を塗って小麦粉をまぶした、中央に穴の開いた丸型ケーキ型に流し込予熱した中温のオーブンで約40分、または表面がきつね色になり、乾くまで焼きま"
+const letras = "私は読んでいる人の尻を食べています"
 const letrasArray = letras.split("");
 
 const fontSize = 12;
