@@ -1,5 +1,5 @@
 /* ========================================
-   VARIÁVEIS
+   VARIÁVEIS (Custom Properties)
 ======================================== */
 :root {
     --primary: #00ff41;
@@ -10,7 +10,7 @@
 }
 
 /* ========================================
-   RESET
+   RESET & CONFIGURAÇÕES GERAIS
 ======================================== */
 * {
     margin: 0;
@@ -34,9 +34,8 @@ h1, h2, h3, .badge {
     font-family: 'Orbitron', sans-serif;
 }
 
-
 /* ========================================
-   FUNDO MATRIX
+   FUNDO MATRIX (Canvas)
 ======================================== */
 #matrix {
     position: fixed;
@@ -49,7 +48,7 @@ h1, h2, h3, .badge {
 }
 
 /* ========================================
-   NAVBAR CENTRALIZADA
+   NAVBAR (Navegação Global)
 ======================================== */
 .navbar {
     position: sticky;
@@ -83,7 +82,7 @@ h1, h2, h3, .badge {
 }
 
 /* ========================================
-   HERO INTERATIVO (HOME)
+   HERO SECTION (Apresentação Principal)
 ======================================== */
 .hero {
     min-height: 80vh;
@@ -125,7 +124,7 @@ h1, h2, h3, .badge {
     display: block;
 }
 
-/* Alinhamento dos Textos */
+/* Elementos de Conteúdo do Hero */
 .hero-right {
     display: flex;
     flex-direction: column;
@@ -158,14 +157,14 @@ h1, h2, h3, .badge {
     max-width: 550px;
 }
 
-/* Cursor de Terminal a Piscar */
+/* Cursor de Terminal Piscante */
 .subtitulo-cyber span {
     color: var(--primary);
     font-weight: bold;
     animation: terminalBlink 1s infinite;
 }
 
-/* Contactos Rápidos */
+/* Contatos Rápidos */
 .quick-contact {
     display: flex;
     gap: 15px;
@@ -191,7 +190,7 @@ h1, h2, h3, .badge {
     box-shadow: 0 0 12px rgba(0, 255, 65, 0.2);
 }
 
-/* BOTÕES INTERATIVOS (Efeito Líquido) */
+/* Botões Interativos com Efeito Líquido */
 .botoes-cyber {
     display: flex;
     gap: 20px;
@@ -242,19 +241,22 @@ h1, h2, h3, .badge {
     z-index: 2;
 }
 
+/* Estilo Alternativo do Botão */
 .btn-glitch.alt {
     border-color: #00ff0d;
     color: #66ff00;
 }
+
 .btn-glitch.alt::before {
     background: #00ff22;
 }
+
 .btn-glitch.alt:hover {
     box-shadow: 0 0 20px #000000;
 }
 
 /* ========================================
-   PÁGINA SOBRE (ESTILOS COMPLEMENTARES)
+   PÁGINAS INTERNAS (Grids e Cards)
 ======================================== */
 .sobre-grid {
     display: grid;
@@ -266,7 +268,7 @@ h1, h2, h3, .badge {
 }
 
 .card {
-    background: rgba(0,0,0,.75);
+    background: rgba(0, 0, 0, 0.75);
     border: 1px solid #00ff88;
     border-radius: 12px;
     padding: 25px;
@@ -276,21 +278,27 @@ h1, h2, h3, .badge {
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 15px rgba(0, 255, 65, .3);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
 }
 
 .card h2 {
     color: #00ff88;
     margin-bottom: 15px;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgba(0,255,136,.3);
+    border-bottom: 1px solid rgba(0, 255, 136, 0.3);
 }
 
-.card ul { padding-left: 20px; }
-.card li { margin-bottom: 10px; line-height: 1.5; }
+.card ul {
+    padding-left: 20px;
+}
+
+.card li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
 
 /* ========================================
-   FOOTER
+   RODAPÉ (Footer)
 ======================================== */
 footer {
     background: #000;
@@ -301,7 +309,7 @@ footer {
 }
 
 /* ========================================
-   ANIMATIONS
+   ANIMAÇÕES (Keyframes)
 ======================================== */
 @keyframes terminalBlink {
     0%, 100% { opacity: 1; }
@@ -309,14 +317,21 @@ footer {
 }
 
 /* ========================================
-   RESPONSIVIDADE (MEDIA QUERIES)
+   RESPONSIVIDADE (Media Queries)
 ======================================== */
+
+/* Monitores menores e Tablets em Paisagem */
 @media (max-width: 1200px) {
-    .sobre-grid { grid-template-columns: repeat(2, 1fr); }
+    .sobre-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
+/* Celulares e Dispositivos Móveis */
 @media (max-width: 768px) {
-    .navbar-container { gap: 25px; }
+    .navbar-container {
+        gap: 25px;
+    }
     .hero-content {
         flex-direction: column;
         gap: 40px;
@@ -326,7 +341,9 @@ footer {
         align-items: center;
         text-align: center;
     }
-    .hero-right h1 { font-size: 2.5rem; }
+    .hero-right h1 {
+        font-size: 2.5rem;
+    }
     .botoes-cyber {
         flex-direction: column;
         width: 100%;
@@ -335,5 +352,7 @@ footer {
         justify-content: center;
         flex-wrap: wrap;
     }
-    .sobre-grid { grid-template-columns: 1fr; }
+    .sobre-grid {
+        grid-template-columns: 1fr;
+    }
 }
