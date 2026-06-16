@@ -17,12 +17,14 @@
 <body>
 
     <!-- Navbar igual à da Home, mas aqui o "Skills" fica marcado como ativo ("#") -->
-    <nav class="navbar">
+     <nav class="navbar">
         <div class="navbar-container">
-            <a href="index.html">Início</a>
-            <a href="sobre.html">Sobre</a>
-            <a href="#">Skills</a>
-        </div>
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="skills.html">Skills</a>
+    <a href="projetos.html">Projetos</a>
+</div>
+    </nav>
     </nav>
 
     <!-- Cabeçalho da Página de Habilidades -->
@@ -36,14 +38,13 @@
     </header>
 
    <!-- Mostruário de Skills em Grade Interativa (Clicáveis) -->
-<main class="sobre-grid">
+<main style="display: flex; flex-direction: row; justify-content: center; align-items: flex-start; flex-wrap: wrap; gap: 20px; max-width: 1000px; margin: 10px auto 30px auto; padding: 0 20px;">
 
     <!-- CARD HTML5: Link para o seu projeto/repositório de HTML --> 
     <a href="https://github.com/Kaereze/Projeto-X/blob/main/index.html" target="_blank" class="card-link">
         <section class="card" style="text-align: center; min-height: auto;">
             <i class="fa-brands fa-html5" style="font-size: 3rem; color: #e34c26; margin-bottom: 15px;"></i>
             <h2>HTML5</h2>
-            <p>HTML5</p>
         </section>
     </a>
 
@@ -52,16 +53,7 @@
         <section class="card" style="text-align: center; min-height: auto;">
             <i class="fa-brands fa-css3-alt" style="font-size: 3rem; color: #264de4; margin-bottom: 15px;"></i>
             <h2>CSS3</h2>
-            <p>CSS3</p>
-        </section>
-    </a>
 
-    <!-- CARD GIT: Link para o seu repositório de Git -->
-    <a href="https://github.com/Kaereze/Projeto-X" target="_blank" class="card-link">
-        <section class="card" style="text-align: center; min-height: auto;">
-            <i class="fa-brands fa-git-alt" style="font-size: 3rem; color: #f05032; margin-bottom: 15px;"></i>
-            <h2>Git</h2>
-            <p>Git</p>
         </section>
     </a>
 

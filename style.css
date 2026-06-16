@@ -101,6 +101,12 @@ h1, h2, h3, .badge {
     gap: 80px;
 }
 
+/* Reduz o espaço gigante do topo quando inline style min-height: auto for aplicado */
+.hero[style*="min-height: auto"] {
+    padding: 30px 20px 0px 20px !important;
+    margin-bottom: 0px !important;
+}
+
 /* Moldura Neon na Imagem */
 .avatar-wrapper {
     position: relative;
@@ -259,42 +265,33 @@ h1, h2, h3, .badge {
    PÁGINAS INTERNAS (Grids e Cards)
 ======================================== */
 .sobre-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: stretch !important; /* Faz com que os cards na mesma linha tenham a mesma altura */
+    gap: 25px !important;            /* Diminuído ligeiramente para aproximar os blocos */
+    max-width: 1200px !important;
+    margin: 30px auto 40px auto !important;
+    padding: 0 20px !important;
+}
+
+/* Estrutura dos links dos cards (Página Projetos e Skills) */
+.sobre-grid .card-link {
+    display: flex !important;       /* Mudado para flex para ajudar no alinhamento */
+    width: 100% !important;
+    max-width: 260px !important;    /* Reduzi a largura máxima para dar mais harmonia visual aos ícones */
+    text-decoration: none !important;
 }
 
 .card {
     background: rgba(0, 0, 0, 0.75);
     border: 1px solid #00ff88;
     border-radius: 12px;
-    padding: 25px;
-    min-height: 320px;
+    padding: 25px 20px !important;  /* Ajuste de espaçamento interno */
+    width: 100% !important;
+    height: auto !important;        /* O card se ajusta ao tamanho real do conteúdo */
     transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
-}
-
-.card h2 {
-    color: #00ff88;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgba(0, 255, 136, 0.3);
-}
-
-.card ul {
-    padding-left: 20px;
-}
-
-.card li {
-    margin-bottom: 10px;
-    line-height: 1.5;
 }
 
 /* ========================================
@@ -322,8 +319,8 @@ footer {
 
 /* Monitores menores e Tablets em Paisagem */
 @media (max-width: 1200px) {
-    .sobre-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .sobre-grid .card-link {
+        max-width: 45%; /* Distribui melhor em telas médias */
     }
 }
 
@@ -352,7 +349,7 @@ footer {
         justify-content: center;
         flex-wrap: wrap;
     }
-    .sobre-grid {
-        grid-template-columns: 1fr;
+    .sobre-grid .card-link {
+        max-width: 100% !important; /* Ocupa a tela inteira em smartphones */
     }
 }
