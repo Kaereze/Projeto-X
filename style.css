@@ -259,6 +259,56 @@ h1, h2, h3, .badge {
     display: block;
 }
 
+/* ========================================
+   ÓRBITA DE TECNOLOGIAS (foto da Home)
+======================================== */
+.avatar-orbit {
+    position: relative;
+    display: inline-block;
+}
+
+/* Aura pulsante atrás da foto */
+.avatar-orbit::before {
+    content: '';
+    position: absolute;
+    inset: -35px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 255, 65, .28), transparent 70%);
+    z-index: -1;
+    animation: auraPulse 3s ease-in-out infinite;
+}
+
+@keyframes auraPulse {
+    0%, 100% { transform: scale(1); opacity: .7; }
+    50% { transform: scale(1.15); opacity: 1; }
+}
+
+.orbit-icon {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    background: rgba(0, 0, 0, .8);
+    border: 1px solid var(--primary);
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0, 255, 65, .5);
+    animation: orbitFloat 4s ease-in-out infinite;
+}
+
+@keyframes orbitFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.orbit-icon--html5 { top: -20px; left: -20px; color: #e34c26; animation-delay: 0s; }
+.orbit-icon--css3 { top: -20px; right: -20px; color: #264de4; animation-delay: .5s; }
+.orbit-icon--js { top: -38px; left: calc(50% - 23px); color: #f0db4f; animation-delay: 1s; }
+.orbit-icon--git { bottom: -20px; left: -20px; color: #f05033; animation-delay: 1.5s; }
+.orbit-icon--github { bottom: -20px; right: -20px; color: #fff; animation-delay: 2s; }
+
 /* Alinhamento dos Textos */
 .hero-right {
     display: flex;
@@ -837,4 +887,16 @@ footer {
         flex-wrap: wrap;
     }
     .sobre-grid { gap: 20px; }
+
+    /* Encolhe a órbita de ícones para caber em telas estreitas */
+    .orbit-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 1rem;
+    }
+    .orbit-icon--html5 { top: -10px; left: -10px; }
+    .orbit-icon--css3 { top: -10px; right: -10px; }
+    .orbit-icon--js { top: -24px; left: calc(50% - 17px); }
+    .orbit-icon--git { bottom: -10px; left: -10px; }
+    .orbit-icon--github { bottom: -10px; right: -10px; }
 }
