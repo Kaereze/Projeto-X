@@ -1,80 +1,325 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
+<!-- ======================================================
+     HEAD
+     Configurações da página
+====================================================== -->
 <head>
+
+    <!-- Permite caracteres especiais -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Responsividade -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da aba -->
     <title>Skills | João Carlos</title>
 
-    <!-- Fontes Orbitron e Rajdhani para o visual Cyberpunk -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
-    
-    <!-- Ícones do Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Resumo da página para buscadores e compartilhamentos -->
+    <meta name="description"
+          content="Tecnologias e ferramentas utilizadas por João Carlos: HTML5, CSS3 e GitHub.">
 
-    <!-- Ligação ao CSS Global -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Ícone da aba do navegador -->
+    <link rel="icon"
+          type="image/svg+xml"
+          href="favicon.svg">
+
+    <!-- Marca o <html> assim que o JS estiver disponível, para as animações de rolagem -->
+    <script>document.documentElement.classList.add('js');</script>
+
+
+    <!-- ======================================================
+         FONTES
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- ======================================================
+         ÍCONES
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- ======================================================
+         CSS
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
 </head>
+
 <body>
 
-    <!-- Navbar igual à da Home, mas aqui o "Skills" fica marcado como ativo ("#") -->
-     <nav class="navbar">
-        <div class="navbar-container">
-    <a href="index.html">Início</a>
-    <a href="sobre.html">Sobre</a>
-    <a href="skills.html">Skills</a>
-    <a href="projetos.html">Projetos</a>
-</div>
-    </nav>
-    </nav>
 
-    <!-- Cabeçalho da Página de Habilidades -->
-    <header class="hero" style="min-height: auto; padding: 40px 20px 10px 20px;">
-        <div class="hero-content">
-            <div class="hero-right" style="align-items: center; text-align: center;">
-                <span class="badge"><i class="fa-solid fa-code"></i> TECH STACK</span>
-                <h1>Minhas Habilidades</h1>
-            </div>
+
+<!-- ======================================================
+     MENU DE NAVEGAÇÃO
+====================================================== -->
+
+<nav class="navbar">
+
+    <div class="navbar-container">
+
+        <a href="index.html">Início</a>
+
+        <a href="sobre.html">Sobre</a>
+
+        <a href="skills.html"
+           class="active"
+           aria-current="page">Skills</a>
+
+        <a href="projetos.html">Projetos</a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ======================================================
+     HERO
+     Cabeçalho da página Skills
+====================================================== -->
+
+<header class="hero hero-compact">
+
+    <div class="hero-content">
+
+        <div class="hero-right hero-right-center">
+
+            <span class="badge hud-frame">
+
+                <i class="fa-solid fa-code"></i>
+
+                TECH STACK
+
+            </span>
+
+            <h1>Minhas Habilidades</h1>
+
         </div>
-    </header>
 
-   <!-- Mostruário de Skills em Grade Interativa (Clicáveis) -->
-<main style="display: flex; flex-direction: row; justify-content: center; align-items: flex-start; flex-wrap: wrap; gap: 20px; max-width: 1000px; margin: 10px auto 30px auto; padding: 0 20px;">
+    </div>
 
-    <!-- CARD HTML5: Link para o seu projeto/repositório de HTML --> 
-    <a href="https://github.com/Kaereze/Projeto-X/blob/main/index.html" target="_blank" class="card-link">
-        <section class="card" style="text-align: center; min-height: auto;">
-            <i class="fa-brands fa-html5" style="font-size: 3rem; color: #e34c26; margin-bottom: 15px;"></i>
+</header>
+
+
+
+<!-- ======================================================
+     CONTEÚDO PRINCIPAL
+====================================================== -->
+
+<main class="sobre-grid">
+
+
+
+    <!-- ==================================================
+         CARD HTML5
+    =================================================== -->
+
+    <a href="https://github.com/Kaereze/Projeto-X/blob/main/index.html"
+       target="_blank"
+       class="card-link">
+
+        <section class="card card-compact reveal">
+
+            <i class="fa-brands fa-html5 tech-icon html5"></i>
+
             <h2>HTML5</h2>
+
+            <p class="skill-desc">
+                Estrutura páginas semânticas, acessíveis
+                e otimizadas para SEO.
+            </p>
+
+            <div class="skill-tags">
+                <span class="skill-tag">Semântica</span>
+                <span class="skill-tag">Acessibilidade</span>
+                <span class="skill-tag">SEO</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-bar-fill" style="--pct: 85%;"></div>
+            </div>
+
         </section>
+
     </a>
 
-    <!-- CARD CSS3: Link para o seu projeto de CSS -->
-    <a href="https://github.com/Kaereze/Projeto-X/blob/main/style.css" target="_blank" class="card-link">
-        <section class="card" style="text-align: center; min-height: auto;">
-            <i class="fa-brands fa-css3-alt" style="font-size: 3rem; color: #264de4; margin-bottom: 15px;"></i>
+
+
+    <!-- ==================================================
+         CARD CSS3
+    =================================================== -->
+
+    <a href="https://github.com/Kaereze/Projeto-X/blob/main/style.css"
+       target="_blank"
+       class="card-link">
+
+        <section class="card card-compact reveal">
+
+            <i class="fa-brands fa-css3-alt tech-icon css3"></i>
+
             <h2>CSS3</h2>
 
+            <p class="skill-desc">
+                Crio layouts responsivos com Flexbox,
+                Grid e animações.
+            </p>
+
+            <div class="skill-tags">
+                <span class="skill-tag">Flexbox</span>
+                <span class="skill-tag">Grid</span>
+                <span class="skill-tag">Responsivo</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-bar-fill" style="--pct: 75%;"></div>
+            </div>
+
         </section>
+
     </a>
 
-    <!-- CARD GITHUB: Link direto para o seu perfil geral do GitHub -->
-    <a href="https://github.com/Kaereze" target="_blank" class="card-link">
-        <section class="card" style="text-align: center; min-height: auto;">
-            <i class="fa-brands fa-github" style="font-size: 3rem; color: #fff; margin-bottom: 15px;"></i>
+
+
+    <!-- ==================================================
+         CARD GIT
+    =================================================== -->
+
+    <a href="https://git-scm.com/"
+       target="_blank"
+       class="card-link">
+
+        <section class="card card-compact reveal">
+
+            <i class="fa-brands fa-git-alt tech-icon git"></i>
+
+            <h2>Git</h2>
+
+            <p class="skill-desc">
+                Controlo versões do código com commits
+                organizados e branches.
+            </p>
+
+            <div class="skill-tags">
+                <span class="skill-tag">Commits</span>
+                <span class="skill-tag">Branches</span>
+                <span class="skill-tag">Merge</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-bar-fill" style="--pct: 70%;"></div>
+            </div>
+
+        </section>
+
+    </a>
+
+
+
+    <!-- ==================================================
+         CARD GITHUB
+    =================================================== -->
+
+    <a href="https://github.com/Kaereze"
+       target="_blank"
+       class="card-link">
+
+        <section class="card card-compact reveal">
+
+            <i class="fa-brands fa-github tech-icon github"></i>
+
             <h2>GitHub</h2>
-            
+
+            <p class="skill-desc">
+                Publico e documento projetos, com deploy
+                automático via GitHub Pages.
+            </p>
+
+            <div class="skill-tags">
+                <span class="skill-tag">Pages</span>
+                <span class="skill-tag">Deploy</span>
+                <span class="skill-tag">Versionamento</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-bar-fill" style="--pct: 70%;"></div>
+            </div>
+
         </section>
+
     </a>
-    </main>
 
-    <footer>
-        <p>© 2026 João Carlos</p>
-        <p>Desenvolvido com HTML, CSS e GitHub Pages</p>
-    </footer>
+</main>
 
-    <!-- Fundo Matrix de fundo -->
-    <canvas id="matrix"></canvas>
-    <script src="matrix.js"></script>
+
+
+<!-- ======================================================
+     RODAPÉ
+====================================================== -->
+
+<footer>
+
+    <div class="footer-social">
+
+        <a href="mailto:joaocarlossilvazeroum@gmail.com"
+           aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+
+        <a href="https://wa.me/5548991329291"
+           target="_blank"
+           aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <a href="https://github.com/Kaereze"
+           target="_blank"
+           aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+        </a>
+
+    </div>
+
+    <p>© 2026 João Carlos</p>
+
+    <p>
+        Desenvolvido com HTML,
+        CSS e GitHub Pages
+    </p>
+
+</footer>
+
+
+
+<!-- ======================================================
+     EFEITO MATRIX
+====================================================== -->
+
+<canvas id="matrix"></canvas>
+
+
+
+<!-- ======================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="matrix.js"></script>
+<script src="scripts.js"></script>
 
 </body>
+
 </html>

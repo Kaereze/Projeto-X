@@ -1,94 +1,308 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
+<!-- ===================================================== -->
+<!-- HEAD -->
+<!-- Configurações da página, fontes, ícones e CSS -->
+<!-- ===================================================== -->
 <head>
+
+    <!-- Codificação -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Responsividade -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- Título -->
     <title>Sobre Mim | João Carlos</title>
 
-    <!-- Fontes Orbitron e Rajdhani para o visual Cyberpunk -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
-    
-    <!-- Ícones do Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Resumo da página para buscadores e compartilhamentos -->
+    <meta name="description"
+          content="Conheça a jornada, certificações e objetivos de João Carlos como desenvolvedor Front-End em formação.">
 
-    <!-- Ligação ao CSS Global -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Ícone da aba do navegador -->
+    <link rel="icon"
+          type="image/svg+xml"
+          href="favicon.svg">
+
+    <!-- Marca o <html> assim que o JS estiver disponível, para as animações de rolagem -->
+    <script>document.documentElement.classList.add('js');</script>
+
+    <!-- Preconnect acelera a conexão com os servidores de fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="style.css">
+
 </head>
+
 <body>
 
-    <!-- Navbar igual à da Home, mas aqui o "Sobre" fica marcado como ativo ("#") -->
-     <nav class="navbar">
-        <div class="navbar-container">
-    <a href="index.html">Início</a>
-    <a href="sobre.html">Sobre</a>
-    <a href="skills.html">Skills</a>
-    <a href="projetos.html">Projetos</a>
-</div>
-    </nav>
-    </nav>
+<!-- ===================================================== -->
+<!-- MENU DE NAVEGAÇÃO -->
+<!-- ===================================================== -->
 
-    <!-- Cabeçalho da Página Sobre -->
-    <header class="hero" style="min-height: auto; padding: 40px 20px 10px 20px;">
-        <div class="hero-content" style="gap: 40px;">
-            <div class="avatar-wrapper">
-                <img src="foto-perfil.jpeg" alt="João Carlos" class="perfil" style="width: 160px; height: 160px;">
-            </div>
-            <div class="hero-right">
-                <span class="badge"><i class="fa-solid fa-user"></i> PERFIL DO DESENVOLVEDOR</span>
-                <h1>Sobre Mim</h1>
-            </div>
+<nav class="navbar">
+
+    <div class="navbar-container">
+
+        <a href="index.html">Início</a>
+
+        <a href="sobre.html"
+           class="active"
+           aria-current="page">Sobre</a>
+
+        <a href="skills.html">Skills</a>
+
+        <a href="projetos.html">Projetos</a>
+
+    </div>
+
+</nav>
+
+
+<!-- ===================================================== -->
+<!-- CABEÇALHO -->
+<!-- ===================================================== -->
+
+<header class="hero hero-compact">
+
+    <div class="hero-content"
+         style="gap:40px;">
+
+        <!-- FOTO -->
+
+        <div class="avatar-wrapper hud-frame">
+
+            <img src="foto-perfil.jpeg"
+                 alt="João Carlos"
+                 class="perfil"
+                 width="160"
+                 height="160"
+                 style="width:160px; height:160px;">
+
         </div>
-    </header>
 
-    <!-- Conteúdo Principal organizado em Grid -->
-    <main style="display: flex; flex-direction: row; justify-content: center; align-items: flex-start; flex-wrap: wrap; gap: 20px; max-width: 1000px; margin: 10px auto 30px auto; padding: 0 20px;">
-        <section class="card">
-            <h2>Quem sou eu</h2>
-            <p>
-                Sou um entusiasta da tecnologia, apaixonado por criar experiências digitais incríveis. 
-                Atualmente, estou focado em aprender HTML, CSS, Git e GitHub para construir meu portfólio e me preparar para o mercado de trabalho.
-            </p>
-        </section>
+        <!-- TEXTO -->
 
-        <section class="card">
-            <h2>Minha Jornada</h2>
-            <ul>
-                <li>🚀 2025 — Iniciei meus estudos em HTML</li>
-                <li>🎨 2025 — Aprendi CSS</li>
-                <li>💼 2025 — Desenvolvi meu primeiro portfólio</li>
-                <li>🔧 2025 — Aprendi Git e GitHub</li>
-            </ul>
-        </section>
+        <div class="hero-right">
 
-        <section class="card">
-            <h2>Certificações</h2>
-            <ul>
-                <li>✅ HTML5</li>
-                <li>✅ CSS3</li>
-                <li>✅ Git e GitHub</li>
-                <li>📚 JavaScript (em andamento)</li>
-            </ul>
-        </section>
+            <span class="badge hud-frame">
 
-        <section class="card">
-            <h2>Objetivos</h2>
-            <ul>
-                <li>🎯 Aprender JavaScript avançado</li>
-                <li>💻 Desenvolver projetos completos</li>
-                <li>🚀 Conseguir minha primeira vaga Front-End</li>
-                <li>📈 Evoluir continuamente como desenvolvedor</li>
-            </ul>
-        </section>
-    </main>
+                <i class="fa-solid fa-user"></i>
 
-    <footer>
-        <p>© 2026 João Carlos</p>
-        <p>Desenvolvido com HTML, CSS e GitHub Pages</p>
-    </footer>
+                PERFIL DO DESENVOLVEDOR
 
-    <!-- Fundo Matrix de fundo -->
-    <canvas id="matrix"></canvas>
-    <script src="matrix.js"></script>
+            </span>
+
+            <h1>Sobre Mim</h1>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ===================================================== -->
+<!-- CONTEÚDO PRINCIPAL -->
+<!-- ===================================================== -->
+
+<main class="sobre-grid">
+
+    <!-- ======================== -->
+    <!-- CARD QUEM SOU EU -->
+    <!-- ======================== -->
+
+    <section class="card reveal">
+
+        <h2>Quem sou eu</h2>
+
+        <p>
+            Sou um entusiasta da tecnologia, apaixonado por criar
+            experiências digitais incríveis.
+
+            Atualmente estou focado em aprender HTML, CSS, Git e
+            GitHub para construir meu portfólio e conquistar minha
+            primeira oportunidade na área.
+        </p>
+
+        <p class="status-line">
+
+            <span class="status-dot"></span>
+
+            Disponível para novas oportunidades
+
+        </p>
+
+        <div class="skill-tags skill-tags--left">
+
+            <span class="skill-tag">HTML5</span>
+
+            <span class="skill-tag">CSS3</span>
+
+            <span class="skill-tag">Git</span>
+
+            <span class="skill-tag">GitHub</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================== -->
+    <!-- CARD JORNADA -->
+    <!-- ======================== -->
+
+    <section class="card reveal">
+
+        <h2>Minha Jornada</h2>
+
+        <ul class="timeline">
+
+            <li class="timeline-item">
+                <span class="timeline-year">2025</span>
+                🚀 Iniciei meus estudos em HTML
+            </li>
+
+            <li class="timeline-item">
+                <span class="timeline-year">2025</span>
+                🎨 Aprendi CSS
+            </li>
+
+            <li class="timeline-item">
+                <span class="timeline-year">2025</span>
+                💼 Desenvolvi meu primeiro Portfólio
+            </li>
+
+            <li class="timeline-item">
+                <span class="timeline-year">2025</span>
+                🔧 Aprendi Git e GitHub
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- ======================== -->
+    <!-- CARD CERTIFICAÇÕES -->
+    <!-- ======================== -->
+
+    <section class="card reveal">
+
+        <h2>Certificações</h2>
+
+        <div class="cert-grid">
+
+            <span class="cert-badge">
+                <i class="fa-solid fa-circle-check"></i>
+                HTML5
+            </span>
+
+            <span class="cert-badge">
+                <i class="fa-solid fa-circle-check"></i>
+                CSS3
+            </span>
+
+            <span class="cert-badge">
+                <i class="fa-solid fa-circle-check"></i>
+                Git e GitHub
+            </span>
+
+            <span class="cert-badge in-progress">
+                <i class="fa-solid fa-spinner"></i>
+                JavaScript (em andamento)
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================== -->
+    <!-- CARD OBJETIVOS -->
+    <!-- ======================== -->
+
+    <section class="card reveal">
+
+        <h2>Objetivos</h2>
+
+        <ul>
+
+            <li>🎯 Aprender JavaScript Avançado</li>
+
+            <li>💻 Desenvolver projetos completos</li>
+
+            <li>🚀 Conquistar minha primeira vaga Front-End</li>
+
+            <li>📈 Evoluir continuamente como desenvolvedor</li>
+
+        </ul>
+
+    </section>
+
+</main>
+
+
+<!-- ===================================================== -->
+<!-- RODAPÉ -->
+<!-- ===================================================== -->
+
+<footer>
+
+    <div class="footer-social">
+
+        <a href="mailto:joaocarlossilvazeroum@gmail.com"
+           aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+
+        <a href="https://wa.me/5548991329291"
+           target="_blank"
+           aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <a href="https://github.com/Kaereze"
+           target="_blank"
+           aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+        </a>
+
+    </div>
+
+    <p>© 2026 João Carlos</p>
+
+    <p>
+        Desenvolvido com HTML, CSS e GitHub Pages
+    </p>
+
+</footer>
+
+
+<!-- ===================================================== -->
+<!-- MATRIX -->
+<!-- ===================================================== -->
+
+<canvas id="matrix"></canvas>
+
+<script src="matrix.js"></script>
+<script src="scripts.js"></script>
 
 </body>
+
 </html>

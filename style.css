@@ -7,6 +7,7 @@
     --bg-panel: #0f172a;
     --text-light: #fff;
     --glass: rgba(0, 0, 0, 0.8);
+    --danger: #ff0055;
 }
 
 /* ========================================
@@ -18,11 +19,33 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+    scrollbar-color: var(--primary) #000;
+    scrollbar-width: thin;
+}
+
 body {
     background: var(--bg-dark);
     color: var(--text-light);
     font-family: 'Rajdhani', sans-serif;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Grelha tecnológica sutil atrás de todo o conteúdo */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 255, 65, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 65, 0.05) 1px, transparent 1px);
+    background-size: 42px 42px;
+    pointer-events: none;
+    z-index: -2;
 }
 
 a {
@@ -32,6 +55,34 @@ a {
 
 h1, h2, h3, .badge {
     font-family: 'Orbitron', sans-serif;
+}
+
+/* Texto com gradiente neon, usado em títulos de destaque */
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary), #00e5ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Cor de seleção de texto e barra de rolagem no tema do site */
+::selection {
+    background: var(--primary);
+    color: #000;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+    box-shadow: 0 0 8px var(--primary);
 }
 
 
@@ -49,12 +100,55 @@ h1, h2, h3, .badge {
 }
 
 /* ========================================
+   MOLDURA HUD (cantos estilo interface tecnológica)
+======================================== */
+.hud-frame {
+    position: relative;
+}
+
+.hud-frame::before,
+.hud-frame::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--primary);
+    opacity: .9;
+    pointer-events: none;
+}
+
+.hud-frame::before {
+    top: -7px;
+    left: -7px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.hud-frame::after {
+    bottom: -7px;
+    right: -7px;
+    border-left: none;
+    border-top: none;
+}
+
+.hud-frame--lg::before,
+.hud-frame--lg::after {
+    width: 24px;
+    height: 24px;
+}
+
+.hud-frame--lg::before { top: -10px; left: -10px; }
+.hud-frame--lg::after { bottom: -10px; right: -10px; }
+
+/* ========================================
    NAVBAR CENTRALIZADA
 ======================================== */
 .navbar {
     position: sticky;
     top: 0;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-bottom: 2px solid var(--primary);
     padding: 15px 0;
     z-index: 1000;
@@ -69,6 +163,7 @@ h1, h2, h3, .badge {
 }
 
 .navbar a {
+    position: relative;
     color: var(--primary);
     font-weight: bold;
     font-size: 1.1rem;
@@ -82,15 +177,54 @@ h1, h2, h3, .badge {
     text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
 }
 
+.navbar a.active {
+    color: #fff;
+    text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+}
+
+.navbar a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -17px;
+    height: 2px;
+    background: var(--primary);
+    box-shadow: 0 0 8px var(--primary), 0 0 16px var(--primary);
+}
+
 /* ========================================
    HERO INTERATIVO (HOME)
 ======================================== */
 .hero {
+    position: relative;
     min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 40px 20px;
+}
+
+/* Brilho ambiente atrás do cabeçalho, em todas as páginas */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 640px;
+    height: 640px;
+    max-width: 90vw;
+    background: radial-gradient(circle, rgba(0, 255, 65, 0.12), transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Variante compacta usada nos cabeçalhos das páginas internas */
+.hero-compact {
+    min-height: auto;
+    padding: 30px 20px 0;
+    margin-bottom: 0;
 }
 
 .hero-content {
@@ -135,20 +269,32 @@ h1, h2, h3, .badge {
     flex: 1;
 }
 
+/* Variante centralizada usada nos cabeçalhos sem foto */
+.hero-right-center {
+    align-items: center;
+    text-align: center;
+}
+
 .hero-right h1 {
     font-size: 3.5rem;
     color: #fff;
     letter-spacing: 1px;
 }
 
+.hero-right h1.text-gradient {
+    color: transparent;
+}
+
 .badge {
     display: inline-block;
+    max-width: 90vw;
     padding: 6px 14px;
     border: 1px solid var(--primary);
     border-radius: 4px;
     font-size: 2rem;
     color: var(--primary);
     background: rgba(0, 255, 65, 0.05);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.15);
 }
 
 .subtitulo-cyber {
@@ -189,6 +335,7 @@ h1, h2, h3, .badge {
     border-color: var(--primary);
     background: rgba(0, 255, 65, 0.05);
     box-shadow: 0 0 12px rgba(0, 255, 65, 0.2);
+    transform: translateY(-2px);
 }
 
 /* BOTÕES INTERATIVOS (Efeito Líquido) */
@@ -235,6 +382,13 @@ h1, h2, h3, .badge {
 .btn-glitch:hover {
     color: #000;
     box-shadow: 0 0 20px var(--primary);
+    transform: translateY(-2px);
+}
+
+.btn-glitch:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    background: transparent;
 }
 
 .btn-text {
@@ -250,30 +404,47 @@ h1, h2, h3, .badge {
     background: #00ff22;
 }
 .btn-glitch.alt:hover {
-    box-shadow: 0 0 20px #000000;
+    color: #000;
+    box-shadow: 0 0 20px #00ff22;
 }
 
 /* ========================================
-   PÁGINA SOBRE (ESTILOS COMPLEMENTARES)
+   GRELHA DE CARDS (SOBRE / SKILLS / PROJETOS)
 ======================================== */
 .sobre-grid {
-    display: flex;       /* Mudamos de grid para flex para controlar melhor o alinhamento */
-    flex-wrap: wrap;     /* Permite que os cards quebrem de linha se não couberem */
-    justify-content: center; /* Centraliza perfeitamente os cards no meio do ecrã */
-    gap: 100px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 20px auto 40px;
     padding: 0 20px;
-    min-height: 60vh;    /* Garante que o conteúdo empurre o rodapé para baixo */
+}
+
+/* Envolve cada card num link clicável de tamanho fixo */
+.card-link {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    text-decoration: none;
 }
 
 .card {
-    background: rgba(0,0,0,.75);
+    background: rgba(15, 23, 42, .55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid #00ff88;
     border-radius: 12px;
     padding: 30px;
     min-height: 320px;
-    transition: 0,3s;
+    transition: 0.3s ease;
+}
+
+.sobre-grid .card {
+    min-height: 350px;
+    padding: 20px;
 }
 
 .card:hover {
@@ -285,11 +456,271 @@ h1, h2, h3, .badge {
     color: #00ff88;
     margin-bottom: 15px;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgba(0,255,136,.3);
+    border-bottom: 1px solid rgba(0, 255, 136, .3);
 }
 
 .card ul { padding-left: 20px; }
-.card li { margin-bottom: 10px; line-height: 1.5; }
+.card li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    transition: .2s ease;
+    border-radius: 4px;
+}
+
+.card li:hover {
+    color: var(--primary);
+    transform: translateX(6px);
+}
+
+/* Linha de status com ponto pulsante ("Quem sou eu") */
+.status-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    color: #ccc;
+    font-size: .95rem;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--primary);
+    box-shadow: 0 0 8px var(--primary);
+    animation: statusPulse 1.6s ease-in-out infinite;
+}
+
+/* Timeline vertical brilhante ("Minha Jornada") */
+.timeline {
+    list-style: none;
+    padding-left: 22px;
+    border-left: 2px solid rgba(0, 255, 65, .3);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -28px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary);
+    box-shadow: 0 0 8px var(--primary), 0 0 16px var(--primary);
+}
+
+.timeline-year {
+    display: block;
+    color: var(--primary);
+    font-family: 'Orbitron', sans-serif;
+    font-size: .75rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+
+/* Badges de certificação ("Certificações") */
+.cert-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cert-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border: 1px solid rgba(0, 255, 136, .4);
+    border-radius: 30px;
+    background: rgba(0, 255, 65, .06);
+    color: #ccc;
+    font-size: .9rem;
+    transition: .2s ease;
+}
+
+.cert-badge i {
+    color: var(--primary);
+}
+
+.cert-badge:hover {
+    border-color: var(--primary);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(0, 255, 65, .3);
+}
+
+.cert-badge.in-progress {
+    border-style: dashed;
+    border-color: rgba(255, 200, 0, .5);
+}
+
+.cert-badge.in-progress i {
+    color: #ffc800;
+    animation: iconFloat 2s ease-in-out infinite;
+}
+
+/* Card compacto (ex: ícones de tecnologia), sem altura mínima forçada */
+.card-compact {
+    text-align: center;
+    min-height: auto;
+}
+
+.tech-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: inline-block;
+    animation: iconFloat 3s ease-in-out infinite;
+    transition: filter .3s ease;
+}
+
+.card:hover .tech-icon {
+    filter: drop-shadow(0 0 12px currentColor);
+}
+
+.tech-icon.html5 { color: #e34c26; }
+.tech-icon.css3 { color: #264de4; }
+.tech-icon.git { color: #f05033; }
+.tech-icon.github { color: #fff; }
+
+/* Descrição curta de cada skill */
+.skill-desc {
+    color: #aaa;
+    font-size: .9rem;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+/* Etiquetas com os principais tópicos de cada skill */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 14px;
+}
+
+.skill-tags--left {
+    justify-content: flex-start;
+}
+
+.skill-tag {
+    font-size: .72rem;
+    padding: 3px 10px;
+    border: 1px solid rgba(0, 255, 65, .4);
+    border-radius: 999px;
+    color: var(--primary);
+    background: rgba(0, 255, 65, .06);
+}
+
+/* Barra de proficiência: preenche até --pct quando o card fica visível */
+.skill-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, .08);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 16px;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    width: var(--pct, 0%);
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--primary), #00e5ff);
+    box-shadow: 0 0 8px rgba(0, 255, 65, .5);
+}
+
+.js .skill-bar-fill {
+    width: 0;
+    transition: width 1.2s ease .2s;
+}
+
+.js .reveal.is-visible .skill-bar-fill {
+    width: var(--pct, 0%);
+}
+
+/* Card de projeto: ícone + texto centralizados, botão fixo no rodapé */
+.card-project {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.project-icon-circle {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px;
+    border: 2px solid #00ff88;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 255, 136, .4);
+}
+
+.project-icon-circle span {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #00ff88;
+    text-shadow: 0 0 10px #00ff88;
+}
+
+.card-project p {
+    color: #ccc;
+    margin: 10px 0 15px;
+    font-size: .95rem;
+    line-height: 1.4;
+}
+
+.card-project .btn-glitch {
+    padding: 8px 16px;
+    font-size: .85rem;
+    width: 100%;
+}
+
+/* Card de projeto em desenvolvimento (tema vermelho) */
+.card-locked {
+    border-color: var(--danger);
+    box-shadow: 0 0 10px rgba(255, 0, 85, .1);
+}
+
+.card-locked h2 {
+    color: var(--danger);
+    border-bottom-color: rgba(255, 0, 85, .3);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.card-locked p {
+    color: #aaa;
+    font-style: italic;
+}
+
+.card-locked .icon-pulse {
+    font-size: 2.8rem;
+    color: var(--danger);
+    margin-bottom: 10px;
+    animation: terminalBlink 1.5s infinite;
+}
+
+.card-locked .btn-glitch {
+    border-color: var(--danger);
+    color: var(--danger);
+}
 
 /* ========================================
    FOOTER
@@ -300,6 +731,50 @@ footer {
     padding: 20px;
     text-align: center;
     font-size: 0.85rem;
+    margin-top: auto;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 50%;
+    color: #aaa;
+    font-size: 1.05rem;
+    transition: .3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 0 12px rgba(0, 255, 65, .4);
+    transform: translateY(-3px);
+}
+
+/* Brilho que acompanha o cursor (só em telas com mouse) */
+.cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 255, 65, .12), transparent 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity .4s ease;
 }
 
 /* ========================================
@@ -310,13 +785,36 @@ footer {
     50% { opacity: 0; }
 }
 
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+@keyframes statusPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .5; transform: scale(1.3); }
+}
+
+/* Revela elementos suavemente ao rolar a página (só com JS ativo) */
+.js .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .6s ease, transform .6s ease;
+}
+
+.js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+.sobre-grid .reveal:nth-child(1) { transition-delay: 0s; }
+.sobre-grid .reveal:nth-child(2) { transition-delay: .1s; }
+.sobre-grid .reveal:nth-child(3) { transition-delay: .2s; }
+.sobre-grid .reveal:nth-child(4) { transition-delay: .3s; }
+
 /* ========================================
    RESPONSIVIDADE (MEDIA QUERIES)
 ======================================== */
-@media (max-width: 1200px) {
-    .sobre-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
 @media (max-width: 768px) {
     .navbar-container { gap: 25px; }
     .hero-content {
@@ -329,6 +827,7 @@ footer {
         text-align: center;
     }
     .hero-right h1 { font-size: 2.5rem; }
+    .badge { font-size: 1.3rem; }
     .botoes-cyber {
         flex-direction: column;
         width: 100%;
@@ -337,70 +836,5 @@ footer {
         justify-content: center;
         flex-wrap: wrap;
     }
-    .sobre-grid { grid-template-columns: 1fr; }
-}
-
-/* ========================================
-   CORREÇÃO FORÇADA DE ALINHAMENTO (PROJETOS)
-======================================== */
-.sobre-grid {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: stretch !important;
-    gap: 25px !important;
-    max-width: 1200px !important;
-    margin: 40px auto !important;
-}
-
-/* Garante que cada bloco de projeto tenha um tamanho fixo lado a lado */
-.sobre-grid .card-link {
-    display: block !important;
-    width: 100% !important;
-    max-width: 360px !important; /* Tamanho perfeito para ficarem lado a lado */
-    text-decoration: none !important;
-}
-
-.sobre-grid .card {
-    height: 100% !important;
-    min-height: 380px !important;
-    width: 100% !important;
-}
-/* ========================================
-   AJUSTE DE ESPAÇAMENTOS REAIS (PROJETOS)
-======================================== */
-
-/* 1. Reduz o espaço gigante do topo (Header) */
-.hero[style*="min-height: auto"] {
-    padding: 30px 20px 0px 20px !important;
-    margin-bottom: 0px !important;
-}
-
-/* 2. Remove o esticamento vertical do container de cards */
-.sobre-grid {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: flex-start !important; /* Muda de stretch para flex-start para não esticar o fundo */
-    gap: 30px !important;
-    max-width: 1200px !important;
-    margin: 20px auto 40px auto !important; /* Diminui a margem de cima e de baixo */
-    padding: 0 20px !important;
-    min-height: auto !important; /* Remove o 60vh que criava o buraco até o footer */
-}
-
-/* 3. Ajusta o tamanho e proporção interna dos cards de projetos */
-.sobre-grid .card-link {
-    display: block !important;
-    width: 100% !important;
-    max-width: 360px !important;
-    text-decoration: none !important;
-}
-
-.sobre-grid .card {
-    min-height: 350px !important; /* Altura mínima menor para não ficar comprido à toa */
-    height: auto !important;
-    padding: 20px !important;     /* Espaçamento interno mais compacto */
+    .sobre-grid { gap: 20px; }
 }

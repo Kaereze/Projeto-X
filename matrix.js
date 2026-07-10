@@ -1,19 +1,22 @@
 const canvas = document.getElementById("matrix");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const letras = "私は読んでいる人の尻を食べています"
+// Caracteres katakana (efeito clássico do filme Matrix) + dígitos
+const letras = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789";
 const letrasArray = letras.split("");
 
 const fontSize = 12;
-const columns = canvas.width / fontSize;
 
-const drops = [];
+let columns;
+let drops;
 
-for (let i = 0; i < columns; i++) {
-    drops[i] = 1;
+// Recalcula o tamanho do canvas e as colunas de chuva de letras
+function setup() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    columns = Math.floor(canvas.width / fontSize);
+    drops = new Array(columns).fill(1);
 }
 
 function draw() {
@@ -46,4 +49,18 @@ function draw() {
     }
 }
 
-setInterval(draw, 35);
+setup();
+
+let intervalId = setInterval(draw, 35);
+
+// Ajusta o efeito se a janela mudar de tamanho
+window.addEventListener("resize", setup);
+
+// Pausa o efeito quando a aba não está visível, economizando CPU/bateria
+document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+        clearInterval(intervalId);
+    } else {
+        intervalId = setInterval(draw, 35);
+    }
+});
