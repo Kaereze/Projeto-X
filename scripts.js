@@ -1,18 +1,3 @@
-// Revela elementos com a classe "reveal" com uma animação suave
-// assim que eles entram na tela ao rolar a página.
-const revealElements = document.querySelectorAll(".reveal");
-
-const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.15 });
-
-revealElements.forEach((el) => revealObserver.observe(el));
-
 // Brilho que acompanha o cursor, só em dispositivos com mouse
 // e quando o usuário não pediu para reduzir animações.
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -23,10 +8,26 @@ if (!prefersReducedMotion && hasFineHover) {
     glow.className = "cursor-glow";
     document.body.appendChild(glow);
 
+    // Guarda a posição e só desenha uma vez por frame (evita reflow a cada
+    // evento de mousemove, que pode disparar centenas de vezes por segundo).
+    let targetX = 0;
+    let targetY = 0;
+    let ticking = false;
+
+    function paintGlow() {
+        glow.style.transform = `translate3d(${targetX}px, ${targetY}px, 0) translate(-50%, -50%)`;
+        ticking = false;
+    }
+
     document.addEventListener("mousemove", (e) => {
+        targetX = e.clientX;
+        targetY = e.clientY;
         glow.style.opacity = "1";
-        glow.style.left = e.clientX + "px";
-        glow.style.top = e.clientY + "px";
+
+        if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(paintGlow);
+        }
     });
 
     document.addEventListener("mouseleave", () => {

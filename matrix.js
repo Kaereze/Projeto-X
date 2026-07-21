@@ -5,7 +5,12 @@ const ctx = canvas.getContext("2d");
 const letras = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789";
 const letrasArray = letras.split("");
 
-const fontSize = 12;
+// Fonte um pouco maior = menos colunas para desenhar a cada frame
+const fontSize = 15;
+const frameDelay = 50;
+
+// Quem prefere menos animação também costuma estar em aparelhos mais fracos
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 let columns;
 let drops;
@@ -51,16 +56,24 @@ function draw() {
 
 setup();
 
-let intervalId = setInterval(draw, 35);
+// Se o usuário pediu para reduzir animações, o efeito nem começa a rodar
+let intervalId = prefersReducedMotion ? null : setInterval(draw, frameDelay);
 
-// Ajusta o efeito se a janela mudar de tamanho
-window.addEventListener("resize", setup);
+// Ajusta o efeito se a janela mudar de tamanho (com debounce para não
+// recalcular a cada pixel arrastado)
+let resizeTimeout;
+window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(setup, 150);
+});
 
 // Pausa o efeito quando a aba não está visível, economizando CPU/bateria
 document.addEventListener("visibilitychange", () => {
+    if (prefersReducedMotion) return;
+
     if (document.hidden) {
         clearInterval(intervalId);
     } else {
-        intervalId = setInterval(draw, 35);
+        intervalId = setInterval(draw, frameDelay);
     }
 });
