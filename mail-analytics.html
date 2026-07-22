@@ -6,7 +6,7 @@
     <title>Mail Analytics | João Carlos</title>
 
     <meta name="description"
-          content="Mail Analytics: automação em Python que coleta e-mails do Outlook, organiza os dados no Google Sheets e gera dashboards diários.">
+          content="Mail Analytics: automação em Python que coleta e-mails do Outlook, organiza os dados no Google Sheets e gera dashboards diários por agente e hotel.">
 
     <link rel="icon"
           type="image/svg+xml"
@@ -14,7 +14,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -25,22 +25,37 @@
             <a href="skills.html">Skills</a>
             <a href="projetos.html">Projetos</a>
             <a href="mail-analytics.html" class="active" aria-current="page">Mail Analytics</a>
+            <a href="contato.html">Contato</a>
         </div>
     </nav>
 
     <!-- Cabeçalho do Projeto -->
     <header class="hero" style="min-height: auto; padding: 40px 20px 10px 20px;">
-        <div class="hero-content">
+        <div class="hero-content" style="max-width: 1250px;">
             <div class="hero-right" style="align-items: center; text-align: center; width: 100%;">
-                <span class="badge"><i class="fa-solid fa-folder-open"></i> REPOSITÓRIOS</span>
-                <i class="fa-solid fa-robot" style="font-size: 3rem; color: var(--primary); text-shadow: 0 0 20px rgba(0,255,65,0.6); margin: 15px 0 5px 0;"></i>
-                <h1>Mail Analytics</h1>
-                <span class="status-tag"><i class="fa-solid fa-hourglass-half"></i> Em Desenvolvimento</span>
-                <p class="subtitulo-cyber" style="text-align: center; max-width: 680px;">
-                    Todos os dias às <strong style="color: var(--primary);">07:00</strong>, um robô puxa os dados
-                    direto do Outlook, compacta tudo em uma planilha do Google Sheets já organizada nas colunas certas,
-                    e gera dashboards separados por agente e por hotel — com um clique pra enviar o resumo pro gerente.
-                </p>
+
+                <div class="ma-hero">
+                    <div class="ma-brain-wrap ma-brain-wrap--left" aria-hidden="true">
+                        <img class="ma-brain-img" src="cerebro.png" alt="">
+                    </div>
+
+                    <div class="ma-hero-center">
+                        <i class="fa-solid fa-envelope ma-hero-icon"></i>
+                        <h1>Mail Analytics</h1>
+                        <span class="badge hud-frame">FUTURO &amp; INTELIGÊNCIA ARTIFICIAL</span>
+                        <p class="subtitulo-cyber" style="text-align: center; max-width: 640px;">
+                            Todos os dias às <strong style="color: var(--primary);">07:00</strong>, um robô puxa os dados
+                            direto do Outlook, organiza tudo no Google Sheets e gera dashboards separados por agente e por hotel.
+                            O objetivo agora é evoluir com IA: sentimento de e-mails, alertas e insights automáticos.
+                        </p>
+                        <span class="status-tag"><i class="fa-solid fa-hourglass-half"></i> Em Desenvolvimento</span>
+                    </div>
+
+                    <div class="ma-brain-wrap ma-brain-wrap--right" aria-hidden="true">
+                        <img class="ma-brain-img" src="cerebro.png" alt="">
+                    </div>
+                </div>
+
             </div>
         </div>
     </header>
@@ -61,55 +76,325 @@
         </div>
     </div>
 
-    <!-- Como Funciona -->
-    <h2 class="section-title">Como <span>Funciona</span></h2>
-    <main class="feature-panel">
+    <!-- Roadmap & Inovação -->
+    <h2 class="section-title">Roadmap &amp; <span>Inovação</span></h2>
+    <div class="roadmap">
 
-        <div class="feature-col">
-            <span class="feature-number">01</span>
-            <div class="feature-icon-row">
-                <i class="fa-solid fa-envelope-open-text" style="color: #3a9be0;"></i>
-                <i class="fa-solid fa-arrow-right" style="font-size: 1.4rem; color: var(--primary);"></i>
-                <i class="fa-solid fa-table-cells" style="color: #0f9d58;"></i>
+        <div class="roadmap-step">
+            <div class="roadmap-top">
+                <span class="roadmap-number">01</span>
+                <span class="roadmap-status roadmap-status--live">Ativo</span>
             </div>
-            <h3>Outlook → Sheets</h3>
-            <p class="feature-desc">O robô entra no Outlook, separa e-mails recebidos, enviados e notas fiscais, e envia tudo já compactado pras colunas certas do Google Sheets.</p>
-            <ul class="feature-checklist">
-                <li><i class="fa-solid fa-circle-check"></i> Conexão direta com o Outlook</li>
-                <li><i class="fa-solid fa-circle-check"></i> Separação por recebidos, enviados e notas fiscais</li>
-                <li><i class="fa-solid fa-circle-check"></i> Organização automática nas colunas do Sheets</li>
-            </ul>
+            <div class="roadmap-icon-circle"><i class="fa-solid fa-envelope-open-text"></i></div>
+            <h4>Extração do Outlook</h4>
+            <p>Coleta automática dos e-mails recebidos, enviados e notas fiscais do dia.</p>
         </div>
 
-        <div class="feature-col">
-            <span class="feature-number">02</span>
-            <div class="feature-icon-row">
-                <i class="fa-solid fa-bars" style="color: var(--primary);"></i>
+        <i class="fa-solid fa-chevron-right roadmap-arrow"></i>
+
+        <div class="roadmap-step">
+            <div class="roadmap-top">
+                <span class="roadmap-number">02</span>
+                <span class="roadmap-status roadmap-status--live">Ativo</span>
             </div>
-            <h3>Menu &amp; Automação no Sheets</h3>
-            <p class="feature-desc">Direto na planilha, um menu customizado roda o robô, verifica o status da execução e dispara a geração do dashboard.</p>
-            <ul class="feature-checklist">
-                <li><i class="fa-solid fa-circle-check"></i> Rodar robô sob demanda</li>
-                <li><i class="fa-solid fa-circle-check"></i> Verificação de status em tempo real</li>
-                <li><i class="fa-solid fa-circle-check"></i> Disparo do dashboard via Apps Script</li>
-            </ul>
+            <div class="roadmap-icon-circle"><i class="fa-solid fa-table-cells"></i></div>
+            <h4>Organização no Sheets</h4>
+            <p>Compacta e organiza os dados nas colunas exatas da planilha.</p>
         </div>
 
-        <div class="feature-col">
-            <span class="feature-number">03</span>
-            <div class="feature-icon-row">
-                <i class="fa-solid fa-chart-pie" style="color: #ffbd2e;"></i>
+        <i class="fa-solid fa-chevron-right roadmap-arrow"></i>
+
+        <div class="roadmap-step">
+            <div class="roadmap-top">
+                <span class="roadmap-number">03</span>
+                <span class="roadmap-status roadmap-status--live">Ativo</span>
             </div>
-            <h3>Dashboard por Agente</h3>
-            <p class="feature-desc">Gráficos informativos separados pros 4 agentes — cada um responsável por 17 hotéis — com um clique pra enviar o resumo pro gerente.</p>
-            <ul class="feature-checklist">
-                <li><i class="fa-solid fa-circle-check"></i> Gráficos separados por agente e hotel</li>
-                <li><i class="fa-solid fa-circle-check"></i> Resumo de recebidos, enviados e notas fiscais</li>
-                <li><i class="fa-solid fa-circle-check"></i> Envio automático por e-mail ao gerente</li>
-            </ul>
+            <div class="roadmap-icon-circle"><i class="fa-solid fa-bars"></i></div>
+            <h4>Menu &amp; Automação</h4>
+            <p>Menu customizado roda o robô e verifica o status na hora.</p>
         </div>
 
-    </main>
+        <i class="fa-solid fa-chevron-right roadmap-arrow"></i>
+
+        <div class="roadmap-step">
+            <div class="roadmap-top">
+                <span class="roadmap-number">04</span>
+                <span class="roadmap-status roadmap-status--live">Ativo</span>
+            </div>
+            <div class="roadmap-icon-circle"><i class="fa-solid fa-chart-pie"></i></div>
+            <h4>Dashboard por Agente</h4>
+            <p>Gráficos separados pros 4 agentes e seus 68 hotéis.</p>
+        </div>
+
+        <i class="fa-solid fa-chevron-right roadmap-arrow"></i>
+
+        <div class="roadmap-step">
+            <div class="roadmap-top">
+                <span class="roadmap-number">05</span>
+                <span class="roadmap-status roadmap-status--soon">Em breve</span>
+            </div>
+            <div class="roadmap-icon-circle"><i class="fa-solid fa-brain"></i></div>
+            <h4>Alertas &amp; Insights por IA</h4>
+            <p>Sentimento de e-mails e recomendações automáticas.</p>
+        </div>
+
+    </div>
+
+    <!-- Painéis grandes: IA Agente (roadmap) + Dashboard do Agente -->
+    <div class="dash-grid">
+
+        <!-- PAINEL ESQUERDO: IA AGENTE (recurso em roadmap) -->
+        <div class="panel dash-panel">
+            <div class="panel-title">
+                IA Agente: Análise de E-mails
+                <span class="pill-tag">Roadmap</span>
+            </div>
+
+            <div class="ai-agent-grid">
+                <div class="ai-agent-box">
+                    <i class="fa-solid fa-brain ai-agent-brain"></i>
+                    <strong>Agente IA</strong>
+                    <span>Análise Inteligente de E-mails</span>
+                    <div class="ai-agent-mini-stats">
+                        <div>
+                            <span class="label">Status</span>
+                            <span class="value value--planned">Planejado</span>
+                        </div>
+                        <div>
+                            <span class="label">Categorias</span>
+                            <span class="value">3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subpanel">
+                <h4>Principais Categorias <span class="tag-example">(exemplo ilustrativo)</span></h4>
+
+                <div class="cause-bar">
+                    <span>Recebidos</span>
+                    <div class="bar"><div style="--w: 58%;"></div></div>
+                    <em>58%</em>
+                </div>
+                <div class="cause-bar">
+                    <span>Enviados</span>
+                    <div class="bar"><div style="--w: 27%;"></div></div>
+                    <em>27%</em>
+                </div>
+                <div class="cause-bar">
+                    <span>Notas Fiscais</span>
+                    <div class="bar"><div style="--w: 15%;"></div></div>
+                    <em>15%</em>
+                </div>
+            </div>
+
+            <div class="subpanel" style="margin-top: 22px;">
+                <h4>Análise de Sentimento <span class="tag-example">(exemplo ilustrativo)</span></h4>
+                <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+                    <div class="donut-wrap">
+                        <svg viewBox="0 0 120 120" class="donut-chart">
+                            <circle class="donut-bg" cx="60" cy="60" r="50"></circle>
+                            <circle class="donut-seg" cx="60" cy="60" r="50"
+                                    style="stroke: #ff5f56; stroke-dasharray: 194.78 119.38; stroke-dashoffset: 0;"></circle>
+                            <circle class="donut-seg" cx="60" cy="60" r="50"
+                                    style="stroke: #ffbd2e; stroke-dasharray: 75.4 238.76; stroke-dashoffset: -194.78;"></circle>
+                            <circle class="donut-seg" cx="60" cy="60" r="50"
+                                    style="stroke: var(--primary); stroke-dasharray: 43.98 270.18; stroke-dashoffset: -270.18;"></circle>
+                        </svg>
+                        <div class="donut-center"><strong>62%</strong><span>negativo</span></div>
+                    </div>
+                    <ul class="chart-legend-list">
+                        <li><span class="dot" style="background:#ff5f56; box-shadow:0 0 6px #ff5f56;"></span> Negativo <b>62%</b></li>
+                        <li><span class="dot" style="background:#ffbd2e; box-shadow:0 0 6px #ffbd2e;"></span> Neutro <b>24%</b></li>
+                        <li><span class="dot dot--a"></span> Positivo <b>14%</b></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="ai-insights">
+                <h4>Exemplo de Insights Gerados <span class="tag-example">(prévia do recurso)</span></h4>
+                <ul>
+                    <li><i class="fa-solid fa-circle-check"></i> 58% dos e-mails do dia são recebidos de fornecedores e hóspedes.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> E-mails com anexo de nota fiscal aumentam no fim do mês.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Recomendação: priorizar a triagem de e-mails marcados como urgentes.</li>
+                </ul>
+            </div>
+
+            <div class="mini-table">
+                <h4 style="font-family:'Orbitron',sans-serif; font-size:0.82rem; color:#fff; margin-bottom:10px;">
+                    Últimas Análises <span class="tag-example">(exemplo ilustrativo)</span>
+                </h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Data</th>
+                            <th>E-mail</th>
+                            <th>Categoria</th>
+                            <th>Sentimento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#1248</td>
+                            <td>22/07 09:15</td>
+                            <td>fornecedor@exemplo.com</td>
+                            <td>Nota Fiscal</td>
+                            <td class="tag-neu">Neutro</td>
+                        </tr>
+                        <tr>
+                            <td>#1247</td>
+                            <td>22/07 09:10</td>
+                            <td>hospede@exemplo.com</td>
+                            <td>Recebido</td>
+                            <td class="tag-neg">Negativo</td>
+                        </tr>
+                        <tr>
+                            <td>#1246</td>
+                            <td>22/07 09:05</td>
+                            <td>gerente@exemplo.com</td>
+                            <td>Enviado</td>
+                            <td class="tag-pos">Positivo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- PAINEL DIREITO: DASHBOARD DO AGENTE -->
+        <div class="panel dash-panel">
+            <div class="panel-title">Dashboard: Painel do Agente</div>
+
+            <div class="dash-body">
+                <div class="dash-sidebar">
+                    <span class="dash-side-item active"><i class="fa-solid fa-gauge"></i> Visão Geral</span>
+                    <span class="dash-side-item"><i class="fa-solid fa-inbox"></i> Recebidos</span>
+                    <span class="dash-side-item"><i class="fa-solid fa-paper-plane"></i> Enviados</span>
+                    <span class="dash-side-item"><i class="fa-solid fa-file-invoice-dollar"></i> Notas Fiscais</span>
+                    <span class="dash-side-item"><i class="fa-solid fa-user-group"></i> Agentes</span>
+                    <span class="dash-side-item"><i class="fa-solid fa-hotel"></i> Hotéis</span>
+                    <span class="dash-side-item"><i class="fa-solid fa-file-lines"></i> Relatórios</span>
+                    <span class="dash-side-item"><i class="fa-solid fa-gear"></i> Configurações</span>
+                </div>
+
+                <div class="dash-main">
+
+                    <div class="dash-stats-row">
+                        <div class="dash-stat-card">
+                            <span class="dash-stat-label">E-mails Hoje</span>
+                            <span class="dash-stat-value"><span class="counter" data-target="312">0</span></span>
+                        </div>
+                        <div class="dash-stat-card">
+                            <span class="dash-stat-label">Notas Fiscais</span>
+                            <span class="dash-stat-value"><span class="counter" data-target="47">0</span></span>
+                        </div>
+                        <div class="dash-stat-card">
+                            <span class="dash-stat-label">Agentes Ativos</span>
+                            <span class="dash-stat-value"><span class="counter" data-target="4">0</span></span>
+                        </div>
+                        <div class="dash-stat-card">
+                            <span class="dash-stat-label">Hotéis Cobertos</span>
+                            <span class="dash-stat-value"><span class="counter" data-target="68">0</span></span>
+                        </div>
+                    </div>
+
+                    <div class="dash-charts-row">
+                        <div class="chart-card">
+                            <h4>E-mails na Semana <span class="tag-example">exemplo</span></h4>
+                            <svg viewBox="0 0 300 110" class="line-chart" preserveAspectRatio="none">
+                                <polyline class="line-chart-path line-chart-path--a"
+                                          points="0,80 50,65 100,72 150,45 200,55 250,30 300,38"></polyline>
+                                <polyline class="line-chart-path line-chart-path--b"
+                                          points="0,95 50,88 100,92 150,75 200,80 250,60 300,65"></polyline>
+                            </svg>
+                            <div class="chart-legend">
+                                <span><span class="dot dot--a"></span>Recebidos</span>
+                                <span><span class="dot dot--b"></span>Enviados</span>
+                            </div>
+                        </div>
+
+                        <div class="chart-card">
+                            <h4>E-mails por Categoria <span class="tag-example">exemplo</span></h4>
+                            <div class="donut-wrap">
+                                <svg viewBox="0 0 120 120" class="donut-chart">
+                                    <circle class="donut-bg" cx="60" cy="60" r="50"></circle>
+                                    <circle class="donut-seg" cx="60" cy="60" r="50"
+                                            style="stroke: var(--primary); stroke-dasharray: 182.21 131.95; stroke-dashoffset: 0;"></circle>
+                                    <circle class="donut-seg" cx="60" cy="60" r="50"
+                                            style="stroke: #00e5ff; stroke-dasharray: 84.82 229.34; stroke-dashoffset: -182.21;"></circle>
+                                    <circle class="donut-seg" cx="60" cy="60" r="50"
+                                            style="stroke: #ffbd2e; stroke-dasharray: 47.12 267.04; stroke-dashoffset: -267.03;"></circle>
+                                </svg>
+                                <div class="donut-center"><strong><span class="counter" data-target="312">0</span></strong><span>hoje</span></div>
+                            </div>
+                            <ul class="chart-legend-list">
+                                <li><span class="dot dot--a"></span> Recebidos <b>58%</b></li>
+                                <li><span class="dot dot--b"></span> Enviados <b>27%</b></li>
+                                <li><span class="dot dot--c"></span> Notas Fiscais <b>15%</b></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="dash-charts-row">
+                        <div class="chart-card">
+                            <h4>Atividade por Agente <span class="tag-example">exemplo</span></h4>
+                            <div class="heatmap">
+                                <span style="--lvl: 0.3;"></span><span style="--lvl: 0.5;"></span><span style="--lvl: 0.4;"></span><span style="--lvl: 0.7;"></span><span style="--lvl: 0.9;"></span><span style="--lvl: 0.6;"></span><span style="--lvl: 0.8;"></span>
+                                <span style="--lvl: 0.4;"></span><span style="--lvl: 0.6;"></span><span style="--lvl: 0.5;"></span><span style="--lvl: 0.9;"></span><span style="--lvl: 1;"></span><span style="--lvl: 0.7;"></span><span style="--lvl: 0.9;"></span>
+                                <span style="--lvl: 0.2;"></span><span style="--lvl: 0.4;"></span><span style="--lvl: 0.3;"></span><span style="--lvl: 0.6;"></span><span style="--lvl: 0.8;"></span><span style="--lvl: 0.5;"></span><span style="--lvl: 0.7;"></span>
+                                <span style="--lvl: 0.5;"></span><span style="--lvl: 0.7;"></span><span style="--lvl: 0.6;"></span><span style="--lvl: 0.9;"></span><span style="--lvl: 1;"></span><span style="--lvl: 0.8;"></span><span style="--lvl: 0.9;"></span>
+                            </div>
+                            <div class="chart-legend"><span>Agente 1 a 4 · Seg a Dom</span></div>
+                        </div>
+
+                        <div class="mini-table" style="margin-top: 0;">
+                            <h4 style="font-family:'Orbitron',sans-serif; font-size:0.78rem; color:#fff; margin-bottom:10px;">
+                                Últimos Relatórios <span class="tag-example">exemplo</span>
+                            </h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Data</th>
+                                        <th>Agente</th>
+                                        <th>Hotéis</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>22/07</td>
+                                        <td>Agente 1</td>
+                                        <td>17</td>
+                                        <td class="tag-pos">Enviado</td>
+                                    </tr>
+                                    <tr>
+                                        <td>22/07</td>
+                                        <td>Agente 2</td>
+                                        <td>17</td>
+                                        <td class="tag-pos">Enviado</td>
+                                    </tr>
+                                    <tr>
+                                        <td>22/07</td>
+                                        <td>Agente 3</td>
+                                        <td>17</td>
+                                        <td class="tag-neu">Pendente</td>
+                                    </tr>
+                                    <tr>
+                                        <td>22/07</td>
+                                        <td>Agente 4</td>
+                                        <td>17</td>
+                                        <td class="tag-pos">Enviado</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
 
     <!-- Por trás do código -->
     <h2 class="section-title">Por Trás do <span>Código</span></h2>
@@ -166,6 +451,12 @@
         <i class="fa-solid fa-code" style="color: #4285f4;" title="Google Apps Script"></i>
         <i class="fa-solid fa-chart-pie" style="color: #ffbd2e;" title="Dashboards"></i>
         <i class="fa-solid fa-clock-rotate-left" style="color: #00b4d8;" title="Agendamento Diário"></i>
+        <i class="fa-solid fa-brain" style="color: #999; opacity: 0.7;" title="IA (roadmap)"></i>
+    </div>
+
+    <!-- Faixa final -->
+    <div class="ma-tagline-bar">
+        DADOS ORGANIZADOS. DECISÕES RÁPIDAS. HOTÉIS SOB CONTROLE.
     </div>
 
     <!-- Chamada para ação -->
@@ -181,8 +472,38 @@
     </footer>
 
     <canvas id="matrix"></canvas>
-    <script src="matrix.js"></script>
-    <script src="scripts.js"></script>
+    <script src="matrix.js?v=6"></script>
+    <script src="scripts.js?v=6"></script>
+
+    <!-- Contadores animados dos números do dashboard -->
+    <script>
+        const counters = document.querySelectorAll('.counter');
+
+        const animateCounter = (el) => {
+            const target = parseInt(el.dataset.target, 10);
+            const duration = 1200;
+            const start = performance.now();
+
+            function step(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                el.textContent = Math.floor(progress * target);
+                if (progress < 1) requestAnimationFrame(step);
+            }
+
+            requestAnimationFrame(step);
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.4 });
+
+        counters.forEach((el) => observer.observe(el));
+    </script>
 
     <!-- Símbolos de código flutuando por cima do Matrix, atrás do conteúdo -->
     <div class="floating-icons">

@@ -7,30 +7,30 @@
 ====================================================== -->
 <head>
 
-    <!-- Permite utilizar caracteres especiais -->
+    <!-- Permite caracteres especiais -->
     <meta charset="UTF-8">
 
     <!-- Responsividade -->
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <!-- Nome da aba -->
-    <title>Projetos | João Carlos</title>
+    <!-- Título da aba -->
+    <title>Contato | João Carlos</title>
 
     <!-- Resumo da página para buscadores e compartilhamentos -->
     <meta name="description"
-          content="Projetos desenvolvidos por João Carlos, incluindo este portfólio construído com HTML, CSS e Git.">
+          content="Entre em contato com João Carlos: e-mail, WhatsApp, GitHub ou pelo formulário de mensagem.">
 
     <!-- Prévia ao compartilhar o link (WhatsApp, LinkedIn, etc.) -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
-    <meta property="og:url" content="https://kaereze.github.io/Projeto-X/projetos.html">
-    <meta property="og:title" content="Projetos | João Carlos">
-    <meta property="og:description" content="Projetos desenvolvidos por João Carlos, incluindo este portfólio construído com HTML, CSS e Git.">
+    <meta property="og:url" content="https://kaereze.github.io/Projeto-X/contato.html">
+    <meta property="og:title" content="Contato | João Carlos">
+    <meta property="og:description" content="Entre em contato com João Carlos: e-mail, WhatsApp, GitHub ou pelo formulário de mensagem.">
     <meta property="og:image" content="https://kaereze.github.io/Projeto-X/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Projetos | João Carlos">
-    <meta name="twitter:description" content="Projetos desenvolvidos por João Carlos, incluindo este portfólio construído com HTML, CSS e Git.">
+    <meta name="twitter:title" content="Contato | João Carlos">
+    <meta name="twitter:description" content="Entre em contato com João Carlos: e-mail, WhatsApp, GitHub ou pelo formulário de mensagem.">
     <meta name="twitter:image" content="https://kaereze.github.io/Projeto-X/og-image.png">
 
     <!-- Ícone da aba do navegador -->
@@ -70,6 +70,8 @@
 
 <body>
 
+
+
 <!-- ======================================================
      MENU DE NAVEGAÇÃO
 ====================================================== -->
@@ -84,13 +86,13 @@
 
         <a href="skills.html">Skills</a>
 
-        <a href="projetos.html"
-           class="active"
-           aria-current="page">Projetos</a>
+        <a href="projetos.html">Projetos</a>
 
         <a href="mail-analytics.html">Mail Analytics</a>
 
-        <a href="contato.html">Contato</a>
+        <a href="contato.html"
+           class="active"
+           aria-current="page">Contato</a>
 
     </div>
 
@@ -100,7 +102,7 @@
 
 <!-- ======================================================
      HERO
-     Cabeçalho da página Projetos
+     Cabeçalho da página Contato
 ====================================================== -->
 
 <header class="hero hero-compact">
@@ -113,11 +115,16 @@
 
                 <i class="fa-solid fa-folder-open"></i>
 
-                REPOSITÓRIOS
+                CONTATO
 
             </span>
 
-            <h1>Meus Projetos</h1>
+            <h1>Vamos Conversar?</h1>
+
+            <p class="subtitulo-cyber" style="text-align: center; max-width: 600px;">
+                Tem um projeto em mente ou quer trocar uma ideia?
+                Preencha o formulário ou entre em contato pelas redes abaixo.
+            </p>
 
         </div>
 
@@ -131,132 +138,96 @@
      CONTEÚDO PRINCIPAL
 ====================================================== -->
 
-<main class="sobre-grid">
+<main class="contact-page">
 
+    <div class="contact-page-left">
 
+        <!-- Informações de Contato -->
+        <div class="panel">
+            <div class="panel-title">Informações de Contato</div>
 
-    <!-- ==================================================
-         CARD 1
-         PROJETO X
-    =================================================== -->
-
-    <a href="https://github.com/Kaereze/Projeto-X"
-       target="_blank"
-       class="card-link">
-
-        <section class="card card-project reveal">
-
-            <div>
-
-                <!-- Ícone -->
-
-                <div class="project-icon-circle">
-
-                    <span>X</span>
-
+            <div class="contact-list">
+                <div class="contact-item">
+                    <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
+                    <span>
+                        <span class="contact-label">E-mail</span>
+                        <a class="contact-value" href="mailto:joaocarlossilvazeroum@gmail.com">joaocarlossilvazeroum@gmail.com</a>
+                    </span>
                 </div>
-
-                <!-- Nome -->
-
-                <h2>Projeto X</h2>
-
-                <!-- Descrição -->
-
-                <p>
-
-                    Meu primeiro portfólio oficial desenvolvido
-                    do zero para consolidar meus conhecimentos
-                    em HTML5, CSS3, Git e versionamento.
-
-                </p>
-
-                <div class="skill-tags">
-                    <span class="skill-tag">HTML5</span>
-                    <span class="skill-tag">CSS3</span>
-                    <span class="skill-tag">Git</span>
+                <div class="contact-item">
+                    <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
+                    <span>
+                        <span class="contact-label">Localização</span>
+                        <span class="contact-value">Brasil</span>
+                    </span>
                 </div>
-
+                <div class="contact-item">
+                    <span class="contact-icon"><i class="fa-solid fa-clock"></i></span>
+                    <span>
+                        <span class="contact-label">Disponibilidade</span>
+                        <span class="contact-value">Seg - Sex: 08:00 - 18:00</span>
+                    </span>
+                </div>
             </div>
+        </div>
 
-            <!-- Botão -->
+        <!-- Conecte-se -->
+        <div class="panel">
+            <div class="panel-title">Conecte-se</div>
 
-            <div class="btn-glitch">
-
-                <span class="btn-text">
-
-                    <i class="fa-solid fa-eye"></i>
-
-                    Ver Projeto
-
+            <div class="social-grid">
+                <!-- LinkedIn: sem link ainda, aguardando criação da conta -->
+                <span class="social-btn disabled" title="Em breve">
+                    <span class="social-icon"><i class="fa-brands fa-linkedin-in"></i></span>
+                    <span>LinkedIn</span>
                 </span>
 
+                <a class="social-btn" href="https://github.com/Kaereze" target="_blank">
+                    <span class="social-icon"><i class="fa-brands fa-github"></i></span>
+                    <span>GitHub</span>
+                </a>
             </div>
+        </div>
 
-        </section>
+    </div>
 
-    </a>
+    <div class="contact-page-right">
 
+        <!-- Envie sua Mensagem -->
+        <div class="panel">
+            <div class="panel-title">Envie sua Mensagem</div>
 
+            <form id="contact-form">
 
-    <!-- ==================================================
-         CARD 2
-         MAIL ANALYTICS
-    =================================================== -->
-
-    <a href="mail-analytics.html"
-       class="card-link">
-
-        <section class="card card-project reveal">
-
-            <div>
-
-                <!-- Ícone -->
-
-                <div class="project-icon-circle">
-
-                    <i class="fa-solid fa-robot"></i>
-
+                <div class="contact-form-row">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                    </div>
                 </div>
 
-                <!-- Nome -->
-
-                <h2>Mail Analytics</h2>
-
-                <!-- Descrição -->
-
-                <p>
-
-                    Automação em Python que gera, todos os dias
-                    às 07:00, um relatório de e-mails recebidos,
-                    enviados e notas fiscais emitidas.
-
-                </p>
-
-                <div class="skill-tags">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Google Sheets</span>
-                    <span class="skill-tag">Apps Script</span>
+                <div class="form-group">
+                    <label for="assunto">Assunto</label>
+                    <input type="text" id="assunto" name="assunto" placeholder="Assunto da mensagem" required>
                 </div>
 
-            </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="6" placeholder="Digite sua mensagem aqui..." required></textarea>
+                </div>
 
-            <!-- Botão -->
+                <button type="submit" class="btn-glitch btn-submit">
+                    <span class="btn-text"><i class="fa-solid fa-paper-plane"></i> Enviar Mensagem</span>
+                </button>
 
-            <div class="btn-glitch">
+            </form>
+        </div>
 
-                <span class="btn-text">
-
-                    <i class="fa-solid fa-eye"></i>
-
-                    Ver Projeto
-
-                </span>
-
-            </div>
-
-        </section>
-
-    </a>
+    </div>
 
 </main>
 
@@ -314,6 +285,23 @@
 
 <script src="matrix.js?v=6"></script>
 <script src="scripts.js?v=6"></script>
+
+<!-- Envia a mensagem abrindo o cliente de e-mail do usuário, já preenchido -->
+<script>
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const assunto = document.getElementById('assunto').value;
+        const mensagem = document.getElementById('mensagem').value;
+
+        const corpo = `Nome: ${nome}\nE-mail: ${email}\n\n${mensagem}`;
+
+        window.location.href =
+            `mailto:joaocarlossilvazeroum@gmail.com?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+    });
+</script>
 
     <!-- Símbolos de código flutuando por cima do Matrix, atrás do conteúdo -->
     <div class="floating-icons">

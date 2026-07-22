@@ -1,9 +1,9 @@
 // Brilho que acompanha o cursor, só em dispositivos com mouse
 // e quando o usuário não pediu para reduzir animações.
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const prefersReducedMotionCursor = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const hasFineHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-if (!prefersReducedMotion && hasFineHover) {
+if (!prefersReducedMotionCursor && hasFineHover) {
     const glow = document.createElement("div");
     glow.className = "cursor-glow";
     document.body.appendChild(glow);
