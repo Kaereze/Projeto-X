@@ -1,5 +1,5 @@
 /* ========================================
-   VARIÁVEIS (Custom Properties)
+   VARIÁVEIS
 ======================================== */
 :root {
     --primary: #00ff41;
@@ -7,10 +7,11 @@
     --bg-panel: #0f172a;
     --text-light: #fff;
     --glass: rgba(0, 0, 0, 0.8);
+    --danger: #ff0055;
 }
 
 /* ========================================
-   RESET & CONFIGURAÇÕES GERAIS
+   RESET
 ======================================== */
 * {
     margin: 0;
@@ -18,25 +19,33 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+    scrollbar-color: var(--primary) #000;
+    scrollbar-width: thin;
+}
+
 body {
     background: var(--bg-dark);
     color: var(--text-light);
     font-family: 'Rajdhani', sans-serif;
     overflow-x: hidden;
-    padding-bottom: 90px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Grid de circuito no fundo, atrás do Matrix, pra preencher o vazio com textura tech */
+/* Grelha tecnológica sutil atrás de todo o conteúdo */
 body::before {
     content: '';
     position: fixed;
     inset: 0;
-    z-index: -2;
-    pointer-events: none;
     background-image:
-        linear-gradient(rgba(0, 255, 65, 0.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 65, 0.07) 1px, transparent 1px);
+        linear-gradient(rgba(0, 255, 65, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 65, 0.05) 1px, transparent 1px);
     background-size: 42px 42px;
+    pointer-events: none;
+    z-index: -2;
 }
 
 a {
@@ -48,8 +57,37 @@ h1, h2, h3, .badge {
     font-family: 'Orbitron', sans-serif;
 }
 
+/* Texto com gradiente neon, usado em títulos de destaque */
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary), #00e5ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Cor de seleção de texto e barra de rolagem no tema do site */
+::selection {
+    background: var(--primary);
+    color: #000;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+    box-shadow: 0 0 8px var(--primary);
+}
+
+
 /* ========================================
-   FUNDO MATRIX (Canvas)
+   FUNDO MATRIX
 ======================================== */
 #matrix {
     position: fixed;
@@ -58,16 +96,59 @@ h1, h2, h3, .badge {
     width: 100%;
     height: 100%;
     z-index: -1;
-    opacity: 0.45;
+    opacity: 0.15;
 }
 
 /* ========================================
-   NAVBAR (Navegação Global)
+   MOLDURA HUD (cantos estilo interface tecnológica)
+======================================== */
+.hud-frame {
+    position: relative;
+}
+
+.hud-frame::before,
+.hud-frame::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--primary);
+    opacity: .9;
+    pointer-events: none;
+}
+
+.hud-frame::before {
+    top: -7px;
+    left: -7px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.hud-frame::after {
+    bottom: -7px;
+    right: -7px;
+    border-left: none;
+    border-top: none;
+}
+
+.hud-frame--lg::before,
+.hud-frame--lg::after {
+    width: 24px;
+    height: 24px;
+}
+
+.hud-frame--lg::before { top: -10px; left: -10px; }
+.hud-frame--lg::after { bottom: -10px; right: -10px; }
+
+/* ========================================
+   NAVBAR CENTRALIZADA
 ======================================== */
 .navbar {
     position: sticky;
     top: 0;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-bottom: 2px solid var(--primary);
     padding: 15px 0;
     z-index: 1000;
@@ -82,6 +163,7 @@ h1, h2, h3, .badge {
 }
 
 .navbar a {
+    position: relative;
     color: var(--primary);
     font-weight: bold;
     font-size: 1.1rem;
@@ -95,15 +177,54 @@ h1, h2, h3, .badge {
     text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
 }
 
+.navbar a.active {
+    color: #fff;
+    text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+}
+
+.navbar a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -17px;
+    height: 2px;
+    background: var(--primary);
+    box-shadow: 0 0 8px var(--primary), 0 0 16px var(--primary);
+}
+
 /* ========================================
-   HERO SECTION (Apresentação Principal)
+   HERO INTERATIVO (HOME)
 ======================================== */
 .hero {
+    position: relative;
     min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 40px 20px;
+}
+
+/* Brilho ambiente atrás do cabeçalho, em todas as páginas */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 640px;
+    height: 640px;
+    max-width: 90vw;
+    background: radial-gradient(circle, rgba(0, 255, 65, 0.12), transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Variante compacta usada nos cabeçalhos das páginas internas */
+.hero-compact {
+    min-height: auto;
+    padding: 30px 20px 0;
+    margin-bottom: 0;
 }
 
 .hero-content {
@@ -113,12 +234,6 @@ h1, h2, h3, .badge {
     align-items: center;
     justify-content: center;
     gap: 80px;
-}
-
-/* Reduz o espaço gigante do topo quando inline style min-height: auto for aplicado */
-.hero[style*="min-height: auto"] {
-    padding: 30px 20px 0px 20px !important;
-    margin-bottom: 0px !important;
 }
 
 /* Moldura Neon na Imagem */
@@ -132,7 +247,6 @@ h1, h2, h3, .badge {
 }
 
 .avatar-wrapper:hover {
-    animation: none;
     transform: scale(1.03) rotate(-1deg);
     box-shadow: 0 0 40px rgba(0, 255, 65, 0.7);
 }
@@ -145,7 +259,57 @@ h1, h2, h3, .badge {
     display: block;
 }
 
-/* Elementos de Conteúdo do Hero */
+/* ========================================
+   ÓRBITA DE TECNOLOGIAS (foto da Home)
+======================================== */
+.avatar-orbit {
+    position: relative;
+    display: inline-block;
+}
+
+/* Aura pulsante atrás da foto */
+.avatar-orbit::before {
+    content: '';
+    position: absolute;
+    inset: -35px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 255, 65, .28), transparent 70%);
+    z-index: -1;
+    animation: auraPulse 3s ease-in-out infinite;
+}
+
+@keyframes auraPulse {
+    0%, 100% { transform: scale(1); opacity: .7; }
+    50% { transform: scale(1.15); opacity: 1; }
+}
+
+.orbit-icon {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    background: rgba(0, 0, 0, .8);
+    border: 1px solid var(--primary);
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0, 255, 65, .5);
+    animation: orbitFloat 4s ease-in-out infinite;
+}
+
+@keyframes orbitFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.orbit-icon--html5 { top: -20px; left: -20px; color: #e34c26; animation-delay: 0s; }
+.orbit-icon--css3 { top: -20px; right: -20px; color: #264de4; animation-delay: .5s; }
+.orbit-icon--js { top: -38px; left: calc(50% - 23px); color: #f0db4f; animation-delay: 1s; }
+.orbit-icon--git { bottom: -20px; left: -20px; color: #f05033; animation-delay: 1.5s; }
+.orbit-icon--github { bottom: -20px; right: -20px; color: #fff; animation-delay: 2s; }
+
+/* Alinhamento dos Textos */
 .hero-right {
     display: flex;
     flex-direction: column;
@@ -155,20 +319,32 @@ h1, h2, h3, .badge {
     flex: 1;
 }
 
+/* Variante centralizada usada nos cabeçalhos sem foto */
+.hero-right-center {
+    align-items: center;
+    text-align: center;
+}
+
 .hero-right h1 {
     font-size: 3.5rem;
     color: #fff;
     letter-spacing: 1px;
 }
 
+.hero-right h1.text-gradient {
+    color: transparent;
+}
+
 .badge {
     display: inline-block;
+    max-width: 90vw;
     padding: 6px 14px;
     border: 1px solid var(--primary);
     border-radius: 4px;
     font-size: 2rem;
     color: var(--primary);
     background: rgba(0, 255, 65, 0.05);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.15);
 }
 
 .subtitulo-cyber {
@@ -178,14 +354,14 @@ h1, h2, h3, .badge {
     max-width: 550px;
 }
 
-/* Cursor de Terminal Piscante */
+/* Cursor de Terminal a Piscar */
 .subtitulo-cyber span {
     color: var(--primary);
     font-weight: bold;
     animation: terminalBlink 1s infinite;
 }
 
-/* Contatos Rápidos */
+/* Contactos Rápidos */
 .quick-contact {
     display: flex;
     gap: 15px;
@@ -209,9 +385,10 @@ h1, h2, h3, .badge {
     border-color: var(--primary);
     background: rgba(0, 255, 65, 0.05);
     box-shadow: 0 0 12px rgba(0, 255, 65, 0.2);
+    transform: translateY(-2px);
 }
 
-/* Botões Interativos com Efeito Líquido */
+/* BOTÕES INTERATIVOS (Efeito Líquido) */
 .botoes-cyber {
     display: flex;
     gap: 20px;
@@ -221,7 +398,7 @@ h1, h2, h3, .badge {
 .btn-glitch {
     position: relative;
     display: inline-block;
-    padding: 14px 26px;
+    padding: 12px 26px;
     background: transparent;
     border: 2px solid var(--primary);
     color: var(--primary);
@@ -255,6 +432,13 @@ h1, h2, h3, .badge {
 .btn-glitch:hover {
     color: #000;
     box-shadow: 0 0 20px var(--primary);
+    transform: translateY(-2px);
+}
+
+.btn-glitch:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    background: transparent;
 }
 
 .btn-text {
@@ -262,52 +446,492 @@ h1, h2, h3, .badge {
     z-index: 2;
 }
 
-/* Estilo Alternativo do Botão */
 .btn-glitch.alt {
     border-color: #00ff0d;
     color: #66ff00;
 }
-
 .btn-glitch.alt::before {
     background: #00ff22;
 }
-
 .btn-glitch.alt:hover {
-    box-shadow: 0 0 20px #000000;
+    color: #000;
+    box-shadow: 0 0 20px #00ff22;
 }
 
 /* ========================================
-   PÁGINAS INTERNAS (Grids e Cards)
+   GRELHA DE CARDS (SOBRE / SKILLS / PROJETOS)
 ======================================== */
 .sobre-grid {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: stretch !important; /* Faz com que os cards na mesma linha tenham a mesma altura */
-    gap: 25px !important;            /* Diminuído ligeiramente para aproximar os blocos */
-    max-width: 1200px !important;
-    margin: 30px auto 40px auto !important;
-    padding: 0 20px !important;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 20px auto 40px;
+    padding: 0 20px;
 }
 
-/* Estrutura dos links dos cards (Página Projetos e Skills) */
-.sobre-grid .card-link {
-    display: flex !important;       /* Mudado para flex para ajudar no alinhamento */
-    width: 100% !important;
-    max-width: 260px !important;    /* Reduzi a largura máxima para dar mais harmonia visual aos ícones */
-    text-decoration: none !important;
+/* Envolve cada card num link clicável de tamanho fixo */
+.card-link {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    text-decoration: none;
 }
 
 .card {
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(15, 23, 42, .55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border: 1px solid #00ff88;
     border-radius: 12px;
-    padding: 25px 20px !important;  /* Ajuste de espaçamento interno */
-    width: 100% !important;
-    height: auto !important;        /* O card se ajusta ao tamanho real do conteúdo */
-    transition: 0.3s;
+    padding: 30px;
+    min-height: 320px;
+    transition: 0.3s ease;
 }
+
+.sobre-grid .card {
+    min-height: 350px;
+    padding: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 255, 65, .3);
+}
+
+.card h2 {
+    color: #00ff88;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 255, 136, .3);
+}
+
+.card ul { padding-left: 20px; }
+.card li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    transition: .2s ease;
+    border-radius: 4px;
+}
+
+.card li:hover {
+    color: var(--primary);
+    transform: translateX(6px);
+}
+
+/* Linha de status com ponto pulsante ("Quem sou eu") */
+.status-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    color: #ccc;
+    font-size: .95rem;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--primary);
+    box-shadow: 0 0 8px var(--primary);
+    animation: statusPulse 1.6s ease-in-out infinite;
+}
+
+/* Timeline vertical brilhante ("Minha Jornada") */
+.timeline {
+    list-style: none;
+    padding-left: 22px;
+    border-left: 2px solid rgba(0, 255, 65, .3);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -28px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary);
+    box-shadow: 0 0 8px var(--primary), 0 0 16px var(--primary);
+}
+
+.timeline-year {
+    display: block;
+    color: var(--primary);
+    font-family: 'Orbitron', sans-serif;
+    font-size: .75rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+
+/* Badges de certificação ("Certificações") */
+.cert-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cert-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border: 1px solid rgba(0, 255, 136, .4);
+    border-radius: 30px;
+    background: rgba(0, 255, 65, .06);
+    color: #ccc;
+    font-size: .9rem;
+    transition: .2s ease;
+}
+
+.cert-badge i {
+    color: var(--primary);
+}
+
+.cert-badge:hover {
+    border-color: var(--primary);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(0, 255, 65, .3);
+}
+
+.cert-badge.in-progress {
+    border-style: dashed;
+    border-color: rgba(255, 200, 0, .5);
+}
+
+.cert-badge.in-progress i {
+    color: #ffc800;
+    animation: iconFloat 2s ease-in-out infinite;
+}
+
+/* Card compacto (ex: ícones de tecnologia), sem altura mínima forçada */
+.card-compact {
+    text-align: center;
+    min-height: auto;
+}
+
+.tech-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: inline-block;
+    animation: iconFloat 3s ease-in-out infinite;
+    transition: filter .3s ease;
+}
+
+.card:hover .tech-icon {
+    filter: drop-shadow(0 0 12px currentColor);
+}
+
+.tech-icon.html5 { color: #e34c26; }
+.tech-icon.css3 { color: #264de4; }
+.tech-icon.git { color: #f05033; }
+.tech-icon.github { color: #fff; }
+
+/* Descrição curta de cada skill */
+.skill-desc {
+    color: #aaa;
+    font-size: .9rem;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+/* Etiquetas com os principais tópicos de cada skill */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 14px;
+}
+
+.skill-tags--left {
+    justify-content: flex-start;
+}
+
+.skill-tag {
+    font-size: .72rem;
+    padding: 3px 10px;
+    border: 1px solid rgba(0, 255, 65, .4);
+    border-radius: 999px;
+    color: var(--primary);
+    background: rgba(0, 255, 65, .06);
+}
+
+/* Barra de proficiência: preenche sozinha pouco depois do carregamento,
+   sem depender de JavaScript (100% CSS, sempre funciona). */
+.skill-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, .08);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 16px;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    width: var(--pct, 0%);
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--primary), #00e5ff);
+    box-shadow: 0 0 8px rgba(0, 255, 65, .5);
+    animation: barFill .9s ease .3s both;
+}
+
+@keyframes barFill {
+    from { width: 0; }
+    to { width: var(--pct, 0%); }
+}
+
+/* Card de projeto: ícone + texto centralizados, botão fixo no rodapé */
+.card-project {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.project-icon-circle {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px;
+    border: 2px solid #00ff88;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 255, 136, .4);
+}
+
+.project-icon-circle span {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #00ff88;
+    text-shadow: 0 0 10px #00ff88;
+}
+
+.card-project p {
+    color: #ccc;
+    margin: 10px 0 15px;
+    font-size: .95rem;
+    line-height: 1.4;
+}
+
+.card-project .btn-glitch {
+    padding: 8px 16px;
+    font-size: .85rem;
+    width: 100%;
+}
+
+/* Card de projeto em desenvolvimento (tema vermelho) */
+.card-locked {
+    border-color: var(--danger);
+    box-shadow: 0 0 10px rgba(255, 0, 85, .1);
+}
+
+.card-locked h2 {
+    color: var(--danger);
+    border-bottom-color: rgba(255, 0, 85, .3);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.card-locked p {
+    color: #aaa;
+    font-style: italic;
+}
+
+.card-locked .icon-pulse {
+    font-size: 2.8rem;
+    color: var(--danger);
+    margin-bottom: 10px;
+    animation: terminalBlink 1.5s infinite;
+}
+
+.card-locked .btn-glitch {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+footer {
+    background: #000;
+    border-top: 1px solid var(--primary);
+    padding: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    margin-top: auto;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 50%;
+    color: #aaa;
+    font-size: 1.05rem;
+    transition: .3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 0 12px rgba(0, 255, 65, .4);
+    transform: translateY(-3px);
+}
+
+/* Brilho que acompanha o cursor (só em telas com mouse) */
+.cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 255, 65, .12), transparent 70%);
+    transform: translate(-50%, -50%);
+    will-change: transform;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity .4s ease;
+}
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+@keyframes terminalBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+@keyframes statusPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .5; transform: scale(1.3); }
+}
+
+/* Revela elementos com um fade suave ao carregar a página.
+   100% CSS — não depende de JavaScript nem de rolar a tela,
+   então nunca fica "preso" invisível por falha de script. */
+.reveal {
+    animation: fadeInUp .6s ease both;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: none; }
+}
+
+.sobre-grid .reveal:nth-child(1) { animation-delay: 0s; }
+.sobre-grid .reveal:nth-child(2) { animation-delay: .1s; }
+.sobre-grid .reveal:nth-child(3) { animation-delay: .2s; }
+.sobre-grid .reveal:nth-child(4) { animation-delay: .3s; }
+
+/* ========================================
+   PERFORMANCE / ACESSIBILIDADE
+   Desliga as animações contínuas para quem
+   pediu "reduzir movimento" no sistema —
+   também poupa bateria/CPU em aparelhos fracos.
+======================================== */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-delay: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ========================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+======================================== */
+@media (max-width: 768px) {
+    .navbar-container { gap: 25px; }
+    .hero-content {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    .hero-right {
+        align-items: center;
+        text-align: center;
+    }
+    .hero-right h1 { font-size: 2.5rem; }
+    .badge { font-size: 1.3rem; }
+    .botoes-cyber {
+        flex-direction: column;
+        width: 100%;
+    }
+    .quick-contact {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .sobre-grid { gap: 20px; }
+
+    /* Encolhe a órbita de ícones para caber em telas estreitas */
+    .orbit-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 1rem;
+    }
+    .orbit-icon--html5 { top: -10px; left: -10px; }
+    .orbit-icon--css3 { top: -10px; right: -10px; }
+    .orbit-icon--js { top: -24px; left: calc(50% - 17px); }
+    .orbit-icon--git { bottom: -10px; left: -10px; }
+    .orbit-icon--github { bottom: -10px; right: -10px; }
+
+    /* Desliga o blur em telas pequenas — GPUs de celular sofrem mais com
+       backdrop-filter, e a diferença visual é mínima nesse tamanho */
+    .navbar {
+        background: rgba(0, 0, 0, .92);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+    .card {
+        background: rgba(15, 23, 42, .88);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+}
+
+/* ========================================
+   ADIÇÕES DA SESSÃO (Mail Analytics, Sobre, Skills)
+======================================== */
 
 /* ========================================
    SÍMBOLOS FLUTUANTES (Fundo Animado)
@@ -357,162 +981,6 @@ h1, h2, h3, .badge {
     50%  { transform: translate(60vw, -48vh) rotate(45deg); opacity: 0.9; }
     88%  { opacity: 0.9; }
     100% { transform: translate(125vw, -100vh) rotate(45deg); opacity: 0; }
-}
-
-/* Entrada suave dos cards + leve elevação no hover */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.card {
-    animation: fadeInUp 0.7s ease backwards;
-}
-
-.card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 25px rgba(0, 255, 65, 0.35);
-}
-
-/* Flutuação leve do avatar */
-@keyframes avatarFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-.avatar-wrapper {
-    animation: avatarFloat 4s ease-in-out infinite;
-}
-
-/* ========================================
-   FRASE DE IMPACTO (Página Sobre)
-======================================== */
-.tagline {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.5rem;
-    text-align: center;
-    color: #fff;
-    max-width: 680px;
-    line-height: 1.6;
-    margin: 5px auto 35px auto;
-}
-
-.tagline span {
-    color: var(--primary);
-    text-shadow: 0 0 12px rgba(0, 255, 65, 0.7);
-}
-
-/* Linha do tempo com ícones (substitui listas longas) */
-.timeline {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    max-width: 800px;
-    margin: 0 auto 45px auto;
-    padding: 0 20px;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 23px;
-    left: 8%;
-    right: 8%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--primary), var(--primary), transparent);
-    opacity: 0.35;
-    z-index: 0;
-}
-
-.timeline-step {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 95px;
-}
-
-.timeline-step .dot {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    background: #050505;
-    border: 2px solid var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    color: var(--primary);
-    margin-bottom: 8px;
-    animation: pulseDot 2.5s ease-in-out infinite;
-}
-
-.timeline-step .label {
-    font-size: 0.75rem;
-    color: #aaa;
-    letter-spacing: 0.5px;
-}
-
-@keyframes pulseDot {
-    0%, 100% { box-shadow: 0 0 8px rgba(0, 255, 65, 0.3); }
-    50% { box-shadow: 0 0 18px rgba(0, 255, 65, 0.8); }
-}
-
-/* Badges compactos (substituem listas de certificações/objetivos) */
-.tag-group-label {
-    text-align: center;
-    color: #888;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 0 auto 10px auto;
-    font-family: 'Orbitron', sans-serif;
-}
-
-.tag-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    max-width: 700px;
-    margin: 0 auto 30px auto;
-    padding: 0 20px;
-}
-
-.tag-pill {
-    padding: 7px 18px;
-    border-radius: 20px;
-    border: 1px solid var(--primary);
-    color: var(--primary);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    background: rgba(0, 255, 65, 0.06);
-    transition: 0.3s ease;
-}
-
-.tag-pill:hover {
-    background: var(--primary);
-    color: #000;
-    box-shadow: 0 0 15px var(--primary);
-}
-
-.tag-pill.learning {
-    border-style: dashed;
-    border-color: #ffbd2e;
-    color: #ffbd2e;
-    background: rgba(255, 189, 46, 0.06);
-    animation: pulseDot 2s ease-in-out infinite;
-}
-
-.tag-pill.goal {
-    border-color: #00e5ff;
-    color: #00e5ff;
-    background: rgba(0, 229, 255, 0.06);
 }
 
 /* ========================================
@@ -805,35 +1273,6 @@ h1, h2, h3, .badge {
     animation: terminalBlink 1s infinite;
 }
 
-/* Barra de nível de habilidade dentro dos cards */
-.skill-level {
-    width: 100%;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 10px;
-    margin-top: 16px;
-    overflow: hidden;
-}
-
-.skill-level-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--primary), #00ff88);
-    border-radius: 10px;
-    box-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
-}
-
-.skill-percent {
-    display: block;
-    margin-top: 6px;
-    font-size: 0.8rem;
-    color: #aaa;
-    font-family: 'Orbitron', sans-serif;
-    letter-spacing: 1px;
-}
-
-/* ========================================
-   PÁGINA DE PROJETO EM DESTAQUE (Mail Analytics)
-======================================== */
 .section-title {
     text-align: center;
     font-family: 'Orbitron', sans-serif;
@@ -882,67 +1321,6 @@ h1, h2, h3, .badge {
     letter-spacing: 1px;
 }
 
-.steps-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 20px;
-    max-width: 1100px;
-    margin: 20px auto 40px auto;
-    padding: 0 20px;
-}
-
-.step-card {
-    background: rgba(0, 0, 0, 0.75);
-    border: 1px solid #00ff88;
-    border-radius: 12px;
-    padding: 25px 20px;
-    width: 100%;
-    max-width: 240px;
-    text-align: center;
-    transition: 0.3s ease;
-}
-
-.step-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
-}
-
-.step-card .step-number {
-    display: inline-block;
-    width: 26px;
-    height: 26px;
-    line-height: 26px;
-    border-radius: 50%;
-    background: var(--primary);
-    color: #000;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: bold;
-    font-size: 0.8rem;
-    margin-bottom: 12px;
-}
-
-.step-card i {
-    display: block;
-    font-size: 2rem;
-    color: var(--primary);
-    margin-bottom: 12px;
-}
-
-.step-card h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1rem;
-    color: #fff;
-    margin-bottom: 8px;
-}
-
-.step-card p {
-    color: #ccc;
-    font-size: 0.88rem;
-    line-height: 1.4;
-}
-
 .tech-row {
     display: flex;
     justify-content: center;
@@ -972,69 +1350,4 @@ h1, h2, h3, .badge {
     letter-spacing: 1px;
     text-transform: uppercase;
     font-family: 'Orbitron', sans-serif;
-}
-
-/* ========================================
-   RODAPÉ (Footer)
-======================================== */
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #000;
-    border-top: 1px solid var(--primary);
-    padding: 20px;
-    text-align: center;
-    font-size: 0.85rem;
-    z-index: 900;
-}
-
-/* ========================================
-   ANIMAÇÕES (Keyframes)
-======================================== */
-@keyframes terminalBlink {
-    0%, 100% { opacity: 1; }
-    50% { opacity   : 1; }
-}
-
-/* ========================================
-   RESPONSIVIDADE (Media Queries)
-======================================== */
-
-/* Monitores menores e Tablets em Paisagem */
-@media (max-width: 1200px) {
-    .sobre-grid .card-link {
-        max-width: 45%; /* Distribui melhor em telas médias */
-    }
-}
-
-/* Celulares e Dispositivos Móveis */
-@media (max-width: 768px) {
-    .navbar-container {
-        gap: 25px;
-    }
-    .hero-content {
-        flex-direction: column;
-        gap: 40px;
-        text-align: center;
-    }
-    .hero-right {
-        align-items: center;
-        text-align: center;
-    }
-    .hero-right h1 {
-        font-size: 2.5rem;
-    }
-    .botoes-cyber {
-        flex-direction: column;
-        width: 100%;
-    }
-    .quick-contact {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    .sobre-grid .card-link {
-        max-width: 100% !important; /* Ocupa a tela inteira em smartphones */
-    }
 }

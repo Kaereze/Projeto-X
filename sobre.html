@@ -1,123 +1,230 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
+<!-- ===================================================== -->
+<!-- HEAD -->
+<!-- Configurações da página, fontes, ícones e CSS -->
+<!-- ===================================================== -->
 <head>
+
+    <!-- Codificação -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Responsividade -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- Título -->
     <title>Sobre Mim | João Carlos</title>
 
-    <!-- Fontes Orbitron e Rajdhani para o visual Cyberpunk -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
-    
-    <!-- Ícones do Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Resumo da página para buscadores e compartilhamentos -->
+    <meta name="description"
+          content="Conheça a jornada, certificações e objetivos de João Carlos como desenvolvedor Front-End em formação.">
 
-    <!-- Ligação ao CSS Global -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Prévia ao compartilhar o link (WhatsApp, LinkedIn, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://kaereze.github.io/Projeto-X/sobre.html">
+    <meta property="og:title" content="Sobre Mim | João Carlos">
+    <meta property="og:description" content="Conheça a jornada, certificações e objetivos de João Carlos como desenvolvedor Front-End em formação.">
+    <meta property="og:image" content="https://kaereze.github.io/Projeto-X/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sobre Mim | João Carlos">
+    <meta name="twitter:description" content="Conheça a jornada, certificações e objetivos de João Carlos como desenvolvedor Front-End em formação.">
+    <meta name="twitter:image" content="https://kaereze.github.io/Projeto-X/og-image.png">
+
+    <!-- Ícone da aba do navegador -->
+    <link rel="icon"
+          type="image/svg+xml"
+          href="favicon.svg">
+
+    <!-- Preconnect acelera a conexão com os servidores de fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="style.css">
+
 </head>
+
 <body>
 
-    <!-- Navbar igual à da Home, mas aqui o "Sobre" fica marcado como ativo ("#") -->
-     <nav class="navbar">
-        <div class="navbar-container">
-    <a href="index.html">Início</a>
-    <a href="sobre.html">Sobre</a>
-    <a href="skills.html">Skills</a>
-    <a href="projetos.html">Projetos</a>
-    <a href="mail-analytics.html">Mail Analytics</a>
-</div>
-    </nav>
-    </nav>
+<!-- ===================================================== -->
+<!-- MENU DE NAVEGAÇÃO -->
+<!-- ===================================================== -->
 
-    <!-- Cabeçalho da Página Sobre -->
-    <header class="hero" style="min-height: auto; padding: 40px 20px 0 20px;">
-        <div class="hero-content">
-            <div class="hero-right" style="align-items: center; text-align: center; width: 100%;">
-                <span class="badge"><i class="fa-solid fa-folder-open"></i> PORTFÓLIO</span>
-            </div>
-        </div>
-    </header>
+<nav class="navbar">
 
-    <!-- Card único com o perfil completo -->
-    <main class="about-card">
+    <div class="navbar-container">
 
-        <div class="about-card-left">
-            <h1 style="font-size: 2.6rem; margin-bottom: 6px;">Sobre Mim</h1>
-            <span class="about-subtitle">Front-End em Formação · Curioso · Aprendiz Contínuo</span>
+        <a href="index.html">Início</a>
 
-            <p>Olá! Sou o João Carlos — minha jornada em programação começou com curiosidade e muita vontade de criar coisas que funcionam de verdade.</p>
-            <p>Comecei estudando HTML, CSS e Git, e sigo evoluindo todos os dias, sempre testando novas ideias.</p>
-            <p>Acredito que tecnologia bem feita resolve problemas reais — este portfólio é prova disso: construído do zero, peça por peça.</p>
+        <a href="sobre.html"
+           class="active"
+           aria-current="page">Sobre</a>
 
-            <div class="mini-stats">
-                <div class="mini-stat">
-                    <i class="fa-solid fa-terminal"></i>
-                    <span class="mini-stat-label">Início na Programação</span>
-                    <span class="mini-stat-value">2025</span>
-                </div>
-                <div class="mini-stat">
-                    <i class="fa-solid fa-code"></i>
-                    <span class="mini-stat-label">Tecnologias Estudadas</span>
-                    <span class="mini-stat-value">9</span>
-                </div>
-                <div class="mini-stat">
-                    <i class="fa-solid fa-rocket"></i>
-                    <span class="mini-stat-label">Projetos em Construção</span>
-                    <span class="mini-stat-value">2</span>
-                </div>
-            </div>
+        <a href="skills.html">Skills</a>
 
-            <button class="btn-glitch" disabled style="cursor: not-allowed; opacity: 0.6;">
-                <span class="btn-text"><i class="fa-solid fa-file-arrow-down"></i> Currículo em Breve</span>
-            </button>
+        <a href="projetos.html">Projetos</a>
+
+        <a href="mail-analytics.html">Mail Analytics</a>
+
+    </div>
+
+</nav>
+
+
+<!-- ===================================================== -->
+<!-- CABEÇALHO -->
+<!-- ===================================================== -->
+
+<header class="hero hero-compact">
+
+    <div class="hero-content">
+
+        <div class="hero-right hero-right-center">
+
+            <span class="badge hud-frame"><i class="fa-solid fa-folder-open"></i> PORTFÓLIO</span>
+
         </div>
 
-        <div class="about-card-right">
-            <div class="photo-frame">
-                <img src="foto-perfil.jpg" alt="João Carlos">
-            </div>
+    </div>
 
-            <div class="contact-list">
-                <div class="contact-item">
-                    <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
-                    <span>
-                        <span class="contact-label">E-mail</span>
-                        <a class="contact-value" href="mailto:joaocarlossilvazeroum@gmail.com">joaocarlossilvazeroum@gmail.com</a>
-                    </span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon"><i class="fa-brands fa-github"></i></span>
-                    <span>
-                        <span class="contact-label">GitHub</span>
-                        <a class="contact-value" href="https://github.com/Kaereze" target="_blank">github.com/Kaereze</a>
-                    </span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon"><i class="fa-brands fa-whatsapp"></i></span>
-                    <span>
-                        <span class="contact-label">WhatsApp</span>
-                        <a class="contact-value" href="https://wa.me/5548991329291" target="_blank">Chamar no WhatsApp</a>
-                    </span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
-                    <span>
-                        <span class="contact-label">Localização</span>
-                        <span class="contact-value">Brasil</span>
-                    </span>
-                </div>
+</header>
+
+
+<!-- ===================================================== -->
+<!-- CARD ÚNICO COM O PERFIL COMPLETO -->
+<!-- ===================================================== -->
+
+<main class="about-card">
+
+    <div class="about-card-left">
+        <h1 style="font-size: 2.6rem; margin-bottom: 6px;">Sobre Mim</h1>
+        <span class="about-subtitle">Front-End em Formação · Curioso · Aprendiz Contínuo</span>
+
+        <p>Olá! Sou o João Carlos — minha jornada em programação começou com curiosidade e muita vontade de criar coisas que funcionam de verdade.</p>
+        <p>Comecei estudando HTML, CSS e Git, e sigo evoluindo todos os dias, sempre testando novas ideias.</p>
+        <p>Acredito que tecnologia bem feita resolve problemas reais — este portfólio é prova disso: construído do zero, peça por peça.</p>
+
+        <div class="mini-stats">
+            <div class="mini-stat">
+                <i class="fa-solid fa-terminal"></i>
+                <span class="mini-stat-label">Início na Programação</span>
+                <span class="mini-stat-value">2025</span>
+            </div>
+            <div class="mini-stat">
+                <i class="fa-solid fa-code"></i>
+                <span class="mini-stat-label">Tecnologias Estudadas</span>
+                <span class="mini-stat-value">9</span>
+            </div>
+            <div class="mini-stat">
+                <i class="fa-solid fa-rocket"></i>
+                <span class="mini-stat-label">Projetos em Construção</span>
+                <span class="mini-stat-value">2</span>
             </div>
         </div>
 
-    </main>
+        <button class="btn-glitch" disabled style="cursor: not-allowed; opacity: 0.6;">
+            <span class="btn-text"><i class="fa-solid fa-file-arrow-down"></i> Currículo em Breve</span>
+        </button>
+    </div>
 
-    <footer>
-        <p>© 2026 João Carlos</p>
-        <p>Desenvolvido com HTML, CSS e GitHub Pages</p>
-    </footer>
+    <div class="about-card-right">
+        <div class="photo-frame">
+            <img src="foto-perfil.jpg" alt="João Carlos">
+        </div>
 
-    <!-- Fundo Matrix de fundo -->
-    <canvas id="matrix"></canvas>
-    <script src="matrix.js"></script>
+        <div class="contact-list">
+            <div class="contact-item">
+                <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
+                <span>
+                    <span class="contact-label">E-mail</span>
+                    <a class="contact-value" href="mailto:joaocarlossilvazeroum@gmail.com">joaocarlossilvazeroum@gmail.com</a>
+                </span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon"><i class="fa-brands fa-github"></i></span>
+                <span>
+                    <span class="contact-label">GitHub</span>
+                    <a class="contact-value" href="https://github.com/Kaereze" target="_blank">github.com/Kaereze</a>
+                </span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon"><i class="fa-brands fa-whatsapp"></i></span>
+                <span>
+                    <span class="contact-label">WhatsApp</span>
+                    <a class="contact-value" href="https://wa.me/5548991329291" target="_blank">Chamar no WhatsApp</a>
+                </span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
+                <span>
+                    <span class="contact-label">Localização</span>
+                    <span class="contact-value">Brasil</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+<!-- ===================================================== -->
+<!-- RODAPÉ -->
+<!-- ===================================================== -->
+
+<footer>
+
+    <div class="footer-social">
+
+        <a href="mailto:joaocarlossilvazeroum@gmail.com"
+           aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+
+        <a href="https://wa.me/5548991329291"
+           target="_blank"
+           aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <a href="https://github.com/Kaereze"
+           target="_blank"
+           aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+        </a>
+
+    </div>
+
+    <p>© 2026 João Carlos</p>
+
+    <p>
+        Desenvolvido com HTML, CSS e GitHub Pages
+    </p>
+
+</footer>
+
+
+<!-- ===================================================== -->
+<!-- MATRIX -->
+<!-- ===================================================== -->
+
+<canvas id="matrix"></canvas>
+
+<script src="matrix.js"></script>
+<script src="scripts.js"></script>
 
     <!-- Símbolos de código flutuando por cima do Matrix, atrás do conteúdo -->
     <div class="floating-icons">
@@ -138,4 +245,5 @@
     </div>
 
 </body>
+
 </html>

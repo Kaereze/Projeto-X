@@ -1,191 +1,556 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
+<!-- ======================================================
+     HEAD
+     Configurações da página
+====================================================== -->
 <head>
+
+    <!-- Permite caracteres especiais -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Responsividade -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da aba -->
     <title>Skills | João Carlos</title>
 
-    <!-- Fontes Orbitron e Rajdhani para o visual Cyberpunk -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
-    
-    <!-- Ícones do Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Resumo da página para buscadores e compartilhamentos -->
+    <meta name="description"
+          content="Tecnologias e ferramentas utilizadas por João Carlos: HTML5, CSS3, Git, GitHub, Excel, Apps Script e automação de dados.">
 
-    <!-- Ligação ao CSS Global -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Prévia ao compartilhar o link (WhatsApp, LinkedIn, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://kaereze.github.io/Projeto-X/skills.html">
+    <meta property="og:title" content="Skills | João Carlos">
+    <meta property="og:description" content="Tecnologias e ferramentas utilizadas por João Carlos: HTML5, CSS3, Git, GitHub, Excel, Apps Script e automação de dados.">
+    <meta property="og:image" content="https://kaereze.github.io/Projeto-X/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Skills | João Carlos">
+    <meta name="twitter:description" content="Tecnologias e ferramentas utilizadas por João Carlos: HTML5, CSS3, Git, GitHub, Excel, Apps Script e automação de dados.">
+    <meta name="twitter:image" content="https://kaereze.github.io/Projeto-X/og-image.png">
+
+    <!-- Ícone da aba do navegador -->
+    <link rel="icon"
+          type="image/svg+xml"
+          href="favicon.svg">
+
+    <!-- ======================================================
+         FONTES
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- ======================================================
+         ÍCONES
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- ======================================================
+         CSS
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
 </head>
+
 <body>
 
-    <!-- Navbar igual à da Home, mas aqui o "Skills" fica marcado como ativo ("#") -->
-     <nav class="navbar">
-        <div class="navbar-container">
-    <a href="index.html">Início</a>
-    <a href="sobre.html">Sobre</a>
-    <a href="skills.html">Skills</a>
-    <a href="projetos.html">Projetos</a>
-    <a href="mail-analytics.html">Mail Analytics</a>
-</div>
-    </nav>
-    </nav>
 
-    <!-- Cabeçalho da Página de Habilidades -->
-    <header class="hero" style="min-height: auto; padding: 40px 20px 10px 20px;">
-        <div class="hero-content">
-            <div class="hero-right" style="align-items: center; text-align: center;">
-                <span class="badge"><i class="fa-solid fa-code"></i> TECH STACK</span>
-                <h1>Minhas Habilidades</h1>
-            </div>
-        </div>
-    </header>
 
-    <!-- Estatísticas rápidas -->
-    <div class="stats-row">
-        <div class="stat-box">
-            <span class="stat-number">9</span>
-            <span class="stat-label">Tecnologias</span>
-        </div>
-        <div class="stat-box">
-            <span class="stat-number">76%</span>
-            <span class="stat-label">Nível Médio</span>
-        </div>
-        <div class="stat-box">
-            <span class="stat-number">1</span>
-            <span class="stat-label">Em Aprendizado</span>
-        </div>
+<!-- ======================================================
+     MENU DE NAVEGAÇÃO
+====================================================== -->
+
+<nav class="navbar">
+
+    <div class="navbar-container">
+
+        <a href="index.html">Início</a>
+
+        <a href="sobre.html">Sobre</a>
+
+        <a href="skills.html"
+           class="active"
+           aria-current="page">Skills</a>
+
+        <a href="projetos.html">Projetos</a>
+
+        <a href="mail-analytics.html">Mail Analytics</a>
+
     </div>
 
-    <!-- Terminal decorativo com "scan" das habilidades -->
-    <div class="terminal-window">
-        <div class="terminal-header">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">joao@dev-machine: ~/skills</span>
+</nav>
+
+
+
+<!-- ======================================================
+     HERO
+     Cabeçalho da página Skills
+====================================================== -->
+
+<header class="hero hero-compact">
+
+    <div class="hero-content">
+
+        <div class="hero-right hero-right-center">
+
+            <span class="badge hud-frame">
+
+                <i class="fa-solid fa-code"></i>
+
+                TECH STACK
+
+            </span>
+
+            <h1>Minhas Habilidades</h1>
+
         </div>
-        <div class="terminal-body"><span class="comment">// escaneando stack de desenvolvimento...</span>
+
+    </div>
+
+</header>
+
+<!-- Estatísticas rápidas -->
+<div class="stats-row">
+    <div class="stat-box">
+        <span class="stat-number">9</span>
+        <span class="stat-label">Tecnologias</span>
+    </div>
+    <div class="stat-box">
+        <span class="stat-number">26%</span>
+        <span class="stat-label">Nível Médio</span>
+    </div>
+    <div class="stat-box">
+        <span class="stat-number">1</span>
+        <span class="stat-label">Em Aprendizado</span>
+    </div>
+</div>
+
+<!-- Terminal decorativo com "scan" das habilidades -->
+<div class="terminal-window">
+    <div class="terminal-header">
+        <span class="terminal-dot red"></span>
+        <span class="terminal-dot yellow"></span>
+        <span class="terminal-dot green"></span>
+        <span class="terminal-title">joao@dev-machine: ~/skills</span>
+    </div>
+    <div class="terminal-body"><span class="comment">// escaneando stack de desenvolvimento...</span>
 <span class="cmd">user@joao-carlos:~$</span> ls skills/
 HTML5  CSS3  Git  GitHub  JavaScript  Excel  Apps-Script  APIs  Dashboards
 
 <span class="cmd">user@joao-carlos:~$</span> ./status --all
-[<span class="ok">OK</span>] HTML5        ██████████ 90%
-[<span class="ok">OK</span>] CSS3         █████████░ 85%
-[<span class="ok">OK</span>] Git/GitHub   █████████░ 85%
-[<span class="warn">..</span>] JavaScript   ████░░░░░░ 40%  <span class="comment">// em andamento</span>
-[<span class="ok">OK</span>] Excel        █████████░ 85%
-[<span class="ok">OK</span>] Apps Script  ████████░░ 75%
-[<span class="ok">OK</span>] APIs         ███████░░░ 70%
-[<span class="ok">OK</span>] Dashboards   ████████░░ 80%
+[<span class="ok">OK</span>] HTML5        ████░░░░░░ 40%
+[<span class="ok">OK</span>] CSS3         ███░░░░░░░ 30%
+[<span class="ok">OK</span>] Git          █░░░░░░░░░ 10%
+[<span class="ok">OK</span>] GitHub       ███░░░░░░░ 30%
+[<span class="warn">..</span>] JavaScript   ██░░░░░░░░ 15%  <span class="comment">// em andamento</span>
+[<span class="ok">OK</span>] Excel        ████░░░░░░ 35%
+[<span class="ok">OK</span>] Apps Script  ███░░░░░░░ 25%
+[<span class="ok">OK</span>] APIs         ██░░░░░░░░ 20%
+[<span class="ok">OK</span>] Dashboards   ███░░░░░░░ 30%
 
 <span class="cmd">user@joao-carlos:~$</span> <span class="terminal-cursor">▊</span></div>
-    </div>
+</div>
 
-   <!-- Mostruário de Skills em Grade Interativa (Clicáveis) -->
+
+
+<!-- ======================================================
+     CONTEÚDO PRINCIPAL
+====================================================== -->
+
 <h2 class="section-title">Front-End &amp; <span>Versionamento</span></h2>
-<main style="display: flex; flex-direction: row; justify-content: center; align-items: flex-start; flex-wrap: wrap; gap: 20px; max-width: 1100px; margin: 10px auto 30px auto; padding: 0 20px;">
+<main class="sobre-grid">
 
-    <!-- CARD HTML5: Link para o seu projeto/repositório de HTML -->
-    <a href="https://github.com/Kaereze/Projeto-X/blob/main/index.html" target="_blank" class="card-link">
-        <section class="card" style="text-align: center; min-height: auto;">
-            <i class="fa-brands fa-html5" style="font-size: 3rem; color: #e34c26; margin-bottom: 15px;"></i>
+
+
+    <!-- ==================================================
+         CARD HTML5
+    =================================================== -->
+
+    <a href="https://github.com/Kaereze/Projeto-X/blob/main/index.html"
+       target="_blank"
+       class="card-link">
+
+        <section class="card card-compact reveal">
+
+            <i class="fa-brands fa-html5 tech-icon html5"></i>
+
             <h2>HTML5</h2>
-            <div class="skill-level"><div class="skill-level-fill" style="width: 90%;"></div></div>
-            <span class="skill-percent">90%</span>
+
+            <p class="skill-desc">
+                Estrutura páginas semânticas, acessíveis
+                e otimizadas para SEO.
+            </p>
+
+            <div class="skill-tags">
+                <span class="skill-tag">Semântica</span>
+                <span class="skill-tag">Acessibilidade</span>
+                <span class="skill-tag">SEO</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-bar-fill" style="--pct: 40%;"></div>
+            </div>
+
         </section>
+
     </a>
 
-    <!-- CARD CSS3: Link para o seu projeto de CSS -->
-    <a href="https://github.com/Kaereze/Projeto-X/blob/main/style.css" target="_blank" class="card-link">
-        <section class="card" style="text-align: center; min-height: auto;">
-            <i class="fa-brands fa-css3-alt" style="font-size: 3rem; color: #264de4; margin-bottom: 15px;"></i>
+
+
+    <!-- ==================================================
+         CARD CSS3
+    =================================================== -->
+
+    <a href="https://github.com/Kaereze/Projeto-X/blob/main/style.css"
+       target="_blank"
+       class="card-link">
+
+        <section class="card card-compact reveal">
+
+            <i class="fa-brands fa-css3-alt tech-icon css3"></i>
+
             <h2>CSS3</h2>
-            <div class="skill-level"><div class="skill-level-fill" style="width: 85%;"></div></div>
-            <span class="skill-percent">85%</span>
+
+            <p class="skill-desc">
+                Crio layouts responsivos com Flexbox,
+                Grid e animações.
+            </p>
+
+            <div class="skill-tags">
+                <span class="skill-tag">Flexbox</span>
+                <span class="skill-tag">Grid</span>
+                <span class="skill-tag">Responsivo</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-bar-fill" style="--pct: 30%;"></div>
+            </div>
+
         </section>
+
     </a>
 
-    <!-- CARD GIT: Link para a documentação oficial -->
-    <a href="https://git-scm.com/" target="_blank" class="card-link">
-        <section class="card" style="text-align: center; min-height: auto;">
-            <i class="fa-brands fa-git-alt" style="font-size: 3rem; color: #f05033; margin-bottom: 15px;"></i>
+
+
+    <!-- ==================================================
+         CARD GIT
+    =================================================== -->
+
+    <a href="https://git-scm.com/"
+       target="_blank"
+       class="card-link">
+
+        <section class="card card-compact reveal">
+
+            <i class="fa-brands fa-git-alt tech-icon git"></i>
+
             <h2>Git</h2>
-            <div class="skill-level"><div class="skill-level-fill" style="width: 80%;"></div></div>
-            <span class="skill-percent">80%</span>
+
+            <p class="skill-desc">
+                Controlo versões do código com commits
+                organizados e branches.
+            </p>
+
+            <div class="skill-tags">
+                <span class="skill-tag">Commits</span>
+                <span class="skill-tag">Branches</span>
+                <span class="skill-tag">Merge</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-bar-fill" style="--pct: 10%;"></div>
+            </div>
+
         </section>
+
     </a>
 
-    <!-- CARD GITHUB: Link direto para o seu perfil geral do GitHub -->
-    <a href="https://github.com/Kaereze" target="_blank" class="card-link">
-        <section class="card" style="text-align: center; min-height: auto;">
-            <i class="fa-brands fa-github" style="font-size: 3rem; color: #fff; margin-bottom: 15px;"></i>
+
+
+    <!-- ==================================================
+         CARD GITHUB
+    =================================================== -->
+
+    <a href="https://github.com/Kaereze"
+       target="_blank"
+       class="card-link">
+
+        <section class="card card-compact reveal">
+
+            <i class="fa-brands fa-github tech-icon github"></i>
+
             <h2>GitHub</h2>
-            <div class="skill-level"><div class="skill-level-fill" style="width: 85%;"></div></div>
-            <span class="skill-percent">85%</span>
+
+            <p class="skill-desc">
+                Publico e documento projetos, com deploy
+                automático via GitHub Pages.
+            </p>
+
+            <div class="skill-tags">
+                <span class="skill-tag">Pages</span>
+                <span class="skill-tag">Deploy</span>
+                <span class="skill-tag">Versionamento</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-bar-fill" style="--pct: 30%;"></div>
+            </div>
+
         </section>
+
     </a>
 
-    <!-- CARD JAVASCRIPT: Ainda em aprendizado -->
-    <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" target="_blank" class="card-link">
-        <section class="card" style="text-align: center; min-height: auto;">
-            <i class="fa-brands fa-js" style="font-size: 3rem; color: #f7df1e; margin-bottom: 15px;"></i>
+
+
+    <!-- ==================================================
+         CARD JAVASCRIPT
+    =================================================== -->
+
+    <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"
+       target="_blank"
+       class="card-link">
+
+        <section class="card card-compact reveal">
+
+            <i class="fa-brands fa-js tech-icon" style="color: #f7df1e;"></i>
+
             <h2>JavaScript</h2>
-            <div class="skill-level"><div class="skill-level-fill" style="width: 40%;"></div></div>
-            <span class="skill-percent">40% · em andamento</span>
+
+            <p class="skill-desc">
+                Estou aprendendo a dar interatividade
+                e lógica às páginas, do zero.
+            </p>
+
+            <div class="skill-tags">
+                <span class="skill-tag">DOM</span>
+                <span class="skill-tag">Eventos</span>
+                <span class="skill-tag">Em andamento</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-bar-fill" style="--pct: 15%;"></div>
+            </div>
+
         </section>
+
     </a>
-    </main>
+
+</main>
 
 <h2 class="section-title">Dados &amp; <span>Automação</span></h2>
-<div style="display: flex; flex-direction: row; justify-content: center; align-items: flex-start; flex-wrap: wrap; gap: 20px; max-width: 1100px; margin: 10px auto 30px auto; padding: 0 20px;">
+<div class="sobre-grid">
 
-    <!-- CARD EXCEL: Planilhas, fórmulas e automações -->
-    <a href="https://support.microsoft.com/pt-br/excel" target="_blank" class="card-link">
-        <section class="card" style="text-align: center; min-height: auto;">
-            <i class="fa-solid fa-file-excel" style="font-size: 3rem; color: #1d6f42; margin-bottom: 15px;"></i>
+
+
+    <!-- ==================================================
+         CARD EXCEL
+    =================================================== -->
+
+    <a href="https://support.microsoft.com/pt-br/excel"
+       target="_blank"
+       class="card-link">
+
+        <section class="card card-compact reveal">
+
+            <i class="fa-solid fa-file-excel tech-icon" style="color: #1d6f42;"></i>
+
             <h2>Excel</h2>
-            <div class="skill-level"><div class="skill-level-fill" style="width: 85%;"></div></div>
-            <span class="skill-percent">85%</span>
+
+            <p class="skill-desc">
+                Planilhas, fórmulas e automações para
+                organizar e cruzar dados no dia a dia.
+            </p>
+
+            <div class="skill-tags">
+                <span class="skill-tag">Fórmulas</span>
+                <span class="skill-tag">Tabelas</span>
+                <span class="skill-tag">Automação</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-bar-fill" style="--pct: 35%;"></div>
+            </div>
+
         </section>
+
     </a>
 
-    <!-- CARD GOOGLE APPS SCRIPT: Automação de planilhas do Sheets -->
-    <a href="https://developers.google.com/apps-script" target="_blank" class="card-link">
-        <section class="card" style="text-align: center; min-height: auto;">
-            <i class="fa-solid fa-table-cells" style="font-size: 3rem; color: #0f9d58; margin-bottom: 15px;"></i>
+
+
+    <!-- ==================================================
+         CARD APPS SCRIPT
+    =================================================== -->
+
+    <a href="https://developers.google.com/apps-script"
+       target="_blank"
+       class="card-link">
+
+        <section class="card card-compact reveal">
+
+            <i class="fa-solid fa-table-cells tech-icon" style="color: #0f9d58;"></i>
+
             <h2>Apps Script</h2>
-            <div class="skill-level"><div class="skill-level-fill" style="width: 75%;"></div></div>
-            <span class="skill-percent">75%</span>
+
+            <p class="skill-desc">
+                Automação de planilhas do Google Sheets,
+                com menus e robôs próprios.
+            </p>
+
+            <div class="skill-tags">
+                <span class="skill-tag">Google Sheets</span>
+                <span class="skill-tag">Menus</span>
+                <span class="skill-tag">Automação</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-bar-fill" style="--pct: 25%;"></div>
+            </div>
+
         </section>
+
     </a>
 
-    <!-- CARD APIS: Integração e consumo de dados externos -->
-    <a href="https://developer.mozilla.org/pt-BR/docs/Web/API" target="_blank" class="card-link">
-        <section class="card" style="text-align: center; min-height: auto;">
-            <i class="fa-solid fa-plug" style="font-size: 3rem; color: #00b4d8; margin-bottom: 15px;"></i>
+
+
+    <!-- ==================================================
+         CARD APIS
+    =================================================== -->
+
+    <a href="https://developer.mozilla.org/pt-BR/docs/Web/API"
+       target="_blank"
+       class="card-link">
+
+        <section class="card card-compact reveal">
+
+            <i class="fa-solid fa-plug tech-icon" style="color: #00b4d8;"></i>
+
             <h2>Integração de APIs</h2>
-            <div class="skill-level"><div class="skill-level-fill" style="width: 70%;"></div></div>
-            <span class="skill-percent">70%</span>
+
+            <p class="skill-desc">
+                Conexão e consumo de dados externos
+                para alimentar automações.
+            </p>
+
+            <div class="skill-tags">
+                <span class="skill-tag">Outlook</span>
+                <span class="skill-tag">Integração</span>
+                <span class="skill-tag">Dados</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-bar-fill" style="--pct: 20%;"></div>
+            </div>
+
         </section>
+
     </a>
 
-    <!-- CARD DASHBOARDS: Automação de dados e geração de gráficos/informativos -->
-    <a href="mail-analytics.html" class="card-link">
-        <section class="card" style="text-align: center; min-height: auto;">
-            <i class="fa-solid fa-chart-pie" style="font-size: 3rem; color: #ffbd2e; margin-bottom: 15px;"></i>
+
+
+    <!-- ==================================================
+         CARD DASHBOARDS
+    =================================================== -->
+
+    <a href="mail-analytics.html"
+       class="card-link">
+
+        <section class="card card-compact reveal">
+
+            <i class="fa-solid fa-chart-pie tech-icon" style="color: #ffbd2e;"></i>
+
             <h2>Dashboards &amp; Automação</h2>
-            <div class="skill-level"><div class="skill-level-fill" style="width: 80%;"></div></div>
-            <span class="skill-percent">80%</span>
+
+            <p class="skill-desc">
+                Geração automática de gráficos e relatórios
+                informativos a partir dos dados coletados.
+            </p>
+
+            <div class="skill-tags">
+                <span class="skill-tag">Gráficos</span>
+                <span class="skill-tag">Relatórios</span>
+                <span class="skill-tag">Automação</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-bar-fill" style="--pct: 30%;"></div>
+            </div>
+
         </section>
+
     </a>
+
+</div>
+
+
+
+<!-- ======================================================
+     RODAPÉ
+====================================================== -->
+
+<footer>
+
+    <div class="footer-social">
+
+        <a href="mailto:joaocarlossilvazeroum@gmail.com"
+           aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+
+        <a href="https://wa.me/5548991329291"
+           target="_blank"
+           aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <a href="https://github.com/Kaereze"
+           target="_blank"
+           aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+        </a>
+
     </div>
 
-    <footer>
-        <p>© 2026 João Carlos</p>
-        <p>Desenvolvido com HTML, CSS e GitHub Pages</p>
-    </footer>
+    <p>© 2026 João Carlos</p>
 
-    <!-- Fundo Matrix de fundo -->
-    <canvas id="matrix"></canvas>
-    <script src="matrix.js"></script>
+    <p>
+        Desenvolvido com HTML,
+        CSS e GitHub Pages
+    </p>
+
+</footer>
+
+
+
+<!-- ======================================================
+     EFEITO MATRIX
+====================================================== -->
+
+<canvas id="matrix"></canvas>
+
+
+
+<!-- ======================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="matrix.js"></script>
+<script src="scripts.js"></script>
 
     <!-- Símbolos de código flutuando por cima do Matrix, atrás do conteúdo -->
     <div class="floating-icons">
@@ -206,4 +571,5 @@ HTML5  CSS3  Git  GitHub  JavaScript  Excel  Apps-Script  APIs  Dashboards
     </div>
 
 </body>
+
 </html>

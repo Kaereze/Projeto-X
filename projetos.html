@@ -1,83 +1,317 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
+<!-- ======================================================
+     HEAD
+     Configurações da página
+====================================================== -->
 <head>
+
+    <!-- Permite utilizar caracteres especiais -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Responsividade -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- Nome da aba -->
     <title>Projetos | João Carlos</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <!-- Resumo da página para buscadores e compartilhamentos -->
+    <meta name="description"
+          content="Projetos desenvolvidos por João Carlos, incluindo este portfólio construído com HTML, CSS e Git.">
+
+    <!-- Prévia ao compartilhar o link (WhatsApp, LinkedIn, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://kaereze.github.io/Projeto-X/projetos.html">
+    <meta property="og:title" content="Projetos | João Carlos">
+    <meta property="og:description" content="Projetos desenvolvidos por João Carlos, incluindo este portfólio construído com HTML, CSS e Git.">
+    <meta property="og:image" content="https://kaereze.github.io/Projeto-X/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Projetos | João Carlos">
+    <meta name="twitter:description" content="Projetos desenvolvidos por João Carlos, incluindo este portfólio construído com HTML, CSS e Git.">
+    <meta name="twitter:image" content="https://kaereze.github.io/Projeto-X/og-image.png">
+
+    <!-- Ícone da aba do navegador -->
+    <link rel="icon"
+          type="image/svg+xml"
+          href="favicon.svg">
+
+    <!-- ======================================================
+         FONTES
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- ======================================================
+         ÍCONES
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- ======================================================
+         CSS
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
 </head>
+
 <body>
 
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="index.html">Início</a>
-            <a href="sobre.html">Sobre</a>
-            <a href="skills.html">Skills</a>
-            <a href="#">Projetos</a>
-            <a href="mail-analytics.html">Mail Analytics</a>
+<!-- ======================================================
+     MENU DE NAVEGAÇÃO
+====================================================== -->
+
+<nav class="navbar">
+
+    <div class="navbar-container">
+
+        <a href="index.html">Início</a>
+
+        <a href="sobre.html">Sobre</a>
+
+        <a href="skills.html">Skills</a>
+
+        <a href="projetos.html"
+           class="active"
+           aria-current="page">Projetos</a>
+
+        <a href="mail-analytics.html">Mail Analytics</a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ======================================================
+     HERO
+     Cabeçalho da página Projetos
+====================================================== -->
+
+<header class="hero hero-compact">
+
+    <div class="hero-content">
+
+        <div class="hero-right hero-right-center">
+
+            <span class="badge hud-frame">
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                REPOSITÓRIOS
+
+            </span>
+
+            <h1>Meus Projetos</h1>
+
         </div>
 
-    </nav>
+    </div>
 
-    <header class="hero" style="min-height: auto; padding: 40px 20px 10px 20px;">
-        <div class="hero-content">
-            <div class="hero-right" style="align-items: center; text-align: center;">
-                <span class="badge"><i class="fa-solid fa-folder-open"></i> REPOSITÓRIOS</span>
-                <h1>Meus Projetos</h1>
+</header>
+
+
+
+<!-- ======================================================
+     CONTEÚDO PRINCIPAL
+====================================================== -->
+
+<main class="sobre-grid">
+
+
+
+    <!-- ==================================================
+         CARD 1
+         PROJETO X
+    =================================================== -->
+
+    <a href="https://github.com/Kaereze/Projeto-X"
+       target="_blank"
+       class="card-link">
+
+        <section class="card card-project reveal">
+
+            <div>
+
+                <!-- Ícone -->
+
+                <div class="project-icon-circle">
+
+                    <span>X</span>
+
+                </div>
+
+                <!-- Nome -->
+
+                <h2>Projeto X</h2>
+
+                <!-- Descrição -->
+
+                <p>
+
+                    Meu primeiro portfólio oficial desenvolvido
+                    do zero para consolidar meus conhecimentos
+                    em HTML5, CSS3, Git e versionamento.
+
+                </p>
+
+                <div class="skill-tags">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">Git</span>
+                </div>
+
             </div>
-        </div>
-    </header>
 
-   <!-- Forçamos o espaçamento compacto direto aqui no HTML -->
-    <main style="display: flex; flex-direction: row; justify-content: center; align-items: flex-start; flex-wrap: wrap; gap: 20px; max-width: 1000px; margin: 10px auto 30px auto; padding: 0 20px;">
+            <!-- Botão -->
 
-        <!-- CARD 1: PROJETO X -->
-        <a href="https://github.com/Kaereze/Projeto-X" target="_blank" style="width: 100%; max-width: 340px; text-decoration: none; display: block;">
-            <section class="card" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; height: auto; min-height: 340px; padding: 20px; border: 1px solid #00ff88; border-radius: 12px; background: rgba(0,0,0,0.8);">
-                <div>
-                    <div style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto; border: 2px solid #00ff88; border-radius: 50%; box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);">
-                        <span style="font-family: 'Orbitron', sans-serif; font-size: 2.8rem; font-weight: bold; color: #00ff88; text-shadow: 0 0 10px #00ff88;">X</span>
-                    </div>
-                    <h2>Projeto X</h2>
-                    <p style="color: #ccc; margin-top: 10px; margin-bottom: 15px; font-size: 0.95rem; line-height: 1.4; font-family: 'Rajdhani', sans-serif;">
-                        Meu primeiro portfólio oficial desenvolvido do zero para consolidar meus conhecimentos em HTML5, CSS3, Git e versionamento.
-                    </p>
+            <div class="btn-glitch">
+
+                <span class="btn-text">
+
+                    <i class="fa-solid fa-eye"></i>
+
+                    Ver Projeto
+
+                </span>
+
+            </div>
+
+        </section>
+
+    </a>
+
+
+
+    <!-- ==================================================
+         CARD 2
+         MAIL ANALYTICS
+    =================================================== -->
+
+    <a href="mail-analytics.html"
+       class="card-link">
+
+        <section class="card card-project reveal">
+
+            <div>
+
+                <!-- Ícone -->
+
+                <div class="project-icon-circle">
+
+                    <i class="fa-solid fa-robot"></i>
+
                 </div>
-                <div class="btn-glitch" style="padding: 8px 16px; font-size: 0.85rem; width: 100%; border-radius: 4px;">
-                    <span class="btn-text"><i class="fa-solid fa-eye"></i> Ver Projeto</span>
+
+                <!-- Nome -->
+
+                <h2>Mail Analytics</h2>
+
+                <!-- Descrição -->
+
+                <p>
+
+                    Automação em Python que gera, todos os dias
+                    às 07:00, um relatório de e-mails recebidos,
+                    enviados e notas fiscais emitidas.
+
+                </p>
+
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Google Sheets</span>
+                    <span class="skill-tag">Apps Script</span>
                 </div>
-            </section>
+
+            </div>
+
+            <!-- Botão -->
+
+            <div class="btn-glitch">
+
+                <span class="btn-text">
+
+                    <i class="fa-solid fa-eye"></i>
+
+                    Ver Projeto
+
+                </span>
+
+            </div>
+
+        </section>
+
+    </a>
+
+</main>
+
+
+
+<!-- ======================================================
+     RODAPÉ
+====================================================== -->
+
+<footer>
+
+    <div class="footer-social">
+
+        <a href="mailto:joaocarlossilvazeroum@gmail.com"
+           aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
         </a>
 
-        <!-- CARD 2: MAIL ANALYTICS -->
-        <a href="mail-analytics.html" style="width: 100%; max-width: 340px; text-decoration: none; display: block;">
-            <section class="card" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; height: auto; min-height: 340px; padding: 20px; border: 1px solid #00ff88; border-radius: 12px; background: rgba(0,0,0,0.8);">
-                <div style="width: 100%;">
-                    <div style="font-size: 2.8rem; color: #00ff88; margin-bottom: 10px;">
-                        <i class="fa-solid fa-robot"></i>
-                    </div>
-                    <h2>Mail Analytics</h2>
-                    <p style="color: #ccc; margin-top: 10px; margin-bottom: 15px; font-size: 0.95rem; line-height: 1.4; font-family: 'Rajdhani', sans-serif;">
-                        Automação em Python que gera, todos os dias às 07:00, um relatório de e-mails recebidos, enviados e notas fiscais emitidas.
-                    </p>
-                </div>
-                <div class="btn-glitch" style="padding: 8px 16px; font-size: 0.85rem; width: 100%; border-radius: 4px;">
-                    <span class="btn-text"><i class="fa-solid fa-eye"></i> Ver Projeto</span>
-                </div>
-            </section>
+        <a href="https://wa.me/5548991329291"
+           target="_blank"
+           aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
         </a>
 
-    </main>
-    <footer>
-        <p>© 2026 João Carlos</p>
-        <p>Desenvolvido com HTML, CSS e GitHub Pages</p>
-    </footer>
+        <a href="https://github.com/Kaereze"
+           target="_blank"
+           aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+        </a>
 
-    <canvas id="matrix"></canvas>
-    <script src="matrix.js"></script>
+    </div>
+
+    <p>© 2026 João Carlos</p>
+
+    <p>
+        Desenvolvido com HTML,
+        CSS e GitHub Pages
+    </p>
+
+</footer>
+
+
+
+<!-- ======================================================
+     EFEITO MATRIX
+====================================================== -->
+
+<canvas id="matrix"></canvas>
+
+
+
+<!-- ======================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="matrix.js"></script>
+<script src="scripts.js"></script>
 
     <!-- Símbolos de código flutuando por cima do Matrix, atrás do conteúdo -->
     <div class="floating-icons">
@@ -98,6 +332,5 @@
     </div>
 
 </body>
+
 </html>
-
-

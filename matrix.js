@@ -1,19 +1,27 @@
 const canvas = document.getElementById("matrix");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const letras = "卵、砂糖1カップ、牛乳1カップ、油1カップ、小麦粉1カップ、ベーキングパウダー大さじ"
+// Caracteres katakana (efeito clássico do filme Matrix) + dígitos
+const letras = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789";
 const letrasArray = letras.split("");
 
-const fontSize = 14;
-const columns = canvas.width / fontSize;
+// Fonte um pouco maior = menos colunas para desenhar a cada frame
+const fontSize = 15;
+const frameDelay = 50;
 
-const drops = [];
+// Quem prefere menos animação também costuma estar em aparelhos mais fracos
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-for (let i = 0; i < columns; i++) {
-    drops[i] = 1;
+let columns;
+let drops;
+
+// Recalcula o tamanho do canvas e as colunas de chuva de letras
+function setup() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    columns = Math.floor(canvas.width / fontSize);
+    drops = new Array(columns).fill(1);
 }
 
 function draw() {
@@ -46,4 +54,26 @@ function draw() {
     }
 }
 
-setInterval(draw, 35);
+setup();
+
+// Se o usuário pediu para reduzir animações, o efeito nem começa a rodar
+let intervalId = prefersReducedMotion ? null : setInterval(draw, frameDelay);
+
+// Ajusta o efeito se a janela mudar de tamanho (com debounce para não
+// recalcular a cada pixel arrastado)
+let resizeTimeout;
+window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(setup, 150);
+});
+
+// Pausa o efeito quando a aba não está visível, economizando CPU/bateria
+document.addEventListener("visibilitychange", () => {
+    if (prefersReducedMotion) return;
+
+    if (document.hidden) {
+        clearInterval(intervalId);
+    } else {
+        intervalId = setInterval(draw, frameDelay);
+    }
+});
