@@ -4,10 +4,10 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const letras = "私は読んでいる人の尻を食べています"
+const letras = "卵、砂糖1カップ、牛乳1カップ、油1カップ、小麦粉1カップ、ベーキングパウダー大さじ"
 const letrasArray = letras.split("");
 
-const fontSize = 12;
+const fontSize = 14;
 const columns = canvas.width / fontSize;
 
 const drops = [];

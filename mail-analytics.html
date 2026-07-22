@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail Analytics | João Carlos</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="skills.html">Skills</a>
+            <a href="projetos.html">Projetos</a>
+            <a href="#">Mail Analytics</a>
+        </div>
+    </nav>
+
+    <!-- Cabeçalho do Projeto -->
+    <header class="hero" style="min-height: auto; padding: 40px 20px 10px 20px;">
+        <div class="hero-content">
+            <div class="hero-right" style="align-items: center; text-align: center; width: 100%;">
+                <span class="badge"><i class="fa-solid fa-folder-open"></i> REPOSITÓRIOS</span>
+                <i class="fa-solid fa-robot" style="font-size: 3rem; color: var(--primary); text-shadow: 0 0 20px rgba(0,255,65,0.6); margin: 15px 0 5px 0;"></i>
+                <h1>Mail Analytics</h1>
+                <span class="status-tag"><i class="fa-solid fa-hourglass-half"></i> Em Desenvolvimento</span>
+                <p class="subtitulo-cyber" style="text-align: center; max-width: 680px;">
+                    Todos os dias às <strong style="color: var(--primary);">07:00</strong>, um robô puxa os dados
+                    direto do Outlook, compacta tudo em uma planilha do Google Sheets já organizada nas colunas certas,
+                    e gera dashboards separados por agente e por hotel — com um clique pra enviar o resumo pro gerente.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Estatísticas Rápidas -->
+    <div class="stats-row">
+        <div class="stat-box">
+            <span class="stat-number">07:00</span>
+            <span class="stat-label">Execução Diária</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Agentes Monitorados</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-number">68</span>
+            <span class="stat-label">Hotéis (17 por Agente)</span>
+        </div>
+    </div>
+
+    <!-- Como Funciona -->
+    <h2 class="section-title">Como <span>Funciona</span></h2>
+    <main class="feature-panel">
+
+        <div class="feature-col">
+            <span class="feature-number">01</span>
+            <div class="feature-icon-row">
+                <i class="fa-solid fa-envelope-open-text" style="color: #3a9be0;"></i>
+                <i class="fa-solid fa-arrow-right" style="font-size: 1.4rem; color: var(--primary);"></i>
+                <i class="fa-solid fa-table-cells" style="color: #0f9d58;"></i>
+            </div>
+            <h3>Outlook → Sheets</h3>
+            <p class="feature-desc">O robô entra no Outlook, separa e-mails recebidos, enviados e notas fiscais, e envia tudo já compactado pras colunas certas do Google Sheets.</p>
+            <ul class="feature-checklist">
+                <li><i class="fa-solid fa-circle-check"></i> Conexão direta com o Outlook</li>
+                <li><i class="fa-solid fa-circle-check"></i> Separação por recebidos, enviados e notas fiscais</li>
+                <li><i class="fa-solid fa-circle-check"></i> Organização automática nas colunas do Sheets</li>
+            </ul>
+        </div>
+
+        <div class="feature-col">
+            <span class="feature-number">02</span>
+            <div class="feature-icon-row">
+                <i class="fa-solid fa-bars" style="color: var(--primary);"></i>
+            </div>
+            <h3>Menu &amp; Automação no Sheets</h3>
+            <p class="feature-desc">Direto na planilha, um menu customizado roda o robô, verifica o status da execução e dispara a geração do dashboard.</p>
+            <ul class="feature-checklist">
+                <li><i class="fa-solid fa-circle-check"></i> Rodar robô sob demanda</li>
+                <li><i class="fa-solid fa-circle-check"></i> Verificação de status em tempo real</li>
+                <li><i class="fa-solid fa-circle-check"></i> Disparo do dashboard via Apps Script</li>
+            </ul>
+        </div>
+
+        <div class="feature-col">
+            <span class="feature-number">03</span>
+            <div class="feature-icon-row">
+                <i class="fa-solid fa-chart-pie" style="color: #ffbd2e;"></i>
+            </div>
+            <h3>Dashboard por Agente</h3>
+            <p class="feature-desc">Gráficos informativos separados pros 4 agentes — cada um responsável por 17 hotéis — com um clique pra enviar o resumo pro gerente.</p>
+            <ul class="feature-checklist">
+                <li><i class="fa-solid fa-circle-check"></i> Gráficos separados por agente e hotel</li>
+                <li><i class="fa-solid fa-circle-check"></i> Resumo de recebidos, enviados e notas fiscais</li>
+                <li><i class="fa-solid fa-circle-check"></i> Envio automático por e-mail ao gerente</li>
+            </ul>
+        </div>
+
+    </main>
+
+    <!-- Por trás do código -->
+    <h2 class="section-title">Por Trás do <span>Código</span></h2>
+
+    <div class="terminal-window">
+        <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">outlook_extract.py</span>
+        </div>
+        <div class="terminal-body"><span class="comment"># roda todos os dias às 07:00</span>
+<span class="cmd">def</span> extrair_outlook():
+    emails = outlook.get_emails(data=hoje)
+
+    recebidos = [e <span class="cmd">for</span> e <span class="cmd">in</span> emails <span class="cmd">if</span> e.tipo == <span class="ok">"recebido"</span>]
+    enviados  = [e <span class="cmd">for</span> e <span class="cmd">in</span> emails <span class="cmd">if</span> e.tipo == <span class="ok">"enviado"</span>]
+    notas     = [e <span class="cmd">for</span> e <span class="cmd">in</span> emails <span class="cmd">if</span> <span class="ok">"nota fiscal"</span> <span class="cmd">in</span> e.assunto.lower()]
+
+    exportar_para_planilha(recebidos, enviados, notas)
+    compactar_para_sheets()  <span class="comment"># organiza nas colunas exatas</span></div>
+    </div>
+
+    <div class="terminal-window">
+        <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">menu.gs — Google Apps Script</span>
+        </div>
+        <div class="terminal-body"><span class="comment">// cria o menu personalizado ao abrir a planilha</span>
+<span class="cmd">function</span> onOpen() {
+  SpreadsheetApp.getUi()
+    .createMenu(<span class="ok">'🤖 Robô Mail Analytics'</span>)
+    .addItem(<span class="ok">'▶ Rodar Robô'</span>, <span class="ok">'runRobot'</span>)
+    .addItem(<span class="ok">'📡 Verificar Status'</span>, <span class="ok">'checkStatus'</span>)
+    .addItem(<span class="ok">'📊 Gerar Dashboard'</span>, <span class="ok">'generateDashboard'</span>)
+    .addItem(<span class="ok">'📧 Enviar Resumo ao Gerente'</span>, <span class="ok">'sendManagerSummary'</span>)
+    .addToUi();
+}
+
+<span class="cmd">function</span> generateDashboard() {
+  <span class="cmd">const</span> agentes = getAgentes(); <span class="comment">// 4 agentes, 17 hotéis cada</span>
+  agentes.forEach(agente =&gt; criarGraficosPorHotel(agente));
+}</div>
+    </div>
+
+    <!-- Stack Utilizada -->
+    <h2 class="section-title">Tecnologias <span>Utilizadas</span></h2>
+    <div class="tech-row">
+        <i class="fa-brands fa-python" style="color: #f7d954;" title="Python"></i>
+        <i class="fa-solid fa-envelope-open-text" style="color: var(--primary);" title="Outlook"></i>
+        <i class="fa-solid fa-table-cells" style="color: #0f9d58;" title="Google Sheets"></i>
+        <i class="fa-solid fa-code" style="color: #4285f4;" title="Google Apps Script"></i>
+        <i class="fa-solid fa-chart-pie" style="color: #ffbd2e;" title="Dashboards"></i>
+        <i class="fa-solid fa-clock-rotate-left" style="color: #00b4d8;" title="Agendamento Diário"></i>
+    </div>
+
+    <!-- Chamada para ação -->
+    <div style="text-align: center; margin: 10px auto 50px auto;">
+        <button class="btn-glitch" disabled style="cursor: not-allowed; opacity: 0.6;">
+            <span class="btn-text"><i class="fa-solid fa-lock"></i> Repositório em Breve</span>
+        </button>
+    </div>
+
+    <footer>
+        <p>© 2026 João Carlos</p>
+        <p>Desenvolvido com HTML, CSS e GitHub Pages</p>
+    </footer>
+
+    <canvas id="matrix"></canvas>
+    <script src="matrix.js"></script>
+
+    <!-- Símbolos de código flutuando por cima do Matrix, atrás do conteúdo -->
+    <div class="floating-icons">
+        <span style="left: 5%;  font-size: 1.8rem; animation-duration: 14s; animation-delay: 0s;">&lt;/&gt;</span>
+        <span style="left: 15%; font-size: 1.2rem; animation-duration: 18s; animation-delay: 2s;">01</span>
+        <span style="left: 25%; font-size: 2.2rem; animation-duration: 12s; animation-delay: 4s;">{ }</span>
+        <span style="left: 35%; font-size: 1.4rem; animation-duration: 20s; animation-delay: 1s;">$</span>
+        <span style="left: 45%; font-size: 1.6rem; animation-duration: 16s; animation-delay: 6s;">10</span>
+        <span style="left: 55%; font-size: 2rem;   animation-duration: 13s; animation-delay: 3s;">&lt;/&gt;</span>
+        <span style="left: 65%; font-size: 1.3rem; animation-duration: 19s; animation-delay: 5s;">( )</span>
+        <span style="left: 75%; font-size: 1.7rem; animation-duration: 15s; animation-delay: 2.5s;">01</span>
+        <span style="left: 85%; font-size: 1.5rem; animation-duration: 17s; animation-delay: 7s;">{ }</span>
+        <span style="left: 92%; font-size: 1.2rem; animation-duration: 21s; animation-delay: 3.5s;">=&gt;</span>
+        <span style="left: 10%; font-size: 1.1rem; animation-duration: 22s; animation-delay: 8s;">#</span>
+        <span style="left: 70%; font-size: 1.1rem; animation-duration: 11s; animation-delay: 5.5s;">&&</span>
+        <span class="rocket" style="animation-duration: 16s; animation-delay: 0s;"><i class="fa-solid fa-rocket"></i></span>
+        <span class="rocket" style="animation-duration: 16s; animation-delay: 8s;"><i class="fa-solid fa-rocket"></i></span>
+    </div>
+
+</body>
+</html>

@@ -37,7 +37,7 @@ Projeto-X/
 
 ├── style.css
 
-├── foto-perfil.jpeg
+├── foto-perfil.jpg
 
 └── README.md
 

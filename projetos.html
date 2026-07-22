@@ -17,8 +17,9 @@
             <a href="sobre.html">Sobre</a>
             <a href="skills.html">Skills</a>
             <a href="#">Projetos</a>
+            <a href="mail-analytics.html">Mail Analytics</a>
         </div>
-        
+
     </nav>
 
     <header class="hero" style="min-height: auto; padding: 40px 20px 10px 20px;">
@@ -51,33 +52,50 @@
             </section>
         </a>
 
-        <!-- CARD 2: PROJETO EM ANDAMENTO -->
-        <div style="width: 100%; max-width: 340px; display: block;">
-            <section class="card" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; height: auto; min-height: 340px; padding: 20px; border: 1px solid #ff0055; border-radius: 12px; background: rgba(0,0,0,0.8); box-shadow: 0 0 10px rgba(255, 0, 85, 0.1);">
+        <!-- CARD 2: MAIL ANALYTICS -->
+        <a href="mail-analytics.html" style="width: 100%; max-width: 340px; text-decoration: none; display: block;">
+            <section class="card" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; height: auto; min-height: 340px; padding: 20px; border: 1px solid #00ff88; border-radius: 12px; background: rgba(0,0,0,0.8);">
                 <div style="width: 100%;">
-                    <div style="font-size: 2.8rem; color: #ff0055; margin-bottom: 10px; animation: terminalBlink 1.5s infinite;">
-                        <i class="fa-solid fa-user-secret"></i>
+                    <div style="font-size: 2.8rem; color: #00ff88; margin-bottom: 10px;">
+                        <i class="fa-solid fa-robot"></i>
                     </div>
-                    <h2 style="color: #ff0055; border-bottom: 1px solid rgba(255, 0, 85, 0.3); padding-bottom: 5px; margin-bottom: 10px;">Project: Unknown</h2>
-                    <p style="color: #aaa; font-style: italic; margin-top: 10px; margin-bottom: 15px; font-size: 0.95rem; line-height: 1.4; font-family: 'Rajdhani', sans-serif;">
-                        [ACESSO RESTRITO] <br>
-                        Desenvolvendo uma inteligência em scripts para otimização, extração de dados e automação de relatórios.
+                    <h2>Mail Analytics</h2>
+                    <p style="color: #ccc; margin-top: 10px; margin-bottom: 15px; font-size: 0.95rem; line-height: 1.4; font-family: 'Rajdhani', sans-serif;">
+                        Automação em Python que gera, todos os dias às 07:00, um relatório de e-mails recebidos, enviados e notas fiscais emitidas.
                     </p>
                 </div>
-                <button class="btn-glitch" disabled style="padding: 8px 16px; font-size: 0.85rem; width: 100%; border-color: #ff0055; color: #ff0055; cursor: not-allowed; opacity: 0.6; border-radius: 4px; background: transparent;">
-                    <span class="btn-text"><i class="fa-solid fa-lock"></i> Executando...</span>
-                </button>
+                <div class="btn-glitch" style="padding: 8px 16px; font-size: 0.85rem; width: 100%; border-radius: 4px;">
+                    <span class="btn-text"><i class="fa-solid fa-eye"></i> Ver Projeto</span>
+                </div>
             </section>
-        </div>
+        </a>
 
     </main>
-    <footer style="margin-top: 40px;">
+    <footer>
         <p>© 2026 João Carlos</p>
         <p>Desenvolvido com HTML, CSS e GitHub Pages</p>
     </footer>
 
     <canvas id="matrix"></canvas>
     <script src="matrix.js"></script>
+
+    <!-- Símbolos de código flutuando por cima do Matrix, atrás do conteúdo -->
+    <div class="floating-icons">
+        <span style="left: 5%;  font-size: 1.8rem; animation-duration: 14s; animation-delay: 0s;">&lt;/&gt;</span>
+        <span style="left: 15%; font-size: 1.2rem; animation-duration: 18s; animation-delay: 2s;">01</span>
+        <span style="left: 25%; font-size: 2.2rem; animation-duration: 12s; animation-delay: 4s;">{ }</span>
+        <span style="left: 35%; font-size: 1.4rem; animation-duration: 20s; animation-delay: 1s;">$</span>
+        <span style="left: 45%; font-size: 1.6rem; animation-duration: 16s; animation-delay: 6s;">10</span>
+        <span style="left: 55%; font-size: 2rem;   animation-duration: 13s; animation-delay: 3s;">&lt;/&gt;</span>
+        <span style="left: 65%; font-size: 1.3rem; animation-duration: 19s; animation-delay: 5s;">( )</span>
+        <span style="left: 75%; font-size: 1.7rem; animation-duration: 15s; animation-delay: 2.5s;">01</span>
+        <span style="left: 85%; font-size: 1.5rem; animation-duration: 17s; animation-delay: 7s;">{ }</span>
+        <span style="left: 92%; font-size: 1.2rem; animation-duration: 21s; animation-delay: 3.5s;">=&gt;</span>
+        <span style="left: 10%; font-size: 1.1rem; animation-duration: 22s; animation-delay: 8s;">#</span>
+        <span style="left: 70%; font-size: 1.1rem; animation-duration: 11s; animation-delay: 5.5s;">&&</span>
+        <span class="rocket" style="animation-duration: 16s; animation-delay: 0s;"><i class="fa-solid fa-rocket"></i></span>
+        <span class="rocket" style="animation-duration: 16s; animation-delay: 8s;"><i class="fa-solid fa-rocket"></i></span>
+    </div>
 
 </body>
 </html>

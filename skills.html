@@ -23,6 +23,7 @@
     <a href="sobre.html">Sobre</a>
     <a href="skills.html">Skills</a>
     <a href="projetos.html">Projetos</a>
+    <a href="mail-analytics.html">Mail Analytics</a>
 </div>
     </nav>
     </nav>
@@ -37,14 +38,58 @@
         </div>
     </header>
 
-   <!-- Mostruário de Skills em Grade Interativa (Clicáveis) -->
-<main style="display: flex; flex-direction: row; justify-content: center; align-items: flex-start; flex-wrap: wrap; gap: 20px; max-width: 1000px; margin: 10px auto 30px auto; padding: 0 20px;">
+    <!-- Estatísticas rápidas -->
+    <div class="stats-row">
+        <div class="stat-box">
+            <span class="stat-number">9</span>
+            <span class="stat-label">Tecnologias</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-number">76%</span>
+            <span class="stat-label">Nível Médio</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-number">1</span>
+            <span class="stat-label">Em Aprendizado</span>
+        </div>
+    </div>
 
-    <!-- CARD HTML5: Link para o seu projeto/repositório de HTML --> 
+    <!-- Terminal decorativo com "scan" das habilidades -->
+    <div class="terminal-window">
+        <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">joao@dev-machine: ~/skills</span>
+        </div>
+        <div class="terminal-body"><span class="comment">// escaneando stack de desenvolvimento...</span>
+<span class="cmd">user@joao-carlos:~$</span> ls skills/
+HTML5  CSS3  Git  GitHub  JavaScript  Excel  Apps-Script  APIs  Dashboards
+
+<span class="cmd">user@joao-carlos:~$</span> ./status --all
+[<span class="ok">OK</span>] HTML5        ██████████ 90%
+[<span class="ok">OK</span>] CSS3         █████████░ 85%
+[<span class="ok">OK</span>] Git/GitHub   █████████░ 85%
+[<span class="warn">..</span>] JavaScript   ████░░░░░░ 40%  <span class="comment">// em andamento</span>
+[<span class="ok">OK</span>] Excel        █████████░ 85%
+[<span class="ok">OK</span>] Apps Script  ████████░░ 75%
+[<span class="ok">OK</span>] APIs         ███████░░░ 70%
+[<span class="ok">OK</span>] Dashboards   ████████░░ 80%
+
+<span class="cmd">user@joao-carlos:~$</span> <span class="terminal-cursor">▊</span></div>
+    </div>
+
+   <!-- Mostruário de Skills em Grade Interativa (Clicáveis) -->
+<h2 class="section-title">Front-End &amp; <span>Versionamento</span></h2>
+<main style="display: flex; flex-direction: row; justify-content: center; align-items: flex-start; flex-wrap: wrap; gap: 20px; max-width: 1100px; margin: 10px auto 30px auto; padding: 0 20px;">
+
+    <!-- CARD HTML5: Link para o seu projeto/repositório de HTML -->
     <a href="https://github.com/Kaereze/Projeto-X/blob/main/index.html" target="_blank" class="card-link">
         <section class="card" style="text-align: center; min-height: auto;">
             <i class="fa-brands fa-html5" style="font-size: 3rem; color: #e34c26; margin-bottom: 15px;"></i>
             <h2>HTML5</h2>
+            <div class="skill-level"><div class="skill-level-fill" style="width: 90%;"></div></div>
+            <span class="skill-percent">90%</span>
         </section>
     </a>
 
@@ -53,7 +98,18 @@
         <section class="card" style="text-align: center; min-height: auto;">
             <i class="fa-brands fa-css3-alt" style="font-size: 3rem; color: #264de4; margin-bottom: 15px;"></i>
             <h2>CSS3</h2>
+            <div class="skill-level"><div class="skill-level-fill" style="width: 85%;"></div></div>
+            <span class="skill-percent">85%</span>
+        </section>
+    </a>
 
+    <!-- CARD GIT: Link para a documentação oficial -->
+    <a href="https://git-scm.com/" target="_blank" class="card-link">
+        <section class="card" style="text-align: center; min-height: auto;">
+            <i class="fa-brands fa-git-alt" style="font-size: 3rem; color: #f05033; margin-bottom: 15px;"></i>
+            <h2>Git</h2>
+            <div class="skill-level"><div class="skill-level-fill" style="width: 80%;"></div></div>
+            <span class="skill-percent">80%</span>
         </section>
     </a>
 
@@ -62,10 +118,65 @@
         <section class="card" style="text-align: center; min-height: auto;">
             <i class="fa-brands fa-github" style="font-size: 3rem; color: #fff; margin-bottom: 15px;"></i>
             <h2>GitHub</h2>
-            
+            <div class="skill-level"><div class="skill-level-fill" style="width: 85%;"></div></div>
+            <span class="skill-percent">85%</span>
+        </section>
+    </a>
+
+    <!-- CARD JAVASCRIPT: Ainda em aprendizado -->
+    <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" target="_blank" class="card-link">
+        <section class="card" style="text-align: center; min-height: auto;">
+            <i class="fa-brands fa-js" style="font-size: 3rem; color: #f7df1e; margin-bottom: 15px;"></i>
+            <h2>JavaScript</h2>
+            <div class="skill-level"><div class="skill-level-fill" style="width: 40%;"></div></div>
+            <span class="skill-percent">40% · em andamento</span>
         </section>
     </a>
     </main>
+
+<h2 class="section-title">Dados &amp; <span>Automação</span></h2>
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: flex-start; flex-wrap: wrap; gap: 20px; max-width: 1100px; margin: 10px auto 30px auto; padding: 0 20px;">
+
+    <!-- CARD EXCEL: Planilhas, fórmulas e automações -->
+    <a href="https://support.microsoft.com/pt-br/excel" target="_blank" class="card-link">
+        <section class="card" style="text-align: center; min-height: auto;">
+            <i class="fa-solid fa-file-excel" style="font-size: 3rem; color: #1d6f42; margin-bottom: 15px;"></i>
+            <h2>Excel</h2>
+            <div class="skill-level"><div class="skill-level-fill" style="width: 85%;"></div></div>
+            <span class="skill-percent">85%</span>
+        </section>
+    </a>
+
+    <!-- CARD GOOGLE APPS SCRIPT: Automação de planilhas do Sheets -->
+    <a href="https://developers.google.com/apps-script" target="_blank" class="card-link">
+        <section class="card" style="text-align: center; min-height: auto;">
+            <i class="fa-solid fa-table-cells" style="font-size: 3rem; color: #0f9d58; margin-bottom: 15px;"></i>
+            <h2>Apps Script</h2>
+            <div class="skill-level"><div class="skill-level-fill" style="width: 75%;"></div></div>
+            <span class="skill-percent">75%</span>
+        </section>
+    </a>
+
+    <!-- CARD APIS: Integração e consumo de dados externos -->
+    <a href="https://developer.mozilla.org/pt-BR/docs/Web/API" target="_blank" class="card-link">
+        <section class="card" style="text-align: center; min-height: auto;">
+            <i class="fa-solid fa-plug" style="font-size: 3rem; color: #00b4d8; margin-bottom: 15px;"></i>
+            <h2>Integração de APIs</h2>
+            <div class="skill-level"><div class="skill-level-fill" style="width: 70%;"></div></div>
+            <span class="skill-percent">70%</span>
+        </section>
+    </a>
+
+    <!-- CARD DASHBOARDS: Automação de dados e geração de gráficos/informativos -->
+    <a href="mail-analytics.html" class="card-link">
+        <section class="card" style="text-align: center; min-height: auto;">
+            <i class="fa-solid fa-chart-pie" style="font-size: 3rem; color: #ffbd2e; margin-bottom: 15px;"></i>
+            <h2>Dashboards &amp; Automação</h2>
+            <div class="skill-level"><div class="skill-level-fill" style="width: 80%;"></div></div>
+            <span class="skill-percent">80%</span>
+        </section>
+    </a>
+    </div>
 
     <footer>
         <p>© 2026 João Carlos</p>
@@ -75,6 +186,24 @@
     <!-- Fundo Matrix de fundo -->
     <canvas id="matrix"></canvas>
     <script src="matrix.js"></script>
+
+    <!-- Símbolos de código flutuando por cima do Matrix, atrás do conteúdo -->
+    <div class="floating-icons">
+        <span style="left: 5%;  font-size: 1.8rem; animation-duration: 14s; animation-delay: 0s;">&lt;/&gt;</span>
+        <span style="left: 15%; font-size: 1.2rem; animation-duration: 18s; animation-delay: 2s;">01</span>
+        <span style="left: 25%; font-size: 2.2rem; animation-duration: 12s; animation-delay: 4s;">{ }</span>
+        <span style="left: 35%; font-size: 1.4rem; animation-duration: 20s; animation-delay: 1s;">$</span>
+        <span style="left: 45%; font-size: 1.6rem; animation-duration: 16s; animation-delay: 6s;">10</span>
+        <span style="left: 55%; font-size: 2rem;   animation-duration: 13s; animation-delay: 3s;">&lt;/&gt;</span>
+        <span style="left: 65%; font-size: 1.3rem; animation-duration: 19s; animation-delay: 5s;">( )</span>
+        <span style="left: 75%; font-size: 1.7rem; animation-duration: 15s; animation-delay: 2.5s;">01</span>
+        <span style="left: 85%; font-size: 1.5rem; animation-duration: 17s; animation-delay: 7s;">{ }</span>
+        <span style="left: 92%; font-size: 1.2rem; animation-duration: 21s; animation-delay: 3.5s;">=&gt;</span>
+        <span style="left: 10%; font-size: 1.1rem; animation-duration: 22s; animation-delay: 8s;">#</span>
+        <span style="left: 70%; font-size: 1.1rem; animation-duration: 11s; animation-delay: 5.5s;">&&</span>
+        <span class="rocket" style="animation-duration: 16s; animation-delay: 0s;"><i class="fa-solid fa-rocket"></i></span>
+        <span class="rocket" style="animation-duration: 16s; animation-delay: 8s;"><i class="fa-solid fa-rocket"></i></span>
+    </div>
 
 </body>
 </html>

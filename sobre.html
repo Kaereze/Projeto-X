@@ -23,62 +23,91 @@
     <a href="sobre.html">Sobre</a>
     <a href="skills.html">Skills</a>
     <a href="projetos.html">Projetos</a>
+    <a href="mail-analytics.html">Mail Analytics</a>
 </div>
     </nav>
     </nav>
 
     <!-- Cabeçalho da Página Sobre -->
-    <header class="hero" style="min-height: auto; padding: 40px 20px 10px 20px;">
-        <div class="hero-content" style="gap: 40px;">
-            <div class="avatar-wrapper">
-                <img src="foto-perfil.jpeg" alt="João Carlos" class="perfil" style="width: 160px; height: 160px;">
-            </div>
-            <div class="hero-right">
-                <span class="badge"><i class="fa-solid fa-user"></i> PERFIL DO DESENVOLVEDOR</span>
-                <h1>Sobre Mim</h1>
+    <header class="hero" style="min-height: auto; padding: 40px 20px 0 20px;">
+        <div class="hero-content">
+            <div class="hero-right" style="align-items: center; text-align: center; width: 100%;">
+                <span class="badge"><i class="fa-solid fa-folder-open"></i> PORTFÓLIO</span>
             </div>
         </div>
     </header>
 
-    <!-- Conteúdo Principal organizado em Grid -->
-    <main style="display: flex; flex-direction: row; justify-content: center; align-items: flex-start; flex-wrap: wrap; gap: 20px; max-width: 1000px; margin: 10px auto 30px auto; padding: 0 20px;">
-        <section class="card">
-            <h2>Quem sou eu</h2>
-            <p>
-                Sou um entusiasta da tecnologia, apaixonado por criar experiências digitais incríveis. 
-                Atualmente, estou focado em aprender HTML, CSS, Git e GitHub para construir meu portfólio e me preparar para o mercado de trabalho.
-            </p>
-        </section>
+    <!-- Card único com o perfil completo -->
+    <main class="about-card">
 
-        <section class="card">
-            <h2>Minha Jornada</h2>
-            <ul>
-                <li>🚀 2025 — Iniciei meus estudos em HTML</li>
-                <li>🎨 2025 — Aprendi CSS</li>
-                <li>💼 2025 — Desenvolvi meu primeiro portfólio</li>
-                <li>🔧 2025 — Aprendi Git e GitHub</li>
-            </ul>
-        </section>
+        <div class="about-card-left">
+            <h1 style="font-size: 2.6rem; margin-bottom: 6px;">Sobre Mim</h1>
+            <span class="about-subtitle">Front-End em Formação · Curioso · Aprendiz Contínuo</span>
 
-        <section class="card">
-            <h2>Certificações</h2>
-            <ul>
-                <li>✅ HTML5</li>
-                <li>✅ CSS3</li>
-                <li>✅ Git e GitHub</li>
-                <li>📚 JavaScript (em andamento)</li>
-            </ul>
-        </section>
+            <p>Olá! Sou o João Carlos — minha jornada em programação começou com curiosidade e muita vontade de criar coisas que funcionam de verdade.</p>
+            <p>Comecei estudando HTML, CSS e Git, e sigo evoluindo todos os dias, sempre testando novas ideias.</p>
+            <p>Acredito que tecnologia bem feita resolve problemas reais — este portfólio é prova disso: construído do zero, peça por peça.</p>
 
-        <section class="card">
-            <h2>Objetivos</h2>
-            <ul>
-                <li>🎯 Aprender JavaScript avançado</li>
-                <li>💻 Desenvolver projetos completos</li>
-                <li>🚀 Conseguir minha primeira vaga Front-End</li>
-                <li>📈 Evoluir continuamente como desenvolvedor</li>
-            </ul>
-        </section>
+            <div class="mini-stats">
+                <div class="mini-stat">
+                    <i class="fa-solid fa-terminal"></i>
+                    <span class="mini-stat-label">Início na Programação</span>
+                    <span class="mini-stat-value">2025</span>
+                </div>
+                <div class="mini-stat">
+                    <i class="fa-solid fa-code"></i>
+                    <span class="mini-stat-label">Tecnologias Estudadas</span>
+                    <span class="mini-stat-value">9</span>
+                </div>
+                <div class="mini-stat">
+                    <i class="fa-solid fa-rocket"></i>
+                    <span class="mini-stat-label">Projetos em Construção</span>
+                    <span class="mini-stat-value">2</span>
+                </div>
+            </div>
+
+            <button class="btn-glitch" disabled style="cursor: not-allowed; opacity: 0.6;">
+                <span class="btn-text"><i class="fa-solid fa-file-arrow-down"></i> Currículo em Breve</span>
+            </button>
+        </div>
+
+        <div class="about-card-right">
+            <div class="photo-frame">
+                <img src="foto-perfil.jpg" alt="João Carlos">
+            </div>
+
+            <div class="contact-list">
+                <div class="contact-item">
+                    <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
+                    <span>
+                        <span class="contact-label">E-mail</span>
+                        <a class="contact-value" href="mailto:joaocarlossilvazeroum@gmail.com">joaocarlossilvazeroum@gmail.com</a>
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon"><i class="fa-brands fa-github"></i></span>
+                    <span>
+                        <span class="contact-label">GitHub</span>
+                        <a class="contact-value" href="https://github.com/Kaereze" target="_blank">github.com/Kaereze</a>
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon"><i class="fa-brands fa-whatsapp"></i></span>
+                    <span>
+                        <span class="contact-label">WhatsApp</span>
+                        <a class="contact-value" href="https://wa.me/5548991329291" target="_blank">Chamar no WhatsApp</a>
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
+                    <span>
+                        <span class="contact-label">Localização</span>
+                        <span class="contact-value">Brasil</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <footer>
@@ -89,6 +118,24 @@
     <!-- Fundo Matrix de fundo -->
     <canvas id="matrix"></canvas>
     <script src="matrix.js"></script>
+
+    <!-- Símbolos de código flutuando por cima do Matrix, atrás do conteúdo -->
+    <div class="floating-icons">
+        <span style="left: 5%;  font-size: 1.8rem; animation-duration: 14s; animation-delay: 0s;">&lt;/&gt;</span>
+        <span style="left: 15%; font-size: 1.2rem; animation-duration: 18s; animation-delay: 2s;">01</span>
+        <span style="left: 25%; font-size: 2.2rem; animation-duration: 12s; animation-delay: 4s;">{ }</span>
+        <span style="left: 35%; font-size: 1.4rem; animation-duration: 20s; animation-delay: 1s;">$</span>
+        <span style="left: 45%; font-size: 1.6rem; animation-duration: 16s; animation-delay: 6s;">10</span>
+        <span style="left: 55%; font-size: 2rem;   animation-duration: 13s; animation-delay: 3s;">&lt;/&gt;</span>
+        <span style="left: 65%; font-size: 1.3rem; animation-duration: 19s; animation-delay: 5s;">( )</span>
+        <span style="left: 75%; font-size: 1.7rem; animation-duration: 15s; animation-delay: 2.5s;">01</span>
+        <span style="left: 85%; font-size: 1.5rem; animation-duration: 17s; animation-delay: 7s;">{ }</span>
+        <span style="left: 92%; font-size: 1.2rem; animation-duration: 21s; animation-delay: 3.5s;">=&gt;</span>
+        <span style="left: 10%; font-size: 1.1rem; animation-duration: 22s; animation-delay: 8s;">#</span>
+        <span style="left: 70%; font-size: 1.1rem; animation-duration: 11s; animation-delay: 5.5s;">&&</span>
+        <span class="rocket" style="animation-duration: 16s; animation-delay: 0s;"><i class="fa-solid fa-rocket"></i></span>
+        <span class="rocket" style="animation-duration: 16s; animation-delay: 8s;"><i class="fa-solid fa-rocket"></i></span>
+    </div>
 
 </body>
 </html>
