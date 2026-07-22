@@ -1388,18 +1388,31 @@ footer {
 }
 
 .ma-brain-wrap--side {
-    width: clamp(3.2rem, 9vw, 9rem);
+    width: clamp(3rem, 8vw, 8rem);
     aspect-ratio: 1 / 1;
 }
 
 .ma-brain-wrap--center {
-    width: clamp(240px, 42vw, 680px);
+    width: clamp(220px, 38vw, 610px);
     aspect-ratio: 1 / 1;
     min-width: 0;
+    overflow: hidden;
 }
 
-.ma-brain-wrap--mirror {
-    transform: scaleX(-1);
+.ma-brain-crop {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Corta a margem vazia + marca d'água da imagem sem usar transform
+   (transform no ancestral quebraria o mix-blend-mode da imagem). */
+.ma-brain-crop .ma-brain-img {
+    position: absolute;
+    top: -3%;
+    left: -3%;
+    width: 106%;
+    height: 110%;
 }
 
 .ma-brain-img {
@@ -1408,20 +1421,29 @@ footer {
     height: 100%;
     object-fit: contain;
     animation: brainPulse 4s ease-in-out infinite;
-    filter: drop-shadow(0 0 18px rgba(0, 255, 65, 0.45));
+    mix-blend-mode: screen;
 }
 
 .ma-brain-wrap--center .ma-brain-img {
     animation-delay: 1s;
 }
 
+/* O espelhamento fica dentro da própria animação da imagem (não no elemento pai)
+   porque um transform no ancestral cria um novo contexto de empilhamento e
+   quebra o mix-blend-mode, deixando o fundo preto da imagem visível de novo. */
 .ma-brain-wrap--mirror .ma-brain-img {
+    animation: brainPulseMirror 4s ease-in-out infinite;
     animation-delay: 2s;
 }
 
 @keyframes brainPulse {
     0%, 100% { transform: scale(1); opacity: 0.9; }
     50% { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes brainPulseMirror {
+    0%, 100% { transform: scaleX(-1) scale(1); opacity: 0.9; }
+    50% { transform: scaleX(-1) scale(1.05); opacity: 1; }
 }
 
 @media (max-width: 700px) {
@@ -1437,10 +1459,10 @@ footer {
     align-items: stretch;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
-    max-width: 1150px;
-    margin: 20px auto 40px auto;
-    padding: 0 20px;
+    gap: 14px;
+    max-width: 1700px;
+    margin: 20px auto 50px auto;
+    padding: 0 30px;
 }
 
 .roadmap-step {
@@ -1535,14 +1557,14 @@ footer {
 .dash-grid {
     display: grid;
     grid-template-columns: 1fr 1.25fr;
-    gap: 25px;
-    max-width: 1250px;
-    margin: 0 auto 40px auto;
-    padding: 0 20px;
+    gap: 30px;
+    max-width: 1700px;
+    margin: 0 auto 55px auto;
+    padding: 0 30px;
     align-items: start;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1150px) {
     .dash-grid { grid-template-columns: 1fr; }
 }
 
@@ -1596,11 +1618,53 @@ footer {
     background: rgba(0, 255, 65, 0.04);
 }
 
-.ai-agent-brain {
-    font-size: 2.6rem;
-    color: var(--primary);
-    text-shadow: 0 0 15px rgba(0, 255, 65, 0.6);
-    margin-bottom: 8px;
+.ai-agent-brain-wrap {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 8px auto;
+}
+
+.ai-agent-brain-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    mix-blend-mode: screen;
+    animation: hologramFlicker 3.2s ease-in-out infinite;
+}
+
+/* Linhas de scan por cima, tipo holograma */
+.ai-agent-brain-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 65, 0.18) 0px,
+        rgba(0, 255, 65, 0.18) 1px,
+        transparent 2px,
+        transparent 4px
+    );
+    mix-blend-mode: overlay;
+    animation: scanlineMove 2.2s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes hologramFlicker {
+    0%, 100% { opacity: 1; }
+    4% { opacity: 0.65; }
+    8% { opacity: 1; }
+    13% { opacity: 0.8; }
+    50% { opacity: 1; }
+    53% { opacity: 0.55; }
+    56% { opacity: 1; }
+    78% { opacity: 0.85; }
+}
+
+@keyframes scanlineMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 20px; }
 }
 
 .ai-agent-box strong {
@@ -1683,6 +1747,58 @@ footer {
     from { width: 0; }
 }
 
+/* Gráfico de barras verticais (aba Relatórios) */
+.agent-bar-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 16px;
+    height: 150px;
+    padding-top: 26px;
+}
+
+.agent-bar-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    flex: 1;
+    height: 100%;
+}
+
+.agent-bar {
+    position: relative;
+    width: 100%;
+    max-width: 48px;
+    height: var(--h, 0%);
+    background: linear-gradient(180deg, #00e5ff, var(--primary));
+    border-radius: 6px 6px 0 0;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+    animation: barGrowV 1s ease both;
+}
+
+@keyframes barGrowV {
+    from { height: 0; }
+}
+
+.agent-bar-value {
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.agent-bar-label {
+    font-size: 0.72rem;
+    color: #aaa;
+    text-align: center;
+}
+
 .cause-bar em {
     font-style: normal;
     color: var(--primary);
@@ -1718,6 +1834,65 @@ footer {
 .mini-table {
     margin-top: 20px;
     overflow-x: auto;
+}
+
+.mini-table--scroll {
+    max-height: 460px;
+    overflow-y: scroll;
+    /* Esconde a barra nativa por completo — usamos uma barra falsa
+       (.custom-scrollbar-track/.thumb) que não depende de nenhum
+       suporte do navegador/SO pra estilizar scrollbar. */
+    scrollbar-width: none;
+}
+
+.mini-table--scroll::-webkit-scrollbar {
+    display: none;
+    width: 0;
+}
+
+.mini-table--scroll thead th {
+    position: sticky;
+    top: 0;
+    background: #0a0a0a;
+    z-index: 1;
+}
+
+/* Wrapper que posiciona a barra falsa ao lado da área com scroll */
+.custom-scroll-wrap {
+    position: relative;
+    padding-right: 16px;
+}
+
+.custom-scrollbar-track {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 460px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.custom-scrollbar-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(180deg, var(--primary), #00e5ff);
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 255, 65, 0.7);
+    animation: scrollbarPulse 2s ease-in-out infinite;
+    cursor: grab;
+}
+
+.custom-scrollbar-thumb:active {
+    cursor: grabbing;
+}
+
+@keyframes scrollbarPulse {
+    0%, 100% { box-shadow: 0 0 5px rgba(0, 255, 65, 0.5); }
+    50% { box-shadow: 0 0 14px rgba(0, 255, 65, 1); }
 }
 
 .mini-table table {
@@ -2006,6 +2181,7 @@ footer {
 .dot--a { background: var(--primary); box-shadow: 0 0 6px var(--primary); }
 .dot--b { background: #00e5ff; box-shadow: 0 0 6px #00e5ff; }
 .dot--c { background: #ffbd2e; box-shadow: 0 0 6px #ffbd2e; }
+.dot--d { background: #a78bfa; box-shadow: 0 0 6px #a78bfa; }
 
 .donut-wrap {
     position: relative;
@@ -2098,26 +2274,6 @@ footer {
     align-items: center;
 }
 
-.heatmap {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 4px;
-}
-
-.heatmap span {
-    aspect-ratio: 1;
-    border-radius: 3px;
-    background: var(--primary);
-    opacity: var(--lvl, 0.15);
-    box-shadow: 0 0 6px rgba(0, 255, 65, 0.4);
-    animation: heatIn 0.5s ease both;
-}
-
-@keyframes heatIn {
-    from { opacity: 0; transform: scale(0.5); }
-    to { opacity: var(--lvl, 0.15); transform: scale(1); }
-}
-
 .agenda-list {
     list-style: none;
     display: flex;
@@ -2157,7 +2313,7 @@ footer {
 
 /* Faixa final de destaque */
 .ma-tagline-bar {
-    max-width: 1150px;
+    max-width: 1700px;
     margin: 10px auto 40px auto;
     padding: 18px 20px;
     text-align: center;
@@ -2230,13 +2386,27 @@ footer {
 }
 
 .section-title {
+    position: relative;
     text-align: center;
     font-family: 'Orbitron', sans-serif;
     color: #fff;
-    margin: 45px auto 5px auto;
+    margin: 60px auto 5px auto;
+    padding-top: 30px;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 1.4rem;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.6);
 }
 
 .section-title span {

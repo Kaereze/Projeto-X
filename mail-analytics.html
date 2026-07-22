@@ -14,7 +14,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=7">
+    <link rel="stylesheet" href="style.css?v=17">
 </head>
 <body>
 
@@ -31,7 +31,7 @@
 
     <!-- Cabeçalho do Projeto -->
     <header class="hero" style="min-height: auto; padding: 40px 20px 10px 20px;">
-        <div class="hero-content" style="max-width: 1300px; flex-direction: column; gap: 20px;">
+        <div class="hero-content" style="max-width: 1700px; flex-direction: column; gap: 20px;">
 
             <h1 class="sr-only">Mail Analytics</h1>
 
@@ -40,7 +40,9 @@
                     <img class="ma-brain-img" src="cerebro.png" alt="">
                 </div>
                 <div class="ma-brain-wrap ma-brain-wrap--center">
-                    <img class="ma-brain-img" src="cerebro analítico.png" alt="Diagrama do Mail Analytics: e-mails do Outlook processados por IA e organizados em planilhas, gerando insights">
+                    <div class="ma-brain-crop">
+                        <img class="ma-brain-img" src="cerebro analítico.png" alt="Diagrama do Mail Analytics: e-mails do Outlook processados por IA e organizados em planilhas, gerando insights">
+                    </div>
                 </div>
                 <div class="ma-brain-wrap ma-brain-wrap--side ma-brain-wrap--mirror" aria-hidden="true">
                     <img class="ma-brain-img" src="cerebro.png" alt="">
@@ -152,7 +154,9 @@
 
             <div class="ai-agent-grid">
                 <div class="ai-agent-box">
-                    <i class="fa-solid fa-brain ai-agent-brain"></i>
+                    <div class="ai-agent-brain-wrap">
+                        <img class="ai-agent-brain-img" src="cerebro.png" alt="">
+                    </div>
                     <strong>Agente IA</strong>
                     <span>Análise Inteligente de E-mails</span>
                     <div class="ai-agent-mini-stats">
@@ -345,10 +349,10 @@
                         <div class="chart-card">
                             <h4>Agenda da Semana <span class="tag-example">exemplo</span></h4>
                             <ul class="agenda-list">
-                                <li><span class="agenda-day">SEG</span><span class="agenda-task"><strong>Agente 1</strong> — Revisão de notas fiscais</span></li>
-                                <li><span class="agenda-day">TER</span><span class="agenda-task"><strong>Agente 2</strong> — Conferência de hotéis</span></li>
-                                <li><span class="agenda-day">QUA</span><span class="agenda-task"><strong>Agente 3</strong> — Verificação de e-mails pendentes</span></li>
-                                <li><span class="agenda-day">QUI</span><span class="agenda-task"><strong>Agente 4</strong> — Conferência de hotéis</span></li>
+                                <li><span class="agenda-day">SEG</span><span class="agenda-task"><strong>João</strong> — Revisão de notas fiscais</span></li>
+                                <li><span class="agenda-day">TER</span><span class="agenda-task"><strong>Cristian</strong> — Conferência de hotéis</span></li>
+                                <li><span class="agenda-day">QUA</span><span class="agenda-task"><strong>Clara</strong> — Verificação de e-mails pendentes</span></li>
+                                <li><span class="agenda-day">QUI</span><span class="agenda-task"><strong>Bernardo</strong> — Conferência de hotéis</span></li>
                                 <li><span class="agenda-day">SEX</span><span class="agenda-task"><strong>Todos</strong> — Fechamento e envio do relatório semanal</span></li>
                             </ul>
                         </div>
@@ -369,25 +373,25 @@
                                 <tbody>
                                     <tr>
                                         <td>22/07</td>
-                                        <td>Agente 1</td>
+                                        <td>João</td>
                                         <td>17</td>
                                         <td class="tag-pos">Enviado</td>
                                     </tr>
                                     <tr>
                                         <td>22/07</td>
-                                        <td>Agente 2</td>
+                                        <td>Cristian</td>
                                         <td>17</td>
                                         <td class="tag-pos">Enviado</td>
                                     </tr>
                                     <tr>
                                         <td>22/07</td>
-                                        <td>Agente 3</td>
+                                        <td>Clara</td>
                                         <td>17</td>
                                         <td class="tag-neu">Pendente</td>
                                     </tr>
                                     <tr>
                                         <td>22/07</td>
-                                        <td>Agente 4</td>
+                                        <td>Bernardo</td>
                                         <td>17</td>
                                         <td class="tag-pos">Enviado</td>
                                     </tr>
@@ -509,25 +513,25 @@
                     <div class="agent-grid">
                         <div class="agent-card">
                             <div class="agent-avatar"><i class="fa-solid fa-user"></i></div>
-                            <h4>Agente 1</h4>
+                            <h4>João</h4>
                             <span class="agent-meta">17 hotéis</span>
                             <span class="dash-stat-trend dash-stat-trend--up">● Ativo</span>
                         </div>
                         <div class="agent-card">
                             <div class="agent-avatar"><i class="fa-solid fa-user"></i></div>
-                            <h4>Agente 2</h4>
+                            <h4>Cristian</h4>
                             <span class="agent-meta">17 hotéis</span>
                             <span class="dash-stat-trend dash-stat-trend--up">● Ativo</span>
                         </div>
                         <div class="agent-card">
                             <div class="agent-avatar"><i class="fa-solid fa-user"></i></div>
-                            <h4>Agente 3</h4>
+                            <h4>Clara</h4>
                             <span class="agent-meta">17 hotéis</span>
                             <span class="dash-stat-trend dash-stat-trend--up">● Ativo</span>
                         </div>
                         <div class="agent-card">
                             <div class="agent-avatar"><i class="fa-solid fa-user"></i></div>
-                            <h4>Agente 4</h4>
+                            <h4>Bernardo</h4>
                             <span class="agent-meta">17 hotéis</span>
                             <span class="dash-stat-trend dash-stat-trend--up">● Ativo</span>
                         </div>
@@ -535,26 +539,133 @@
                 </div>
 
                 <div class="dash-tab-panel" data-panel="hoteis">
+                    <div class="dash-stats-row" style="grid-template-columns: repeat(3, 1fr);">
+                        <div class="dash-stat-card">
+                            <span class="dash-stat-label">Total de Hotéis</span>
+                            <span class="dash-stat-value">68</span>
+                        </div>
+                        <div class="dash-stat-card">
+                            <span class="dash-stat-label">Agentes</span>
+                            <span class="dash-stat-value">4</span>
+                        </div>
+                        <div class="dash-stat-card">
+                            <span class="dash-stat-label">Média por Agente</span>
+                            <span class="dash-stat-value">17</span>
+                        </div>
+                    </div>
+
+                    <div class="chart-card" style="margin-bottom: 16px;">
+                        <h4>Distribuição de Hotéis por Agente</h4>
+                        <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+                            <div class="donut-wrap">
+                                <svg viewBox="0 0 120 120" class="donut-chart">
+                                    <circle class="donut-bg" cx="60" cy="60" r="50"></circle>
+                                    <circle class="donut-seg" cx="60" cy="60" r="50"
+                                            style="stroke: var(--primary); stroke-dasharray: 78.54 235.62; stroke-dashoffset: 0;"></circle>
+                                    <circle class="donut-seg" cx="60" cy="60" r="50"
+                                            style="stroke: #00e5ff; stroke-dasharray: 78.54 235.62; stroke-dashoffset: -78.54;"></circle>
+                                    <circle class="donut-seg" cx="60" cy="60" r="50"
+                                            style="stroke: #ffbd2e; stroke-dasharray: 78.54 235.62; stroke-dashoffset: -157.08;"></circle>
+                                    <circle class="donut-seg" cx="60" cy="60" r="50"
+                                            style="stroke: #a78bfa; stroke-dasharray: 78.54 235.62; stroke-dashoffset: -235.62;"></circle>
+                                </svg>
+                                <div class="donut-center"><strong>68</strong><span>hotéis</span></div>
+                            </div>
+                            <ul class="chart-legend-list">
+                                <li><span class="dot dot--a"></span> João <b>17</b></li>
+                                <li><span class="dot dot--b"></span> Cristian <b>17</b></li>
+                                <li><span class="dot dot--c"></span> Clara <b>17</b></li>
+                                <li><span class="dot dot--d"></span> Bernardo <b>17</b></li>
+                            </ul>
+                        </div>
+                    </div>
+
                     <div class="mini-table">
                         <h4 style="font-family:'Orbitron',sans-serif; font-size:0.78rem; color:#fff; margin-bottom:10px;">
-                            Hotéis por Agente <span class="tag-example">nomes de exemplo — 68 hotéis ao todo, 17 por agente</span>
+                            Hotéis por Agente <span class="tag-example">68 hotéis, 17 por agente</span>
                         </h4>
+                        <div class="custom-scroll-wrap">
+                        <div class="mini-table--scroll" id="hoteis-scroll-content">
                         <table>
                             <thead>
-                                <tr><th>Hotel</th><th>Cidade</th><th>Agente Responsável</th></tr>
+                                <tr><th>Hotel</th><th>Agente Responsável</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>Hotel Exemplo 1</td><td>Florianópolis/SC</td><td>Agente 1</td></tr>
-                                <tr><td>Hotel Exemplo 2</td><td>Balneário Camboriú/SC</td><td>Agente 1</td></tr>
-                                <tr><td>Hotel Exemplo 3</td><td>Gramado/RS</td><td>Agente 2</td></tr>
-                                <tr><td>Hotel Exemplo 4</td><td>Canela/RS</td><td>Agente 2</td></tr>
-                                <tr><td>Hotel Exemplo 5</td><td>Curitiba/PR</td><td>Agente 3</td></tr>
-                                <tr><td>Hotel Exemplo 6</td><td>Foz do Iguaçu/PR</td><td>Agente 3</td></tr>
-                                <tr><td>Hotel Exemplo 7</td><td>Porto Alegre/RS</td><td>Agente 4</td></tr>
-                                <tr><td>Hotel Exemplo 8</td><td>Blumenau/SC</td><td>Agente 4</td></tr>
+                                <tr><td>Cecomtur</td><td>João</td></tr>
+                                <tr><td>Estrela Centro</td><td>João</td></tr>
+                                <tr><td>Bahia</td><td>João</td></tr>
+                                <tr><td>Biton</td><td>João</td></tr>
+                                <tr><td>Boa Viagem</td><td>João</td></tr>
+                                <tr><td>Casa Blanca</td><td>João</td></tr>
+                                <tr><td>Coimbra</td><td>João</td></tr>
+                                <tr><td>Comfort</td><td>João</td></tr>
+                                <tr><td>Jangadeiro</td><td>João</td></tr>
+                                <tr><td>Jeri</td><td>João</td></tr>
+                                <tr><td>Luxor</td><td>João</td></tr>
+                                <tr><td>Ondina</td><td>João</td></tr>
+                                <tr><td>Rondonópolis</td><td>João</td></tr>
+                                <tr><td>São Francisco</td><td>João</td></tr>
+                                <tr><td>Terra Brasil</td><td>João</td></tr>
+                                <tr><td>Vela Branca</td><td>João</td></tr>
+                                <tr><td>Vila Jeri</td><td>João</td></tr>
+                                <tr><td>Amazonia</td><td>Cristian</td></tr>
+                                <tr><td>Aquarius</td><td>Cristian</td></tr>
+                                <tr><td>Barra</td><td>Cristian</td></tr>
+                                <tr><td>Goiânia Centro</td><td>Cristian</td></tr>
+                                <tr><td>Hangar</td><td>Cristian</td></tr>
+                                <tr><td>Lapa</td><td>Cristian</td></tr>
+                                <tr><td>Mercado</td><td>Cristian</td></tr>
+                                <tr><td>Pampulha</td><td>Cristian</td></tr>
+                                <tr><td>Porto Center</td><td>Cristian</td></tr>
+                                <tr><td>Porto Praia</td><td>Cristian</td></tr>
+                                <tr><td>Real</td><td>Cristian</td></tr>
+                                <tr><td>Riviera</td><td>Cristian</td></tr>
+                                <tr><td>Novo Vernon</td><td>Cristian</td></tr>
+                                <tr><td>Porto Mar</td><td>Cristian</td></tr>
+                                <tr><td>Dunas Hotel</td><td>Cristian</td></tr>
+                                <tr><td>Criciúma</td><td>Cristian</td></tr>
+                                <tr><td>Royal Criciúma</td><td>Cristian</td></tr>
+                                <tr><td>Aracaju</td><td>Clara</td></tr>
+                                <tr><td>Braz</td><td>Clara</td></tr>
+                                <tr><td>Canada</td><td>Clara</td></tr>
+                                <tr><td>Docas</td><td>Clara</td></tr>
+                                <tr><td>Estrela Dalva Praia</td><td>Clara</td></tr>
+                                <tr><td>L Ginn</td><td>Clara</td></tr>
+                                <tr><td>Mirante Foz</td><td>Clara</td></tr>
+                                <tr><td>Plaza Recife</td><td>Clara</td></tr>
+                                <tr><td>Plaza Salvador</td><td>Clara</td></tr>
+                                <tr><td>Porto Seguro</td><td>Clara</td></tr>
+                                <tr><td>San Martin</td><td>Clara</td></tr>
+                                <tr><td>SLZ</td><td>Clara</td></tr>
+                                <tr><td>Solmar</td><td>Clara</td></tr>
+                                <tr><td>Center Premium</td><td>Clara</td></tr>
+                                <tr><td>Itabuna</td><td>Clara</td></tr>
+                                <tr><td>Pousada do Norte</td><td>Clara</td></tr>
+                                <tr><td>Mini Hotel</td><td>Clara</td></tr>
+                                <tr><td>Barravento</td><td>Bernardo</td></tr>
+                                <tr><td>Onda Mar</td><td>Bernardo</td></tr>
+                                <tr><td>Express</td><td>Bernardo</td></tr>
+                                <tr><td>Royal</td><td>Bernardo</td></tr>
+                                <tr><td>Novo CWB</td><td>Bernardo</td></tr>
+                                <tr><td>Rio Branco</td><td>Bernardo</td></tr>
+                                <tr><td>Araras</td><td>Bernardo</td></tr>
+                                <tr><td>Atlântico</td><td>Bernardo</td></tr>
+                                <tr><td>Baía dos Corais</td><td>Bernardo</td></tr>
+                                <tr><td>Bello Mare</td><td>Bernardo</td></tr>
+                                <tr><td>Guaíra</td><td>Bernardo</td></tr>
+                                <tr><td>Piratininga</td><td>Bernardo</td></tr>
+                                <tr><td>Vivaldi</td><td>Bernardo</td></tr>
+                                <tr><td>Mar Hotel</td><td>Bernardo</td></tr>
+                                <tr><td>Navegantes</td><td>Bernardo</td></tr>
+                                <tr><td>Galeão</td><td>Bernardo</td></tr>
+                                <tr><td>GV</td><td>Bernardo</td></tr>
                             </tbody>
                         </table>
-                        <p class="tag-example" style="display:block; margin-top:10px;">+ 60 hotéis (lista completa direto na planilha real)</p>
+                        </div>
+                        <div class="custom-scrollbar-track">
+                            <div class="custom-scrollbar-thumb"></div>
+                        </div>
+                        </div>
                     </div>
                 </div>
 
@@ -565,12 +676,33 @@
                             Todo relatório sai com o resumo do dia (recebidos, enviados, notas fiscais) e os gráficos
                             de cada agente, prontos pra enviar por e-mail ao gerente.
                         </p>
-                        <div class="heatmap">
-                            <span style="--lvl: 0.3;"></span><span style="--lvl: 0.5;"></span><span style="--lvl: 0.4;"></span><span style="--lvl: 0.7;"></span><span style="--lvl: 0.9;"></span><span style="--lvl: 0.6;"></span><span style="--lvl: 0.8;"></span>
-                            <span style="--lvl: 0.4;"></span><span style="--lvl: 0.6;"></span><span style="--lvl: 0.5;"></span><span style="--lvl: 0.9;"></span><span style="--lvl: 1;"></span><span style="--lvl: 0.7;"></span><span style="--lvl: 0.9;"></span>
-                            <span style="--lvl: 0.2;"></span><span style="--lvl: 0.4;"></span><span style="--lvl: 0.3;"></span><span style="--lvl: 0.6;"></span><span style="--lvl: 0.8;"></span><span style="--lvl: 0.5;"></span><span style="--lvl: 0.7;"></span>
+                        <div class="agent-bar-chart">
+                            <div class="agent-bar-col">
+                                <div class="agent-bar" style="--h: 82%; animation-delay: 0s;">
+                                    <span class="agent-bar-value">82</span>
+                                </div>
+                                <span class="agent-bar-label">João</span>
+                            </div>
+                            <div class="agent-bar-col">
+                                <div class="agent-bar" style="--h: 76%; animation-delay: .15s;">
+                                    <span class="agent-bar-value">76</span>
+                                </div>
+                                <span class="agent-bar-label">Cristian</span>
+                            </div>
+                            <div class="agent-bar-col">
+                                <div class="agent-bar" style="--h: 79%; animation-delay: .3s;">
+                                    <span class="agent-bar-value">79</span>
+                                </div>
+                                <span class="agent-bar-label">Clara</span>
+                            </div>
+                            <div class="agent-bar-col">
+                                <div class="agent-bar" style="--h: 75%; animation-delay: .45s;">
+                                    <span class="agent-bar-value">75</span>
+                                </div>
+                                <span class="agent-bar-label">Bernardo</span>
+                            </div>
                         </div>
-                        <div class="chart-legend"><span>Volume de e-mails por agente e dia <em>(exemplo)</em></span></div>
+                        <div class="chart-legend"><span>E-mails processados hoje por agente <em>(exemplo ilustrativo)</em></span></div>
                     </div>
                     <div class="mini-table">
                         <h4 style="font-family:'Orbitron',sans-serif; font-size:0.78rem; color:#fff; margin-bottom:10px;">
@@ -735,6 +867,10 @@
             tabPanels.forEach((panel) => {
                 panel.classList.toggle('active', panel.dataset.panel === tabName);
             });
+            if (tabName === 'hoteis' && typeof updateFakeScrollbar === 'function') {
+                // espera o painel ficar visível (display:block) antes de medir
+                requestAnimationFrame(updateFakeScrollbar);
+            }
         }
 
         tabButtons.forEach((btn) => {
@@ -746,6 +882,67 @@
                 }
             });
         });
+    </script>
+
+    <!-- Barra de rolagem falsa da aba Hotéis (não depende de suporte do navegador/SO) -->
+    <script>
+        const scrollContent = document.getElementById('hoteis-scroll-content');
+        const scrollTrack = document.querySelector('.custom-scrollbar-track');
+        const scrollThumb = document.querySelector('.custom-scrollbar-thumb');
+
+        function updateFakeScrollbar() {
+            if (!scrollContent || !scrollTrack || !scrollThumb) return;
+
+            const trackHeight = scrollTrack.clientHeight;
+            const contentHeight = scrollContent.scrollHeight;
+            const visibleHeight = scrollContent.clientHeight;
+
+            if (contentHeight <= visibleHeight) {
+                scrollThumb.style.display = 'none';
+                return;
+            }
+            scrollThumb.style.display = 'block';
+
+            const thumbHeight = Math.max((visibleHeight / contentHeight) * trackHeight, 24);
+            const maxThumbTop = trackHeight - thumbHeight;
+            const scrollableDistance = contentHeight - visibleHeight;
+            const scrollRatio = scrollableDistance > 0 ? scrollContent.scrollTop / scrollableDistance : 0;
+
+            scrollThumb.style.height = thumbHeight + 'px';
+            scrollThumb.style.top = (scrollRatio * maxThumbTop) + 'px';
+        }
+
+        if (scrollContent) {
+            scrollContent.addEventListener('scroll', updateFakeScrollbar);
+            window.addEventListener('resize', updateFakeScrollbar);
+            updateFakeScrollbar();
+
+            // Permite arrastar a barra falsa pra rolar o conteúdo real
+            let dragging = false;
+            let dragStartY = 0;
+            let scrollStartTop = 0;
+
+            scrollThumb.addEventListener('mousedown', (e) => {
+                dragging = true;
+                dragStartY = e.clientY;
+                scrollStartTop = scrollContent.scrollTop;
+                e.preventDefault();
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (!dragging) return;
+                const trackHeight = scrollTrack.clientHeight;
+                const thumbHeight = scrollThumb.clientHeight;
+                const contentHeight = scrollContent.scrollHeight;
+                const visibleHeight = scrollContent.clientHeight;
+                const scrollableDistance = contentHeight - visibleHeight;
+                const deltaY = e.clientY - dragStartY;
+                const deltaRatio = deltaY / (trackHeight - thumbHeight);
+                scrollContent.scrollTop = scrollStartTop + deltaRatio * scrollableDistance;
+            });
+
+            window.addEventListener('mouseup', () => { dragging = false; });
+        }
     </script>
 
     <!-- Símbolos de código flutuando por cima do Matrix, atrás do conteúdo -->
