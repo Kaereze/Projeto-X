@@ -117,10 +117,6 @@ export default function Home() {
             <Icon name="terminal" /> {profile.role}
           </motion.span>
 
-          <motion.h2 className="text-gradient" style={{ fontSize: "2.6rem", fontFamily: "Orbitron, sans-serif" }} variants={itemVariants}>
-            {profile.name}
-          </motion.h2>
-
           <motion.p className="subtitulo-cyber" variants={itemVariants}>
             <span className="cash">$</span> {profile.bio}
           </motion.p>
