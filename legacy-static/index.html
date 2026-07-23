@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<!-- ======================================================
+     HEAD
+     Tudo que configura a página fica aqui.
+====================================================== -->
+<head>
+
+    <!-- Permite utilizar acentos e caracteres especiais -->
+    <meta charset="UTF-8">
+
+    <!-- Faz o site se adaptar ao tamanho da tela -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- Nome que aparece na aba do navegador -->
+    <title>João Carlos | Portfólio</title>
+
+    <!-- Resumo da página para buscadores e compartilhamentos -->
+    <meta name="description"
+          content="Portfólio de João Carlos, desenvolvedor Front-End em formação, buscando a primeira oportunidade na área.">
+
+    <!-- Prévia ao compartilhar o link (WhatsApp, LinkedIn, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://kaereze.github.io/Projeto-X/index.html">
+    <meta property="og:title" content="João Carlos | Portfólio">
+    <meta property="og:description" content="Portfólio de João Carlos, desenvolvedor Front-End em formação, buscando a primeira oportunidade na área.">
+    <meta property="og:image" content="https://kaereze.github.io/Projeto-X/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="João Carlos | Portfólio">
+    <meta name="twitter:description" content="Portfólio de João Carlos, desenvolvedor Front-End em formação, buscando a primeira oportunidade na área.">
+    <meta name="twitter:image" content="https://kaereze.github.io/Projeto-X/og-image.png">
+
+    <!-- Ícone da aba do navegador -->
+    <link rel="icon"
+          type="image/svg+xml"
+          href="favicon.svg">
+
+
+    <!-- ======================================================
+         FONTES
+         Fontes utilizadas no site.
+    ====================================================== -->
+
+    <!-- Preconnect acelera a conexão com os servidores de fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- ======================================================
+         ÍCONES (Font Awesome)
+         Permite utilizar os ícones HTML, GitHub, WhatsApp...
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- ======================================================
+         CSS
+         Arquivo responsável pelo visual do site.
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="style.css?v=19">
+
+</head>
+
+<body class="page-sidebar">
+
+<!-- ======================================================
+     BARRA SUPERIOR MOBILE (logo + botão hambúrguer)
+====================================================== -->
+
+<div class="mobile-topbar">
+    <span class="mobile-topbar-logo"><i class="fa-solid fa-terminal"></i> João Carlos</span>
+    <button class="side-nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="side-nav">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+</div>
+
+<!-- ======================================================
+     BARRA LATERAL FIXA
+====================================================== -->
+
+<nav class="side-nav" id="side-nav">
+
+    <div class="side-nav-top">
+        <span class="side-nav-logo"><i class="fa-solid fa-terminal"></i></span>
+        <h2 class="side-nav-name">João Carlos</h2>
+        <span class="side-nav-role">DESENVOLVEDOR</span>
+    </div>
+
+    <ul class="side-nav-links">
+        <li><a href="index.html" class="active" aria-current="page"><i class="fa-solid fa-house"></i> Início</a></li>
+        <li><a href="sobre.html"><i class="fa-solid fa-user"></i> Sobre</a></li>
+        <li><a href="skills.html"><i class="fa-solid fa-code"></i> Skills</a></li>
+        <li><a href="projetos.html"><i class="fa-solid fa-briefcase"></i> Projetos</a></li>
+        <li><a href="mail-analytics.html"><i class="fa-solid fa-envelope"></i> Mail Analytics</a></li>
+        <li><a href="contato.html"><i class="fa-solid fa-comment"></i> Contato</a></li>
+    </ul>
+
+    <div class="side-nav-bottom">
+        <div class="side-nav-social">
+            <a href="https://github.com/Kaereze" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <span class="side-nav-social-disabled" title="LinkedIn em breve"><i class="fa-brands fa-linkedin-in"></i></span>
+            <a href="https://wa.me/5548991329291" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <p class="side-nav-copy">© 2026 João Carlos</p>
+    </div>
+
+</nav>
+
+<div class="side-nav-backdrop"></div>
+
+
+
+<div class="page-main">
+
+<!-- ======================================================
+     CENA DE ABERTURA (Monograma JC)
+====================================================== -->
+
+<header class="hero-scene">
+
+    <div class="hero-scene-floor" aria-hidden="true"></div>
+
+    <div class="floating-tech floating-tech--code" aria-hidden="true"><i class="fa-solid fa-code"></i></div>
+    <div class="floating-tech floating-tech--web" aria-hidden="true"><i class="fa-solid fa-window-restore"></i></div>
+    <div class="floating-tech floating-tech--terminal" aria-hidden="true"><i class="fa-solid fa-terminal"></i></div>
+    <div class="floating-tech floating-tech--cloud" aria-hidden="true"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+    <div class="floating-tech floating-tech--db" aria-hidden="true"><i class="fa-solid fa-database"></i></div>
+    <div class="floating-tech floating-tech--gear" aria-hidden="true"><i class="fa-solid fa-gear"></i></div>
+
+    <div class="hero-scene-content">
+
+        <h1 class="jc-monogram" data-text="JC">JC</h1>
+
+        <p class="hero-scene-tagline">
+            CRIANDO <span>SOLUÇÕES</span>, CONSTRUINDO O <span>FUTURO</span>.
+        </p>
+
+        <a href="projetos.html" class="btn-glitch">
+            <span class="btn-text">VER MEU TRABALHO <i class="fa-solid fa-chevron-right"></i></span>
+        </a>
+
+    </div>
+
+    <div class="hero-scene-scroll-hint">
+        <i class="fa-solid fa-computer-mouse"></i>
+        <span>ROLE PARA EXPLORAR</span>
+    </div>
+
+</header>
+
+
+
+<!-- ======================================================
+     RODAPÉ
+====================================================== -->
+
+<footer class="footer-slim">
+    <p>
+        <i class="fa-solid fa-code" aria-hidden="true"></i>
+        Desenvolvido com HTML, CSS e GitHub Pages
+    </p>
+</footer>
+
+</div>
+<!-- fecha .page-main -->
+
+
+
+<!-- ======================================================
+     EFEITO MATRIX
+====================================================== -->
+
+<canvas id="matrix"></canvas>
+
+
+
+<!-- ======================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="matrix.js?v=19"></script>
+<script src="scripts.js?v=19"></script>
+
+    <!-- Símbolos de código flutuando por cima do Matrix, atrás do conteúdo -->
+    <div class="floating-icons">
+        <span style="left: 5%;  font-size: 1.8rem; animation-duration: 14s; animation-delay: 0s;">&lt;/&gt;</span>
+        <span style="left: 15%; font-size: 1.2rem; animation-duration: 18s; animation-delay: 2s;">01</span>
+        <span style="left: 25%; font-size: 2.2rem; animation-duration: 12s; animation-delay: 4s;">{ }</span>
+        <span style="left: 35%; font-size: 1.4rem; animation-duration: 20s; animation-delay: 1s;">$</span>
+        <span style="left: 45%; font-size: 1.6rem; animation-duration: 16s; animation-delay: 6s;">10</span>
+        <span style="left: 55%; font-size: 2rem;   animation-duration: 13s; animation-delay: 3s;">&lt;/&gt;</span>
+        <span style="left: 65%; font-size: 1.3rem; animation-duration: 19s; animation-delay: 5s;">( )</span>
+        <span style="left: 75%; font-size: 1.7rem; animation-duration: 15s; animation-delay: 2.5s;">01</span>
+        <span style="left: 85%; font-size: 1.5rem; animation-duration: 17s; animation-delay: 7s;">{ }</span>
+        <span style="left: 92%; font-size: 1.2rem; animation-duration: 21s; animation-delay: 3.5s;">=&gt;</span>
+        <span style="left: 10%; font-size: 1.1rem; animation-duration: 22s; animation-delay: 8s;">#</span>
+        <span style="left: 70%; font-size: 1.1rem; animation-duration: 11s; animation-delay: 5.5s;">&&</span>
+        <span class="rocket" style="animation-duration: 16s; animation-delay: 0s;"><i class="fa-solid fa-rocket"></i></span>
+        <span class="rocket" style="animation-duration: 16s; animation-delay: 8s;"><i class="fa-solid fa-rocket"></i></span>
+    </div>
+
+</body>
+
+</html>
