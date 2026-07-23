@@ -1,9 +1,33 @@
 import { motion } from "motion/react";
 import Icon from "../components/Icon";
 import { mailAnalytics } from "../data/portfolio";
+import useTilt from "../hooks/useTilt";
 
 const maxHoteis = Math.max(...mailAnalytics.agents.map((a) => a.hoteis));
 const BASE = import.meta.env.BASE_URL;
+
+function RoadmapCard({ step, index }) {
+  const tilt = useTilt();
+  return (
+    <motion.div
+      className="roadmap-card"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.4 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileHover={{ y: -6 }}
+      onMouseMove={tilt.onMouseMove}
+      onMouseLeave={tilt.onMouseLeave}
+      style={tilt.style}
+    >
+      <div className="roadmap-icon-circle">
+        <Icon name={step.icon} />
+      </div>
+      <h3>{step.title}</h3>
+      <p>{step.desc}</p>
+    </motion.div>
+  );
+}
 
 export default function MailAnalytics() {
   return (
@@ -114,21 +138,7 @@ export default function MailAnalytics() {
       </h2>
       <div className="roadmap-grid">
         {mailAnalytics.roadmap.map((step, i) => (
-          <motion.div
-            key={step.title}
-            className="roadmap-card"
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            whileHover={{ y: -6 }}
-          >
-            <div className="roadmap-icon-circle">
-              <Icon name={step.icon} />
-            </div>
-            <h3>{step.title}</h3>
-            <p>{step.desc}</p>
-          </motion.div>
+          <RoadmapCard step={step} index={i} key={step.title} />
         ))}
       </div>
     </>

@@ -35,7 +35,18 @@ export default function Sidebar() {
           aria-controls="side-nav"
           onClick={() => setIsOpen((v) => !v)}
         >
-          <Icon name="bars" />
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.span
+              key={isOpen ? "close" : "open"}
+              initial={{ rotate: -90, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              exit={{ rotate: 90, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              style={{ display: "inline-flex" }}
+            >
+              <Icon name={isOpen ? "xmark" : "bars"} />
+            </motion.span>
+          </AnimatePresence>
         </button>
       </div>
 

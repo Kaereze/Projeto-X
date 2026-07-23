@@ -53,6 +53,21 @@ a {
 }
 
 /* ==========================================================
+   CURSOR GLOW
+========================================================== */
+.cursor-glow {
+  position: fixed;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 255, 65, 0.12), transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -1;
+  will-change: left, top;
+}
+
+/* ==========================================================
    MATRIX BACKGROUND CANVAS
 ========================================================== */
 .matrix-canvas {
@@ -533,11 +548,39 @@ a {
   border-radius: 4px;
   overflow: hidden;
   cursor: pointer;
+  z-index: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+}
+
+.btn-glitch::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--primary);
+  transition: left 0.35s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  z-index: -1;
+}
+
+.btn-glitch:not(:disabled):hover {
+  color: #000;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 20px var(--primary);
+}
+
+.btn-glitch:not(:disabled):hover::before {
+  left: 0;
 }
 
 .btn-glitch.alt {
   border-color: #00ff0d;
   color: #66ff00;
+}
+
+.btn-glitch.alt::before {
+  background: #00ff0d;
 }
 
 .btn-glitch:disabled {

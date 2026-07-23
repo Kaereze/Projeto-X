@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "motion/react";
 import MatrixBackground from "./components/MatrixBackground";
+import CursorGlow from "./components/CursorGlow";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import PageTransition from "./components/PageTransition";
@@ -17,6 +18,7 @@ export default function App() {
   return (
     <div className="app-shell">
       <MatrixBackground />
+      <CursorGlow />
       <Sidebar />
 
       <div className="page-main">

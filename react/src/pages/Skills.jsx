@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import Icon from "../components/Icon";
 import { skillGroups } from "../data/portfolio";
+import useTilt from "../hooks/useTilt";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -8,6 +9,7 @@ const cardVariants = {
 };
 
 function SkillCard({ item, index }) {
+  const tilt = useTilt();
   return (
     <motion.a
       href={item.link}
@@ -20,7 +22,9 @@ function SkillCard({ item, index }) {
       whileInView="show"
       viewport={{ once: true, amount: 0.3 }}
       whileHover={{ y: -6, borderColor: "rgba(0,255,65,0.5)" }}
-      style={{ textDecoration: "none" }}
+      onMouseMove={tilt.onMouseMove}
+      onMouseLeave={tilt.onMouseLeave}
+      style={{ textDecoration: "none", ...tilt.style }}
     >
       <Icon name={item.icon} className="tech-icon" style={{ color: item.color }} />
       <h2>{item.name}</h2>

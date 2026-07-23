@@ -76,7 +76,6 @@ export default function Home() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.5 }}
-          whileHover={{ scale: 1.05, backgroundColor: "var(--primary)", color: "#000" }}
           whileTap={{ scale: 0.97 }}
         >
           Ver Meu Trabalho <Icon name="chevronRight" />
