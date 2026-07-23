@@ -29,25 +29,47 @@ function RoadmapCard({ step, index }) {
   );
 }
 
+const particles = [
+  { top: "6%", left: "2%", delay: 0, duration: 5 },
+  { top: "18%", right: "0%", delay: 0.8, duration: 6 },
+  { top: "70%", left: "-2%", delay: 1.6, duration: 5.5 },
+  { top: "85%", right: "3%", delay: 0.4, duration: 4.5 },
+  { top: "45%", left: "8%", delay: 2.2, duration: 6.5 },
+  { top: "40%", right: "8%", delay: 1.2, duration: 5 },
+];
+
 export default function MailAnalytics() {
+  const tilt = useTilt(6);
+
   return (
     <>
       <header className="hero" style={{ minHeight: "auto", paddingTop: 50, paddingBottom: 10 }}>
         <div className="hero-content" style={{ maxWidth: 900 }}>
           <h1 className="sr-only">Mail Analytics</h1>
 
-          <div className="ma-brain-wrap">
+          <div className="ma-brain-wrap" onMouseMove={tilt.onMouseMove} onMouseLeave={tilt.onMouseLeave}>
+            {particles.map((p, i) => (
+              <motion.span
+                key={i}
+                className="ma-particle"
+                style={{ top: p.top, left: p.left, right: p.right }}
+                animate={{ y: [0, -18, 0], opacity: [0.2, 1, 0.2] }}
+                transition={{ duration: p.duration, delay: p.delay, repeat: Infinity, ease: "easeInOut" }}
+              />
+            ))}
             <div className="ma-brain-crop">
               <motion.img
                 src={`${BASE}cerebro-analitico.png`}
                 alt="Diagrama do Mail Analytics: e-mails do Outlook processados por IA e organizados em planilhas"
                 className="ma-brain-img"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1, scale: [1, 1.03, 1] }}
+                animate={{ opacity: 1, scale: [1, 1.03, 1], y: [0, -6, 0] }}
                 transition={{
                   opacity: { duration: 0.6 },
                   scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                  y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
                 }}
+                style={tilt.style}
               />
             </div>
           </div>

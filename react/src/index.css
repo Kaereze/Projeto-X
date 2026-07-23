@@ -974,16 +974,17 @@ a {
   width: min(560px, 80vw);
   aspect-ratio: 1 / 1;
   margin: 10px auto 30px;
+  cursor: default;
 }
 
-/* Brilho ambiente atrás do cérebro */
-.ma-brain-wrap::after {
-  content: "";
+.ma-particle {
   position: absolute;
-  inset: -12%;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 255, 65, 0.2), transparent 70%);
-  z-index: -1;
+  background: var(--primary);
+  box-shadow: 0 0 8px 2px rgba(0, 255, 65, 0.8);
+  pointer-events: none;
 }
 
 .ma-brain-crop {
