@@ -69,97 +69,113 @@
     ====================================================== -->
 
     <link rel="stylesheet"
-          href="style.css?v=17">
+          href="style.css?v=19">
 
 </head>
 
-<body>
+<body class="page-sidebar">
 
 <!-- ======================================================
-     MENU DE NAVEGAÇÃO
+     BARRA SUPERIOR MOBILE (logo + botão hambúrguer)
 ====================================================== -->
 
-<nav class="navbar">
+<div class="mobile-topbar">
+    <span class="mobile-topbar-logo"><i class="fa-solid fa-terminal"></i> João Carlos</span>
+    <button class="side-nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="side-nav">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+</div>
 
-    <div class="navbar-container">
+<!-- ======================================================
+     BARRA LATERAL FIXA
+====================================================== -->
 
-        <a href="index.html"
-           class="active"
-           aria-current="page">Início</a>
+<nav class="side-nav" id="side-nav">
 
-        <a href="sobre.html">Sobre</a>
+    <div class="side-nav-top">
+        <span class="side-nav-logo"><i class="fa-solid fa-terminal"></i></span>
+        <h2 class="side-nav-name">João Carlos</h2>
+        <span class="side-nav-role">DESENVOLVEDOR</span>
+    </div>
 
-        <a href="skills.html">Skills</a>
+    <ul class="side-nav-links">
+        <li><a href="index.html" class="active" aria-current="page"><i class="fa-solid fa-house"></i> Início</a></li>
+        <li><a href="sobre.html"><i class="fa-solid fa-user"></i> Sobre</a></li>
+        <li><a href="skills.html"><i class="fa-solid fa-code"></i> Skills</a></li>
+        <li><a href="projetos.html"><i class="fa-solid fa-briefcase"></i> Projetos</a></li>
+        <li><a href="mail-analytics.html"><i class="fa-solid fa-envelope"></i> Mail Analytics</a></li>
+        <li><a href="contato.html"><i class="fa-solid fa-comment"></i> Contato</a></li>
+    </ul>
 
-        <a href="projetos.html">Projetos</a>
-
-        <a href="mail-analytics.html">Mail Analytics</a>
-
-        <a href="contato.html">Contato</a>
-
+    <div class="side-nav-bottom">
+        <div class="side-nav-social">
+            <a href="https://github.com/Kaereze" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <span class="side-nav-social-disabled" title="LinkedIn em breve"><i class="fa-brands fa-linkedin-in"></i></span>
+            <a href="https://wa.me/5548991329291" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <p class="side-nav-copy">© 2026 João Carlos</p>
     </div>
 
 </nav>
 
+<div class="side-nav-backdrop"></div>
+
+
+
+<div class="page-main">
+
+<!-- ======================================================
+     CENA DE ABERTURA (Monograma JC)
+====================================================== -->
+
+<header class="hero-scene">
+
+    <div class="hero-scene-floor" aria-hidden="true"></div>
+
+    <div class="floating-tech floating-tech--code" aria-hidden="true"><i class="fa-solid fa-code"></i></div>
+    <div class="floating-tech floating-tech--web" aria-hidden="true"><i class="fa-solid fa-window-restore"></i></div>
+    <div class="floating-tech floating-tech--terminal" aria-hidden="true"><i class="fa-solid fa-terminal"></i></div>
+    <div class="floating-tech floating-tech--cloud" aria-hidden="true"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+    <div class="floating-tech floating-tech--db" aria-hidden="true"><i class="fa-solid fa-database"></i></div>
+    <div class="floating-tech floating-tech--gear" aria-hidden="true"><i class="fa-solid fa-gear"></i></div>
+
+    <div class="hero-scene-content">
+
+        <h1 class="jc-monogram" data-text="JC">JC</h1>
+
+        <p class="hero-scene-tagline">
+            CRIANDO <span>SOLUÇÕES</span>, CONSTRUINDO O <span>FUTURO</span>.
+        </p>
+
+        <a href="projetos.html" class="btn-glitch">
+            <span class="btn-text">VER MEU TRABALHO <i class="fa-solid fa-chevron-right"></i></span>
+        </a>
+
+    </div>
+
+    <div class="hero-scene-scroll-hint">
+        <i class="fa-solid fa-computer-mouse"></i>
+        <span>ROLE PARA EXPLORAR</span>
+    </div>
+
+</header>
+
 
 
 <!-- ======================================================
-     HERO
-     Primeira seção do site.
+     PERFIL RESUMIDO
+     Segunda seção: quem é João, contato rápido, atalhos.
 ====================================================== -->
 
-<header class="hero">
+<section class="hero">
 
     <div class="hero-content">
-
-
-        <!-- ==========================================
-             FOTO
-        =========================================== -->
-
-        <div class="hero-left">
-
-            <div class="avatar-orbit">
-
-                <div class="avatar-wrapper hud-frame hud-frame--lg">
-
-                    <img src="foto-perfil.jpg"
-                         alt="João Carlos"
-                         class="perfil"
-                         width="250"
-                         height="250"
-                         fetchpriority="high">
-
-                </div>
-
-                <!-- Tecnologias flutuando ao redor da foto -->
-
-                <i class="fa-brands fa-html5 orbit-icon orbit-icon--html5"
-                   aria-hidden="true"></i>
-
-                <i class="fa-brands fa-css3-alt orbit-icon orbit-icon--css3"
-                   aria-hidden="true"></i>
-
-                <i class="fa-brands fa-js orbit-icon orbit-icon--js"
-                   aria-hidden="true"></i>
-
-                <i class="fa-brands fa-git-alt orbit-icon orbit-icon--git"
-                   aria-hidden="true"></i>
-
-                <i class="fa-brands fa-github orbit-icon orbit-icon--github"
-                   aria-hidden="true"></i>
-
-            </div>
-
-        </div>
-
-
 
         <!-- ==========================================
              INFORMAÇÕES
         =========================================== -->
 
-        <div class="hero-right">
+        <div class="hero-right hero-right-center">
 
             <!-- Badge -->
 
@@ -173,13 +189,13 @@
 
             <!-- Nome -->
 
-            <h1 class="text-gradient reveal">João Carlos</h1>
+            <h2 class="text-gradient reveal" style="font-size: 2.6rem; animation-delay: .1s;">João Carlos</h2>
 
 
 
             <!-- Descrição -->
 
-            <p class="subtitulo-cyber reveal">
+            <p class="subtitulo-cyber reveal" style="animation-delay: .2s;">
 
                 <span>$</span>
 
@@ -196,7 +212,7 @@
                  CONTATOS
             ======================================= -->
 
-            <div class="quick-contact reveal">
+            <div class="quick-contact reveal" style="animation-delay: .3s;">
 
                 <a href="mailto:joaocarlossilvazeroum@gmail.com">
 
@@ -224,7 +240,7 @@
                  BOTÕES
             ======================================= -->
 
-            <div class="botoes-cyber reveal">
+            <div class="botoes-cyber reveal" style="animation-delay: .4s;">
 
                 <a href="sobre.html"
                    class="btn-glitch">
@@ -255,7 +271,7 @@
 
     </div>
 
-</header>
+</section>
 
 
 
@@ -263,37 +279,15 @@
      RODAPÉ
 ====================================================== -->
 
-<footer>
-
-    <div class="footer-social">
-
-        <a href="mailto:joaocarlossilvazeroum@gmail.com"
-           aria-label="Email">
-            <i class="fa-solid fa-envelope"></i>
-        </a>
-
-        <a href="https://wa.me/5548991329291"
-           target="_blank"
-           aria-label="WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-
-        <a href="https://github.com/Kaereze"
-           target="_blank"
-           aria-label="GitHub">
-            <i class="fa-brands fa-github"></i>
-        </a>
-
-    </div>
-
-    <p>© 2026 João Carlos</p>
-
+<footer class="footer-slim">
     <p>
-        Desenvolvido com HTML,
-        CSS e GitHub Pages
+        <i class="fa-solid fa-code" aria-hidden="true"></i>
+        Desenvolvido com HTML, CSS e GitHub Pages
     </p>
-
 </footer>
+
+</div>
+<!-- fecha .page-main -->
 
 
 
@@ -309,8 +303,8 @@
      JAVASCRIPT
 ====================================================== -->
 
-<script src="matrix.js?v=7"></script>
-<script src="scripts.js?v=7"></script>
+<script src="matrix.js?v=19"></script>
+<script src="scripts.js?v=19"></script>
 
     <!-- Símbolos de código flutuando por cima do Matrix, atrás do conteúdo -->
     <div class="floating-icons">

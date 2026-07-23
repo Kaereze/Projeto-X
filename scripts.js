@@ -34,3 +34,34 @@ if (!prefersReducedMotionCursor && hasFineHover) {
         glow.style.opacity = "0";
     });
 }
+
+// Menu mobile: abre/fecha a barra lateral como gaveta (off-canvas)
+(function () {
+    const toggle = document.querySelector(".side-nav-toggle");
+    const sideNav = document.querySelector(".side-nav");
+    const backdrop = document.querySelector(".side-nav-backdrop");
+
+    if (!toggle || !sideNav) return;
+
+    function closeMenu() {
+        sideNav.classList.remove("is-open");
+        backdrop?.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+    }
+
+    function openMenu() {
+        sideNav.classList.add("is-open");
+        backdrop?.classList.add("is-open");
+        toggle.setAttribute("aria-expanded", "true");
+    }
+
+    toggle.addEventListener("click", () => {
+        sideNav.classList.contains("is-open") ? closeMenu() : openMenu();
+    });
+
+    backdrop?.addEventListener("click", closeMenu);
+
+    sideNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+    });
+})();

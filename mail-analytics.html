@@ -14,20 +14,48 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=17">
+    <link rel="stylesheet" href="style.css?v=19">
 </head>
-<body>
+<body class="page-sidebar">
 
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="index.html">Início</a>
-            <a href="sobre.html">Sobre</a>
-            <a href="skills.html">Skills</a>
-            <a href="projetos.html">Projetos</a>
-            <a href="mail-analytics.html" class="active" aria-current="page">Mail Analytics</a>
-            <a href="contato.html">Contato</a>
+    <div class="mobile-topbar">
+        <span class="mobile-topbar-logo"><i class="fa-solid fa-terminal"></i> João Carlos</span>
+        <button class="side-nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="side-nav">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+
+    <nav class="side-nav" id="side-nav">
+
+        <div class="side-nav-top">
+            <span class="side-nav-logo"><i class="fa-solid fa-terminal"></i></span>
+            <h2 class="side-nav-name">João Carlos</h2>
+            <span class="side-nav-role">DESENVOLVEDOR</span>
         </div>
+
+        <ul class="side-nav-links">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Início</a></li>
+            <li><a href="sobre.html"><i class="fa-solid fa-user"></i> Sobre</a></li>
+            <li><a href="skills.html"><i class="fa-solid fa-code"></i> Skills</a></li>
+            <li><a href="projetos.html"><i class="fa-solid fa-briefcase"></i> Projetos</a></li>
+            <li><a href="mail-analytics.html" class="active" aria-current="page"><i class="fa-solid fa-envelope"></i> Mail Analytics</a></li>
+            <li><a href="contato.html"><i class="fa-solid fa-comment"></i> Contato</a></li>
+        </ul>
+
+        <div class="side-nav-bottom">
+            <div class="side-nav-social">
+                <a href="https://github.com/Kaereze" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <span class="side-nav-social-disabled" title="LinkedIn em breve"><i class="fa-brands fa-linkedin-in"></i></span>
+                <a href="https://wa.me/5548991329291" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <p class="side-nav-copy">© 2026 João Carlos</p>
+        </div>
+
     </nav>
+
+    <div class="side-nav-backdrop"></div>
+
+    <div class="page-main">
 
     <!-- Cabeçalho do Projeto -->
     <header class="hero" style="min-height: auto; padding: 40px 20px 10px 20px;">
@@ -816,14 +844,19 @@
         </button>
     </div>
 
-    <footer>
-        <p>© 2026 João Carlos</p>
-        <p>Desenvolvido com HTML, CSS e GitHub Pages</p>
+    <footer class="footer-slim">
+        <p>
+            <i class="fa-solid fa-code" aria-hidden="true"></i>
+            Desenvolvido com HTML, CSS e GitHub Pages
+        </p>
     </footer>
 
+    </div>
+    <!-- fecha .page-main -->
+
     <canvas id="matrix"></canvas>
-    <script src="matrix.js?v=7"></script>
-    <script src="scripts.js?v=7"></script>
+    <script src="matrix.js?v=19"></script>
+    <script src="scripts.js?v=19"></script>
 
     <!-- Contadores animados dos números do dashboard -->
     <script>
