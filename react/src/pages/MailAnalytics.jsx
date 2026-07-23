@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import Icon from "../components/Icon";
 import { mailAnalytics } from "../data/portfolio";
 import useTilt from "../hooks/useTilt";
+import useParallax from "../hooks/useParallax";
 
 const maxHoteis = Math.max(...mailAnalytics.agents.map((a) => a.hoteis));
 const BASE = import.meta.env.BASE_URL;
@@ -39,7 +40,7 @@ const particles = [
 ];
 
 export default function MailAnalytics() {
-  const tilt = useTilt(6);
+  const parallax = useParallax(14);
 
   return (
     <>
@@ -47,7 +48,7 @@ export default function MailAnalytics() {
         <div className="hero-content" style={{ maxWidth: 900 }}>
           <h1 className="sr-only">Mail Analytics</h1>
 
-          <div className="ma-brain-wrap" onMouseMove={tilt.onMouseMove} onMouseLeave={tilt.onMouseLeave}>
+          <div className="ma-brain-wrap" onMouseMove={parallax.onMouseMove} onMouseLeave={parallax.onMouseLeave}>
             {particles.map((p, i) => (
               <motion.span
                 key={i}
@@ -63,13 +64,12 @@ export default function MailAnalytics() {
                 alt="Diagrama do Mail Analytics: e-mails do Outlook processados por IA e organizados em planilhas"
                 className="ma-brain-img"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1, scale: [1, 1.03, 1], y: [0, -6, 0] }}
+                animate={{ opacity: 1, scale: [1, 1.03, 1] }}
                 transition={{
                   opacity: { duration: 0.6 },
                   scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-                  y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
                 }}
-                style={tilt.style}
+                style={parallax.style}
               />
             </div>
           </div>
