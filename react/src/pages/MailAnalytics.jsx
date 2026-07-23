@@ -36,37 +36,21 @@ export default function MailAnalytics() {
         <div className="hero-content" style={{ maxWidth: 900 }}>
           <h1 className="sr-only">Mail Analytics</h1>
 
-          <motion.div
-            className="ma-brain-row"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            <motion.img
-              src={`${BASE}cerebro.png`}
-              alt=""
-              className="ma-brain-side"
-              aria-hidden="true"
-              animate={{ scale: [1, 1.06, 1], opacity: [0.5, 0.7, 0.5] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <motion.img
-              src={`${BASE}cerebro-analitico.png`}
-              alt="Diagrama do Mail Analytics: e-mails do Outlook processados por IA e organizados em planilhas"
-              className="ma-brain-center"
-              animate={{ scale: [1, 1.03, 1] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <motion.img
-              src={`${BASE}cerebro.png`}
-              alt=""
-              className="ma-brain-side"
-              aria-hidden="true"
-              style={{ transform: "scaleX(-1)" }}
-              animate={{ scale: [1, 1.06, 1], opacity: [0.5, 0.7, 0.5] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-            />
-          </motion.div>
+          <div className="ma-brain-wrap">
+            <div className="ma-brain-crop">
+              <motion.img
+                src={`${BASE}cerebro-analitico.png`}
+                alt="Diagrama do Mail Analytics: e-mails do Outlook processados por IA e organizados em planilhas"
+                className="ma-brain-img"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, scale: [1, 1.03, 1] }}
+                transition={{
+                  opacity: { duration: 0.6 },
+                  scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                }}
+              />
+            </div>
+          </div>
 
           <motion.span
             className="badge"

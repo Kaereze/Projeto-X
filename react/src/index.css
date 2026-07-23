@@ -969,28 +969,44 @@ a {
 /* ==========================================================
    MAIL ANALYTICS
 ========================================================== */
-.ma-brain-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin: 10px 0 30px;
-}
-
-.ma-brain-row img {
-  max-width: 100%;
-  height: auto;
-  mix-blend-mode: screen;
-}
-
-.ma-brain-side {
-  width: 140px;
-  opacity: 0.55;
-}
-
-.ma-brain-center {
+.ma-brain-wrap {
+  position: relative;
   width: min(560px, 80vw);
+  aspect-ratio: 1 / 1;
+  margin: 10px auto 30px;
+}
+
+/* Brilho ambiente atrás do cérebro */
+.ma-brain-wrap::after {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 255, 65, 0.2), transparent 70%);
+  z-index: -1;
+}
+
+.ma-brain-crop {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Corta a margem vazia + marca d'água "AI" da imagem original, sem
+   usar transform (um transform aqui quebraria o mix-blend-mode). */
+.ma-brain-crop .ma-brain-img {
+  position: absolute;
+  top: -3%;
+  left: -3%;
+  width: 106%;
+  height: 110%;
+}
+
+.ma-brain-img {
+  display: block;
+  object-fit: contain;
+  mix-blend-mode: screen;
 }
 
 .status-tag {
