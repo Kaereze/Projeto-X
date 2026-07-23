@@ -68,7 +68,7 @@ export default function Sobre() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <motion.div className="photo-frame" whileHover={{ scale: 1.02, rotate: -1 }}>
-            <img src="/foto-perfil.jpg" alt="João Carlos" />
+            <img src={`${import.meta.env.BASE_URL}foto-perfil.jpg`} alt="João Carlos" />
           </motion.div>
 
           <div className="contact-list">

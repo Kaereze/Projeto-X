@@ -3,6 +3,7 @@ import Icon from "../components/Icon";
 import { mailAnalytics } from "../data/portfolio";
 
 const maxHoteis = Math.max(...mailAnalytics.agents.map((a) => a.hoteis));
+const BASE = import.meta.env.BASE_URL;
 
 export default function MailAnalytics() {
   return (
@@ -18,7 +19,7 @@ export default function MailAnalytics() {
             transition={{ duration: 0.6 }}
           >
             <motion.img
-              src="/cerebro.png"
+              src={`${BASE}cerebro.png`}
               alt=""
               className="ma-brain-side"
               aria-hidden="true"
@@ -26,14 +27,14 @@ export default function MailAnalytics() {
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.img
-              src="/cerebro-analitico.png"
+              src={`${BASE}cerebro-analitico.png`}
               alt="Diagrama do Mail Analytics: e-mails do Outlook processados por IA e organizados em planilhas"
               className="ma-brain-center"
               animate={{ scale: [1, 1.03, 1] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.img
-              src="/cerebro.png"
+              src={`${BASE}cerebro.png`}
               alt=""
               className="ma-brain-side"
               aria-hidden="true"
